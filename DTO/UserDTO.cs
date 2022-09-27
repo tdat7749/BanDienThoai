@@ -21,5 +21,7 @@ namespace BanDienThoai.DTO
 
         public string Permission { get; set; }
 
+        public DateTime DateCreate { get; set; }
+
     }
 }

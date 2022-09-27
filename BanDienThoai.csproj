@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Folder Include="BUS\" />
-    <Folder Include="DAO\" />
     <Folder Include="GUI\" />
   </ItemGroup>
 
