@@ -8,7 +8,21 @@ namespace BanDienThoai.DTO
 {
     public class PermissionDTO
     {
-        public int Id { get; set; } 
-        public string NamePermis { get; set; }
+        private int id;
+        private string namePermis;
+
+        public int Id { get => id; set => id = value; }
+        public string NamePermis { get => namePermis; set => namePermis = value; }
+
+        public PermissionDTO(int id,string namePermis)
+        {
+            this.Id = id;
+            this.NamePermis = namePermis;
+        }
+
+        public PermissionDTO()
+        {
+
+        }
     }
 }

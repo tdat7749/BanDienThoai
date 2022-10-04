@@ -8,20 +8,48 @@ namespace BanDienThoai.DTO
 {
     public class UserDTO
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        private int id;
+        private string firstName;
+        private string lastName;
 
-        public string UserName { get; set; }
-        public string Password { get; set; }
+        private string userName;
+        private string passWord;
 
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Address { get; set; }
+        private string email;
+        private string phoneNumber;
+        private string address;
 
-        public string Permission { get; set; }
+        private string permission;
 
-        public DateTime DateCreate { get; set; }
+        private DateTime dateCreate;
+        public UserDTO()
+        {
 
+        }
+
+        public UserDTO(int id, string firstName, string lastName, string userName, string password, string email, string phoneNumber, string address, string permission, DateTime dateCreate)
+        {
+            Id = id;
+            FirstName = firstName;
+            LastName = lastName;
+            UserName = userName;
+            Password = password;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            Address = address;
+            Permission = permission;
+            DateCreate = dateCreate;
+        }
+
+        public int Id { get => id; set => id = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string UserName { get => userName; set => userName = value; }
+        public string Password { get => passWord; set => passWord = value; }
+        public string Email { get => email; set => email = value; }
+        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public string Address { get => address; set => address = value; }
+        public string Permission { get => permission; set => permission = value; }
+        public DateTime DateCreate { get => dateCreate; set => dateCreate = value; }
     }
 }
