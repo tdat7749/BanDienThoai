@@ -22,3 +22,6 @@ E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.genruntimecon
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\ref\BanDienThoai.dll
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.Form1.resources
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.csproj.GenerateResource.cache
+D:\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.dll
+D:\BanDienThoai\obj\Debug\net6.0-windows\refint\BanDienThoai.dll
+D:\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.pdb
