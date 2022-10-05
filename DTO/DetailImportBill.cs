@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BanDienThoai.DTO
 {
-    public class DetaiImportlBillDTO
+    public class DetaiImportlBill
     {
         private int id;
         private int importID;
@@ -24,9 +24,9 @@ namespace BanDienThoai.DTO
         public int Amount { get => amount; set => amount = value; }
         public decimal Total { get => total; set => total = value; }
 
-        public DetaiImportlBillDTO(int id, int importID, int productID, string nameProduct, decimal price, int amount, decimal total)
+        public DetaiImportlBill(int id, int importID, int productID, string nameProduct, decimal price, int amount, decimal total)
         {
-            this.ID = id;
+            this.Id = id;
             this.importID = importID;
             this.ProductID = productID;
             this.NameProduct = nameProduct;
@@ -35,7 +35,7 @@ namespace BanDienThoai.DTO
             this.Total = total;
         }
 
-        public DetaiImportlBillDTO()
+        public DetaiImportlBill()
         {
 
         }

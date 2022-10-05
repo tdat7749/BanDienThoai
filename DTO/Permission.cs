@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BanDienThoai.DTO
 {
-    public class PermissionDTO
+    public class Permission
     {
         private int id;
         private string namePermis;
@@ -14,13 +14,13 @@ namespace BanDienThoai.DTO
         public int Id { get => id; set => id = value; }
         public string NamePermis { get => namePermis; set => namePermis = value; }
 
-        public PermissionDTO(int id,string namePermis)
+        public Permission(int id,string namePermis)
         {
             this.Id = id;
             this.NamePermis = namePermis;
         }
 
-        public PermissionDTO()
+        public Permission()
         {
 
         }

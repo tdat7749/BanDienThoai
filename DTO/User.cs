@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BanDienThoai.DTO
 {
-    public class UserDTO
+    public class User
     {
         private int id;
         private string firstName;
@@ -22,12 +22,12 @@ namespace BanDienThoai.DTO
         private string permission;
 
         private DateTime dateCreate;
-        public UserDTO()
+        public User()
         {
 
         }
 
-        public UserDTO(int id, string firstName, string lastName, string userName, string password, string email, string phoneNumber, string address, string permission, DateTime dateCreate)
+        public User(int id, string firstName, string lastName, string userName, string password, string email, string phoneNumber, string address, string permission, DateTime dateCreate)
         {
             Id = id;
             FirstName = firstName;
