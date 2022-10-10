@@ -19,7 +19,7 @@ namespace BanDienThoai.DTO
         private string phoneNumber;
         private string address;
 
-        private string permission;
+        private int permissId;
 
         private DateTime dateCreate;
         public User()
@@ -27,7 +27,7 @@ namespace BanDienThoai.DTO
 
         }
 
-        public User(int id, string firstName, string lastName, string userName, string password, string email, string phoneNumber, string address, string permission, DateTime dateCreate)
+        public User(int id, string firstName, string lastName, string userName, string password, string email, string phoneNumber, string address, int permissId, DateTime dateCreate)
         {
             Id = id;
             FirstName = firstName;
@@ -37,7 +37,7 @@ namespace BanDienThoai.DTO
             Email = email;
             PhoneNumber = phoneNumber;
             Address = address;
-            Permission = permission;
+            PermissId = permissId;
             DateCreate = dateCreate;
         }
 
@@ -49,7 +49,7 @@ namespace BanDienThoai.DTO
         public string Email { get => email; set => email = value; }
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string Address { get => address; set => address = value; }
-        public string Permission { get => permission; set => permission = value; }
+        public int PermissId { get => permissId; set => permissId = value; }
         public DateTime DateCreate { get => dateCreate; set => dateCreate = value; }
     }
 }
