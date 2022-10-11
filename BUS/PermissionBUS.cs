@@ -11,19 +11,19 @@ namespace BanDienThoai.BUS
 {
     internal class PermissionBUS
     {
-        public static DataTable GetAllUser()
+        public static DataTable GetAllPermiss()
         {
             return PermissionDAO.GetAllPermiss();
         }
 
         [Obsolete]
-        public static void CreateUser(Permission per)
+        public static void CreatePermiss(Permission per)
         {
             PermissionDAO.CreatePermiss(per);
         }
 
         [Obsolete]
-        public static void UpdateUser(Permission per)
+        public static void UpdatePermiss(Permission per)
         {
             PermissionDAO.UpdatePermiss(per);
         }

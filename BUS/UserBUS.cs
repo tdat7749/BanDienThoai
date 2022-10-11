@@ -28,7 +28,7 @@ namespace BanDienThoai.BUS
             UserDAO.UpdateUser(user);
         }
 
-        public static void deleteSanPham(int ma)
+        public static void DeleteSanPham(int ma)
         {
             UserDAO.DeleteUser(ma);
         }
