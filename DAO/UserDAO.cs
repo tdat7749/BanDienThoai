@@ -14,7 +14,16 @@ namespace BanDienThoai.DAO
         public static DataTable GetAllUser()
         {
             Connection.Conn.Open();
-            string query = "Select * From Account";
+            string query = @"select Account.FirstName,
+                            Account.LastName,
+                            Account.UserName,
+                            Account.Password,
+                            Account.Email,
+                            Account.PhoneNumber,
+                            Permission.NamePermiss 
+                            from Account INNER JOIN Permission
+                            on Account.PermissId = Permission.Id";
+;
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;

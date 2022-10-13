@@ -11,13 +11,13 @@ namespace BanDienThoai.DTO
         private int id;
         private int userID;
         private int supplierID;
-        private DateTime createTime;
+        private DateTime dateCreate;
         private decimal total;
 
         public int Id { get => id; set => id = value; }
         public int UserID { get => userID; set => userID = value; }
         public int SupplierID { get => supplierID; set => supplierID = value; }
-        public DateTime CreateTime { get => createTime; set => createTime = value; }
+        public DateTime DateCreate { get => dateCreate; set => dateCreate = value; }
         public decimal Total { get => total; set => total = value; }
 
         public ImportBill(int id, int userID, int supplierID, DateTime createTime, decimal total)
@@ -25,7 +25,7 @@ namespace BanDienThoai.DTO
             this.Id = id;
             this.UserID = userID;
             this.SupplierID = supplierID;
-            this.CreateTime = createTime;
+            this.DateCreate = createTime;
             this.Total = total;
         }
 

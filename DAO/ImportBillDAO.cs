@@ -31,9 +31,9 @@ namespace BanDienThoai.DAO
             string query = @"INSERT INTO ImportBill(SupplierId,UserId,DateCreate,Total)
                            VALUES (@SupplierId,@UserId,@DateCreate,@Total)";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
-            command.Parameters.Add("@SupplierId", SqlDbType.Int).Value = importBill.SupplierID
+            command.Parameters.Add("@SupplierId", SqlDbType.Int).Value = importBill.SupplierID;
             command.Parameters.Add("@UserId", SqlDbType.Int).Value = importBill.UserID;
-            command.Parameters.Add("DateCreate", SqlDbType.DateTime).Value = importBill.CreateTime;
+            command.Parameters.Add("DateCreate", SqlDbType.DateTime).Value = importBill.DateCreate;
             command.Parameters.Add("@Total", SqlDbType.Decimal).Value = importBill.Total;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
@@ -52,7 +52,7 @@ namespace BanDienThoai.DAO
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@SupplierId", SqlDbType.Int).Value = importBill.SupplierID;
             command.Parameters.Add("@UserId", SqlDbType.Int).Value = importBill.UserID;
-            command.Parameters.Add("@DateCreate", SqlDbType.DateTime).Value = importBill.CreateDate;
+            command.Parameters.Add("@DateCreate", SqlDbType.DateTime).Value = importBill.DateCreate;
             command.Parameters.Add("@Total", SqlDbType.Decimal).Value = importBill.Total;
             command.Parameters.Add("@Id", SqlDbType.Int).Value = importBill.Id;
             command.ExecuteNonQuery();

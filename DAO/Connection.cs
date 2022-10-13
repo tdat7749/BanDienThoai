@@ -15,7 +15,6 @@ namespace BanDienThoai.DAO
             try
             {
                 Conn = new SqlConnection("Data Source=localhost,1433;Initial Catalog=bandienthoai;User ID=sa;Password=Password123");
-                Conn.Open();
             }
             catch
             {
