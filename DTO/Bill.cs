@@ -9,26 +9,26 @@ namespace BanDienThoai.DTO
     public class Bill
     {
         private int id;
-        private int userID;
+        private int userId;
         private string userName;
         private string fullName;
-        private DateTime createTime;
+        private DateTime dateCreate;
         private decimal total;
 
         public int Id { get => id; set => id = value; }
-        public int UserID { get => userID; set => userID = value; }
+        public int UserId { get => userId; set => userId = value; }
         public string UserName { get => userName; set => userName = value; }
         public string FullName { get => fullName; set => fullName = value; }
-        public DateTime CreateTime { get => createTime; set => createTime = value; }
+        public DateTime DateCreate { get => dateCreate; set => dateCreate = value; }
         public decimal Total { get => total; set => total = value; }
 
         public Bill(int id, int userID, string userName, string fullName, DateTime createTime, decimal total)
         {
             this.Id = id;
-            this.UserID = userID;
+            this.UserId = userID;
             this.UserName = userName;
             this.FullName = fullName;
-            this.CreateTime = createTime;
+            this.DateCreate = createTime;
             this.Total = total;
         }
 

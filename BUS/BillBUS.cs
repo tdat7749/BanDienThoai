@@ -1,4 +1,4 @@
-﻿using BanDienThoai.DAO;
+using BanDienThoai.DAO;
 using BanDienThoai.DTO;
 using System;
 using System.Collections.Generic;
@@ -9,28 +9,28 @@ using System.Threading.Tasks;
 
 namespace BanDienThoai.BUS
 {
-    internal class PermissionBUS
+    internal class BillBUS
     {
-        public static DataTable GetAllPermiss()
+        public static DataTable GetAllBill()
         {
-            return PermissionDAO.GetAllPermiss();
+            return BillDAO.GetAllBill();
         }
 
         [Obsolete]
-        public static void CreatePermiss(Permission per)
+        public static void CreateBill(Bill bill)
         {
-            PermissionDAO.CreatePermiss(per);
+            BillDAO.CreateBill(bill);
         }
 
         [Obsolete]
-        public static void UpdatePermiss(Permission per)
+        public static void UpdateBill(Bill bill)
         {
-            PermissionDAO.UpdatePermiss(per);
+            BillDAO.UpdateBill(bill);
         }
 
-        public static void DeletePermiss(int ma)
+        public static void DeleteBill(int ma)
         {
-            PermissionDAO.DetelePermiss(ma);
+            BillDAO.DeleteBill(ma);
         }
     }
 }

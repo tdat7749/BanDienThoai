@@ -14,7 +14,7 @@ namespace BanDienThoai.DAO
         public static DataTable GetAllUser()
         {
             Connection.Conn.Open();
-            string query = "Select * From User";
+            string query = "Select * From Account";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;
@@ -28,7 +28,7 @@ namespace BanDienThoai.DAO
         public static void CreateUser(User user)
         {
             Connection.Conn.Open();
-            string query = @"INSERT INTO User(FirstName,LastName,UserName,Password,Email,PhoneNumber,Address,PermissId)
+            string query = @"INSERT INTO Account(FirstName,LastName,UserName,Password,Email,PhoneNumber,Address,PermissId)
                            VALUES (@FirstName,@LastName,@UserName,@Password,@Email,@PhoneNumber,@Address,@PermissId)";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = user.FirstName;
@@ -47,7 +47,7 @@ namespace BanDienThoai.DAO
         public static void UpdateUser(User user)
         {
             Connection.Conn.Open();
-            string query = @"Update User Set
+            string query = @"Update Account Set
                             FirstName = @FirstName,
                             LastName = @LastName,
                             UserName = @UserName,
@@ -74,7 +74,7 @@ namespace BanDienThoai.DAO
         public static void DeleteUser(int ma)
         {
             Connection.Conn.Open();
-            string query = "Delete From User Where Id = @Id";
+            string query = "Delete From Account Where Id = @Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@Id", SqlDbType.Int).Value = ma;
             command.ExecuteNonQuery();

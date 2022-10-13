@@ -9,16 +9,16 @@ namespace BanDienThoai.DTO
     public class DetailBill
     {
         private int id;
-        private int billID;
-        private int productID;
+        private int billId;
+        private int productId;
         private string nameProduct;
         private decimal price;
         private int amount;
         private decimal total;
 
         public int Id { get => id; set => id = value; }
-        public int BillID { get => billID; set => billID = value; }
-        public int ProductID { get => productID; set => productID = value; }
+        public int BillId { get => billId; set => billId = value; }
+        public int ProductId { get => productId; set => productId = value; }
         public string NameProduct { get => nameProduct; set => nameProduct = value; }
         public decimal Price { get => price; set => price = value; }
         public int Amount { get => amount; set => amount = value; }
@@ -27,8 +27,8 @@ namespace BanDienThoai.DTO
         public DetailBill(int id, int billID, int productID, string nameProduct, decimal price, int amount, decimal total)
         {
             this.Id = id;
-            this.BillID = billID;
-            this.ProductID = productID;
+            this.BillId = billID;
+            this.ProductId = productID;
             this.NameProduct = nameProduct;
             this.Price = price;
             this.Amount = amount;
