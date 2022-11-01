@@ -11,6 +11,10 @@ namespace BanDienThoai.DTO
         private int id;
         private string categoryName;
 
+        public Category()
+        {
+
+        }
         public Category(int id, string categoryName)
         {
             this.Id = id;

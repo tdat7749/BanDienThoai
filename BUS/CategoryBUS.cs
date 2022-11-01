@@ -11,24 +11,22 @@ namespace BanDienThoai.BUS
 {
     internal class CategoryBUS
     {
-        public static DataTable GetAllCategory()
+        public DataTable GetAllCategory()
         {
             return CategoryDAO.GetAllCategory();
         }
 
-        [Obsolete]
-        public static void CreateCategory(Category per)
+        public void CreateCategory(Category per)
         {
             CategoryDAO.CreateCategory(per);
         }
 
-        [Obsolete]
-        public static void UpdateCategory(Category per)
+        public void UpdateCategory(Category per)
         {
             CategoryDAO.UpdateCategory(per);
         }
 
-        public static void DeleteCategory(int ma)
+        public void DeleteCategory(int ma)
         {
             CategoryDAO.DeleteCategory(ma);
         }

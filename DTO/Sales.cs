@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace appp11
+namespace BanDienThoai.DTO
 {
-    internal class Sales
+    public class Sales
     {
         private int id;
         private string nameSale;

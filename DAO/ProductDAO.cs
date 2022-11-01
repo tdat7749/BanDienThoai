@@ -14,7 +14,7 @@ namespace BanDienThoai.DAO
         public static DataTable GetAllProduct()
         {
             Connection.Conn.Open();
-            string query = "Select * From Product";
+            string query = "Select * From Product where Id = 1";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;

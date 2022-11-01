@@ -14,7 +14,8 @@ namespace BanDienThoai.DAO
         {
             try
             {
-                Conn = new SqlConnection("Data Source=localhost,1433;Initial Catalog=bandienthoai;User ID=sa;Password=Password123");
+                Conn = new SqlConnection("Data Source=LAPTOP-ED3BE250; Initial Catalog=bandienthoai; Integrated Security=True");
+                //Conn = new SqlConnection("Data Source=cai cho nay vao sql server xem; Initial Catalog=bandienthoai; Integrated Security=True");
             }
             catch
             {
