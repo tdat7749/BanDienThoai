@@ -66,5 +66,23 @@ namespace BanDienThoai.DAO
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }
+
+        public static int GetLastID()
+        {
+            Connection.Conn.Open();
+            string query = "SELECT TOP 1 Id as LastID FROM ImportBill ORDER BY Id DESC";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                int id = int.Parse(sr["LastID"].ToString());
+                Connection.Conn.Close();
+                return id;
+            }
+            Connection.Conn.Close();
+            return -1;
+        }
     }
 }

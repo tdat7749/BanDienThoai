@@ -33,8 +33,8 @@ namespace BanDienThoai.DAO
             command.Parameters.Add("@ImportId", SqlDbType.Int).Value = detailImportBill.ImportID;
             command.Parameters.Add("@ProductId", SqlDbType.Int).Value = detailImportBill.ProductID;
             command.Parameters.Add("NameProduct", SqlDbType.NVarChar).Value = detailImportBill.NameProduct;
-            command.Parameters.Add("@Amount", SqlDbType.Decimal).Value = detailImportBill.Price;
-            command.Parameters.Add("@Price", SqlDbType.Int).Value = detailImportBill.Amount;
+            command.Parameters.Add("@Amount", SqlDbType.Decimal).Value = detailImportBill.Amount;
+            command.Parameters.Add("@Price", SqlDbType.Int).Value = detailImportBill.Price;
             command.Parameters.Add("@Total", SqlDbType.Decimal).Value = detailImportBill.Total;
             command.ExecuteNonQuery();
             Connection.Conn.Close();

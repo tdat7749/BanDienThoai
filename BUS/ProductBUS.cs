@@ -30,5 +30,10 @@ namespace BanDienThoai.BUS
         {
             ProductDAO.DeleteProduct(ma);
         }
+
+        public void UpdateStockProduct(int ma,int stock)
+        {
+            ProductDAO.UpdateStockProduct(ma, stock);
+        }
     }
 }

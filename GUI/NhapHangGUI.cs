@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BanDienThoai.BUS;
+using BanDienThoai.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,12 @@ namespace BanDienThoai.GUI
 {
     public partial class NhapHangGUI : Form
     {
+        DataTable tbOrder = new DataTable();
+        ImportBillBUS importBillBUS = new ImportBillBUS();
+        DetailImportBillBUS detailImportBillBUS = new DetailImportBillBUS();
+        ProductBUS productBUS = new ProductBUS();
+
+
         public NhapHangGUI()
         {
             InitializeComponent();
@@ -40,6 +48,103 @@ namespace BanDienThoai.GUI
             txtIDSanPham.Text = _3ChamProduct.id;
             txtTenSanPham.Text = _3ChamProduct.name;
             txtGiaTien.Text = _3ChamProduct.price;
+        }
+
+        private void NhapHangGUI_Load(object sender, EventArgs e)
+        {
+            tbOrder.Columns.Add("ID Sản Phẩm");
+            tbOrder.Columns.Add("Sản Phẩm");
+            tbOrder.Columns.Add("Giá Tiền");
+            tbOrder.Columns.Add("Số Lượng");
+            tbOrder.Columns.Add("Thành Tiền");
+            dgvOrder.DataSource = tbOrder;
+            txtTongTien.Text = "0";
+        }
+
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
+
+        private void btnThemSanPham_Click(object sender, EventArgs e)
+        {
+            if (IsNumber(txtSoLuong.Text))
+            {
+                DataRow r = tbOrder.NewRow();
+                r["ID Sản Phẩm"] = txtIDSanPham.Text;
+                r["Sản Phẩm"] = txtTenSanPham.Text;
+                r["Giá Tiền"] = txtGiaTien.Text;
+                r["Số Lượng"] = txtSoLuong.Text;
+                r["Thành Tiền"] = (double.Parse(txtGiaTien.Text) * double.Parse(txtSoLuong.Text)).ToString();
+                tbOrder.Rows.Add(r);
+
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập ô số lượng là số !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            foreach(DataRow row in tbOrder.Rows)
+            {
+                txtTongTien.Text = (decimal.Parse(txtTongTien.Text) + decimal.Parse(row["Thành Tiền"].ToString())).ToString();
+            }
+        }
+
+        private void btnDatHang_Click(object sender, EventArgs e)
+        {
+            if(txtIDNCC.Text == "")
+            {
+                MessageBox.Show("Vui lòng lựa chọn nhà cung cấp !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if(txtIDNhanVien.Text == "")
+            {
+                MessageBox.Show("Vui lòng lựa chọn người lập đơn nhập hàng !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if(dgvOrder.RowCount <= 0)
+            {
+                MessageBox.Show("Chưa lựa chọn sản phẩm để nhập hàng !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ImportBill importBill = new ImportBill();
+            importBill.StaffID = int.Parse(txtIDNhanVien.Text.Trim());
+            importBill.SupplierID = int.Parse(txtIDNCC.Text.Trim());
+            importBill.DateCreate = dtpNgayNhap.Value;
+            importBill.Total = decimal.Parse(txtTongTien.Text);
+
+            importBillBUS.CreateImportBill(importBill);
+
+
+            foreach(DataRow row in tbOrder.Rows)
+            {
+                DetailImportBill detailImportBill = new DetailImportBill();
+                detailImportBill.ImportID = importBillBUS.GetLastID();
+                detailImportBill.ProductID = int.Parse(row["ID Sản Phẩm"].ToString());
+                detailImportBill.NameProduct = row["Sản Phẩm"].ToString();
+                detailImportBill.Price = decimal.Parse(row["Giá Tiền"].ToString());
+                detailImportBill.Amount = int.Parse(row["Số lượng"].ToString());
+                detailImportBill.Total = decimal.Parse(row["Thành Tiền"].ToString());
+
+                detailImportBillBUS.CreateDetailImportBill(detailImportBill);
+                productBUS.UpdateStockProduct(detailImportBill.ProductID, detailImportBill.Amount);
+            }
+
+            MessageBox.Show("Nhập hàng thành công !!");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

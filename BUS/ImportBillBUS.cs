@@ -30,5 +30,10 @@ namespace BanDienThoai.BUS
         {
             ImportBillDAO.DeleteImportBill(ma);
         }
+
+        public int GetLastID()
+        {
+            return ImportBillDAO.GetLastID();
+        }
     }
 }
