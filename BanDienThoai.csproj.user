@@ -1,38 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="GUI\CategoryGUI.cs">
+    <Compile Update="GUI\3ChamProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GUI\CustomTextBox.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="GUI\ElipseControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Update="GUI\KhachHang.cs">
+    <Compile Update="GUI\3ChamSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GUI\Main.cs">
+    <Compile Update="GUI\MainGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GUI\MuaHang.cs">
+    <Compile Update="GUI\NhapHangGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GUI\NhapHang.cs">
+    <Compile Update="GUI\SaleGUI.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="GUI\Product.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="GUI\Sale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="GUI\SupplierGUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="GUI\VBButton.cs">
-      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
 </Project>

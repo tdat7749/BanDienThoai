@@ -28,11 +28,11 @@ namespace BanDienThoai.DAO
         public static void CreateBill(Bill bill)
         {
             Connection.Conn.Open();
-            string query = @"INSERT INTO Bill(UserId, UserName, FullName, DateCreate, Total)
-                           VALUES (@UserId, @UserName, @FullName, @DateCreate, @Total)";
+            string query = @"INSERT INTO Bill(UserId, StaffId, FullName, DateCreate, Total)
+                           VALUES (@UserId, @StaffId, @FullName, @DateCreate, @Total)";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@UserId", SqlDbType.Int).Value = bill.UserId;
-            command.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = bill.UserName;
+            command.Parameters.Add("@StaffId", SqlDbType.NVarChar).Value = bill.StaffId;
             command.Parameters.Add("@FullName", SqlDbType.NVarChar).Value = bill.FullName;
             command.Parameters.Add("@DateCreate", SqlDbType.Date).Value = bill.DateCreate;
             command.Parameters.Add("@Total", SqlDbType.Money).Value = bill.Total;
@@ -46,14 +46,14 @@ namespace BanDienThoai.DAO
             Connection.Conn.Open();
             string query = @"Update Bill Set
                             UserId = @UserId,
-                            UserName = @UserName,
+                            StaffId = @StaffId,
                             FullName = @UserName,
                             DateCreate = @DateCreate,
                             Total = @Total 
                             Where Id = @Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@UserId", SqlDbType.Int).Value = bill.UserId;
-            command.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = bill.UserName;
+            command.Parameters.Add("@StaffId", SqlDbType.NVarChar).Value = bill.StaffId;
             command.Parameters.Add("@FullName", SqlDbType.NVarChar).Value = bill.FullName;
             command.Parameters.Add("@DateCreate", SqlDbType.Date).Value = bill.DateCreate;
             command.Parameters.Add("@Total", SqlDbType.Money).Value = bill.Total;

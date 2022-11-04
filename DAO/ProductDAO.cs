@@ -14,7 +14,9 @@ namespace BanDienThoai.DAO
         public static DataTable GetAllProduct()
         {
             Connection.Conn.Open();
-            string query = "Select * From Product where Id = 1";
+            string query = @"select Product.Id,Product.NameProduct,Product.Price,Product.Description,Product.Stock,Category.CategoryName 
+from Product 
+INNER JOIN Category on Product.CategoryId = Category.Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;
@@ -24,7 +26,6 @@ namespace BanDienThoai.DAO
             return dt;
         }
 
-        [Obsolete]
         public static void CreateProduct(Product product)
         {
             Connection.Conn.Open();
@@ -41,7 +42,6 @@ namespace BanDienThoai.DAO
             Connection.Conn.Close();
         }
 
-        [Obsolete]
         public static void UpdateProduct(Product product)
         {
             Connection.Conn.Open();
@@ -52,7 +52,7 @@ namespace BanDienThoai.DAO
                             Description = @Description,
                             Email = @Email,
                             Image = @Image,
-                            CategoryId = @CategoryId,
+                            CategoryId = @CategoryId 
                             Where Id = @Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@NameProduct", SqlDbType.NVarChar).Value = product.Name;
@@ -72,6 +72,17 @@ namespace BanDienThoai.DAO
             string query = "Delete From Product Where Id = @Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@Id", SqlDbType.Int).Value = ma;
+            command.ExecuteNonQuery();
+            Connection.Conn.Close();
+        }
+
+        public static void UpdateStockProduct(int ma,int stock)
+        {
+            Connection.Conn.Open();
+            string query = $"UPDATE Product SET Stock = Stock + @Stock WHERE Id = @Id";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            command.Parameters.Add("@Id", SqlDbType.Int).Value = ma;
+            command.Parameters.Add("@Stock", SqlDbType.Int).Value = stock;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }

@@ -11,24 +11,22 @@ namespace BanDienThoai.BUS
 {
     internal class ProductBUS
     {
-        public static DataTable GetAllProduct()
+        public DataTable GetAllProduct()
         {
             return ProductDAO.GetAllProduct();
         }
 
-        [Obsolete]
-        public static void CreateProduct(Product Product)
+        public void CreateProduct(Product Product)
         {
             ProductDAO.CreateProduct(Product);
         }
 
-        [Obsolete]
-        public static void UpdateProduct(Product Product)
+        public void UpdateProduct(Product Product)
         {
             ProductDAO.UpdateProduct(Product);
         }
 
-        public static void DeleteProduct(int ma)
+        public void DeleteProduct(int ma)
         {
             ProductDAO.DeleteProduct(ma);
         }

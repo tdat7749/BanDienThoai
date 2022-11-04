@@ -11,24 +11,22 @@ namespace BanDienThoai.BUS
 {
     internal class ImportBillBUS
     {
-        public static DataTable GetAllImportBill()
+        public DataTable GetAllImportBill()
         {
             return ImportBillDAO.GetAllImportBill();
         }
 
-        [Obsolete]
-        public static void CreateImportBill(ImportBill importBill)
+        public void CreateImportBill(ImportBill importBill)
         {
             ImportBillDAO.CreateImportBill(importBill);
         }
 
-        [Obsolete]
-        public static void UpdateImportBill(ImportBill importBill)
+        public void UpdateImportBill(ImportBill importBill)
         {
             ImportBillDAO.UpdateImportBill(importBill);
         }
 
-        public static void DeleteImportBill(int ma)
+        public  void DeleteImportBill(int ma)
         {
             ImportBillDAO.DeleteImportBill(ma);
         }

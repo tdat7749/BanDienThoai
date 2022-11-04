@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BanDienThoai.DAO
 {
-    internal class ImportBillDAO
+    public class ImportBillDAO
     {
         public static DataTable GetAllImportBill()
         {
@@ -24,34 +24,32 @@ namespace BanDienThoai.DAO
             return dt;
         }
 
-        [Obsolete]
         public static void CreateImportBill(ImportBill importBill)
         {
             Connection.Conn.Open();
-            string query = @"INSERT INTO ImportBill(SupplierId,UserId,DateCreate,Total)
-                           VALUES (@SupplierId,@UserId,@DateCreate,@Total)";
+            string query = @"INSERT INTO ImportBill(SupplierId,StaffId,DateCreate,Total)
+                           VALUES (@SupplierId,@StaffId,@DateCreate,@Total)";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@SupplierId", SqlDbType.Int).Value = importBill.SupplierID;
-            command.Parameters.Add("@UserId", SqlDbType.Int).Value = importBill.UserID;
+            command.Parameters.Add("@StaffId", SqlDbType.Int).Value = importBill.StaffID;
             command.Parameters.Add("DateCreate", SqlDbType.DateTime).Value = importBill.DateCreate;
             command.Parameters.Add("@Total", SqlDbType.Decimal).Value = importBill.Total;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }
 
-        [Obsolete]
         public static void UpdateImportBill(ImportBill importBill)
         {
             Connection.Conn.Open();
             string query = @"Update ImportBill Set
                             SupplierId = @SupplierId,
-                            UserId = @UserId,
+                            StaffId = @StaffId,
                             DateCreate = @DateCreate,
                             Total = @Total,                          
                             Where Id = @Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@SupplierId", SqlDbType.Int).Value = importBill.SupplierID;
-            command.Parameters.Add("@UserId", SqlDbType.Int).Value = importBill.UserID;
+            command.Parameters.Add("@StaffId", SqlDbType.Int).Value = importBill.StaffID;
             command.Parameters.Add("@DateCreate", SqlDbType.DateTime).Value = importBill.DateCreate;
             command.Parameters.Add("@Total", SqlDbType.Decimal).Value = importBill.Total;
             command.Parameters.Add("@Id", SqlDbType.Int).Value = importBill.Id;

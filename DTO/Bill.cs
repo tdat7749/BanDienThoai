@@ -10,23 +10,23 @@ namespace BanDienThoai.DTO
     {
         private int id;
         private int userId;
-        private string userName;
         private string fullName;
         private DateTime dateCreate;
         private decimal total;
+        private int staffId;
 
         public int Id { get => id; set => id = value; }
         public int UserId { get => userId; set => userId = value; }
-        public string UserName { get => userName; set => userName = value; }
+        public int StaffId { get => staffId; set => staffId = value; }
         public string FullName { get => fullName; set => fullName = value; }
         public DateTime DateCreate { get => dateCreate; set => dateCreate = value; }
         public decimal Total { get => total; set => total = value; }
 
-        public Bill(int id, int userID, string userName, string fullName, DateTime createTime, decimal total)
+        public Bill(int id, int userID, int staffId, string fullName, DateTime createTime, decimal total)
         {
             this.Id = id;
             this.UserId = userID;
-            this.UserName = userName;
+            this.StaffId = staffId;
             this.FullName = fullName;
             this.DateCreate = createTime;
             this.Total = total;

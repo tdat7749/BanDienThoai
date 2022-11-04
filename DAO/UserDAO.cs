@@ -16,13 +16,8 @@ namespace BanDienThoai.DAO
             Connection.Conn.Open();
             string query = @"select Account.FirstName,
                             Account.LastName,
-                            Account.UserName,
-                            Account.Password,
-                            Account.Email,
-                            Account.PhoneNumber,
-                            Permission.NamePermiss 
-                            from Account INNER JOIN Permission
-                            on Account.PermissId = Permission.Id";
+                            Account.PhoneNumber 
+                            from Account";
 ;
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
@@ -37,17 +32,13 @@ namespace BanDienThoai.DAO
         public static void CreateUser(User user)
         {
             Connection.Conn.Open();
-            string query = @"INSERT INTO Account(FirstName,LastName,UserName,Password,Email,PhoneNumber,Address,PermissId)
-                           VALUES (@FirstName,@LastName,@UserName,@Password,@Email,@PhoneNumber,@Address,@PermissId)";
+            string query = @"INSERT INTO Account(FirstName,LastName,PhoneNumber,Address)
+                           VALUES (@FirstName,@LastName,@PhoneNumber,@Address)";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = user.FirstName;
             command.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = user.LastName;
-            command.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = user.UserName;
-            command.Parameters.Add("@Password", SqlDbType.NVarChar).Value = user.Password;
-            command.Parameters.Add("@Email", SqlDbType.NVarChar).Value = user.Email;
             command.Parameters.Add("@PhoneNumber", SqlDbType.NVarChar).Value = user.PhoneNumber;
             command.Parameters.Add("@Address", SqlDbType.NVarChar).Value = user.Address;
-            command.Parameters.Add("@PermissId", SqlDbType.Int).Value = 1;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }
@@ -59,22 +50,14 @@ namespace BanDienThoai.DAO
             string query = @"Update Account Set
                             FirstName = @FirstName,
                             LastName = @LastName,
-                            UserName = @UserName,
-                            Password = @Password,
-                            Email = @Email,
                             PhoneNumber = @PhoneNumber,
-                            Address = @Address,
-                            PermissId = @PermissId 
+                            Address = @Address 
                             Where Id = @Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = user.FirstName;
             command.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = user.LastName;
-            command.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = user.UserName;
-            command.Parameters.Add("@Password", SqlDbType.NVarChar).Value = user.Password;
-            command.Parameters.Add("@Email", SqlDbType.NVarChar).Value = user.Email;
             command.Parameters.Add("@PhoneNumber", SqlDbType.NVarChar).Value = user.PhoneNumber;
             command.Parameters.Add("@Address", SqlDbType.NVarChar).Value = user.Address;
-            command.Parameters.Add("@PermissId", SqlDbType.Int).Value = user.PermissId;
             command.Parameters.Add("@Id", SqlDbType.Int).Value = user.Id;
             command.ExecuteNonQuery();
             Connection.Conn.Close();

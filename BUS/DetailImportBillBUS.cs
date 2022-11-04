@@ -9,26 +9,24 @@ using System.Threading.Tasks;
 
 namespace BanDienThoai.BUS
 {
-    internal class DetailImportBillBUS
+    public class DetailImportBillBUS
     {
-        public static DataTable GetAllDetailImportBill()
+        public DataTable GetAllDetailImportBill()
         {
             return DetailImportBillDAO.GetAllDetailImportBill();
         }
 
-        [Obsolete]
-        public static void CreateDetailImportBill(DetailImportBill detailImportBill)
+        public void CreateDetailImportBill(DetailImportBill detailImportBill)
         {
             DetailImportBillDAO.CreateDetailImportBill(detailImportBill);
         }
 
-        [Obsolete]
-        public static void UpdateDetailImportBill(DetailImportBill detailImportBill)
+        public void UpdateDetailImportBill(DetailImportBill detailImportBill)
         {
             DetailImportBillDAO.UpdateDetailImportBill(detailImportBill);
         }
 
-        public static void DeleteDetailImportBill(int ma)
+        public void DeleteDetailImportBill(int ma)
         {
             DetailImportBillDAO.DeleteDetailImportBill(ma);
         }

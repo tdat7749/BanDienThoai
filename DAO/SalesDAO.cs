@@ -14,7 +14,7 @@ namespace BanDienThoai.DAO
         public static DataTable GetAllSales()
         {
             Connection.Conn.Open();
-            string query = "Select NameSale, TimeStart, TimeEnd From Sale";
+            string query = "Select Id, NameSale, TimeStart,TimeEnd, SaleOff From Sale";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;
@@ -27,12 +27,13 @@ namespace BanDienThoai.DAO
         public static void CreateSale(Sales sale)
         {
             Connection.Conn.Open();
-            string query = @"INSERT INTO Sale(NameSale,TimeStart,TimeEnd)
-                           VALUES (@NameSale,@TimeStart,@TimeEnd)";
+            string query = @"INSERT INTO Sale(NameSale,TimeStart,TimeEnd,SaleOff)
+                           VALUES (@NameSale,@TimeStart,@TimeEnd,@SaleOff)";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@NameSale", SqlDbType.NVarChar).Value = sale.NameSale;
             command.Parameters.Add("@TimeStart", SqlDbType.DateTime).Value = sale.TimeStart;
             command.Parameters.Add("@TimeEnd", SqlDbType.DateTime).Value = sale.TimeEnd;
+            command.Parameters.Add("@SaleOff", SqlDbType.Int).Value = sale.SaleOff;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }
@@ -43,12 +44,15 @@ namespace BanDienThoai.DAO
             string query = @"Update Sale Set
                             NameSale = @NameSale,
                             TimeStart = @TimeStart,
-                            TimeEnd = @TimeEnd  
+                            TimeEnd = @TimeEnd,
+                            SaleOff = @SaleOff 
                             Where Id = @Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@NameSale", SqlDbType.NVarChar).Value = sale.NameSale;
             command.Parameters.Add("@TimeStart", SqlDbType.DateTime).Value = sale.TimeStart;
             command.Parameters.Add("@TimeEnd", SqlDbType.DateTime).Value = sale.TimeEnd;
+            command.Parameters.Add("@SaleOff", SqlDbType.Int).Value = sale.SaleOff;
+            command.Parameters.Add("@Id", SqlDbType.Int).Value = sale.Id;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }

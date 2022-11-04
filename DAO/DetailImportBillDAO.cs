@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BanDienThoai.DAO
 {
-    internal class DetailImportBillDAO
+    public class DetailImportBillDAO
     {
         public static DataTable GetAllDetailImportBill()
         {
@@ -24,7 +24,6 @@ namespace BanDienThoai.DAO
             return dt;
         }
 
-        [Obsolete]
         public static void CreateDetailImportBill(DetailImportBill detailImportBill)
         {
             Connection.Conn.Open();
@@ -41,7 +40,6 @@ namespace BanDienThoai.DAO
             Connection.Conn.Close();
         }
 
-        [Obsolete]
         public static void UpdateDetailImportBill(DetailImportBill detailImportBill)
         {
             Connection.Conn.Open();
