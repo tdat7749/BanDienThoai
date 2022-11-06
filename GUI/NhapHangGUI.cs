@@ -73,6 +73,12 @@ namespace BanDienThoai.GUI
 
         private void btnThemSanPham_Click(object sender, EventArgs e)
         {
+            if (txtSoLuong.Text == "")
+            {
+                MessageBox.Show("Số lượng không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (IsNumber(txtSoLuong.Text))
             {
                 DataRow r = tbOrder.NewRow();
@@ -86,7 +92,7 @@ namespace BanDienThoai.GUI
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập ô số lượng là số !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập ô số lượng là số > 0!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -144,7 +150,64 @@ namespace BanDienThoai.GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            int i = dgvOrder.CurrentRow.Index;
+
+            if (i < 0)
+            {
+                MessageBox.Show("Bạn chưa chọn sản phẩm để sửa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (txtSoLuong.Text == "")
+            {
+                MessageBox.Show("Số lượng không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!IsNumber(txtSoLuong.Text))
+            {
+                MessageBox.Show("Số lượng phải là số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (int.Parse(txtSoLuong.Text) < 1)
+            {
+                MessageBox.Show("Số lượng không được bé hơn 0", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            dgvOrder.Rows[i].Cells[3].Value = txtSoLuong.Text;
+            MessageBox.Show("Sửa Thành Công !");
+
+
+        }
+
+        private void dgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dgvOrder.CurrentRow.Index;
+            if (i >= 0)
+            {
+                txtIDSanPham.Text = dgvOrder.Rows[i].Cells[0].Value.ToString();
+                txtTenSanPham.Text = dgvOrder.Rows[i].Cells[1].Value.ToString();
+                txtSoLuong.Text = dgvOrder.Rows[i].Cells[3].Value.ToString();
+                txtGiaTien.Text = dgvOrder.Rows[i].Cells[2].Value.ToString();
+            }
+        }
+
+        private void btnXoaSanPham_Click(object sender, EventArgs e)
+        {
+            int i = dgvOrder.CurrentRow.Index;
+
+            if (i<0)
+            {
+                MessageBox.Show("Bạn chưa chọn sản phẩm để xóa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            tbOrder.Rows.RemoveAt(i);
+            MessageBox.Show("Xóa Thành Công !");
         }
     }
 }
