@@ -51,5 +51,28 @@ namespace BanDienThoai.GUI
                 return;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                MessageBox.Show("Phải nhập từ khóa để tìm kiếm !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            dgv3ChamSupplier.DataSource = supplierBUS.GetSupplierByName(txtSearch.Text.Trim());
+            if (dgv3ChamSupplier.Rows.Count <= 1)
+            {
+                MessageBox.Show("Không tìm thấy !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GetAllSupplier();
+                return;
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            GetAllSupplier();
+        }
     }
 }

@@ -34,6 +34,10 @@
             this.txt_AddressSupplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnChon = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv3ChamSupplier)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,13 +48,12 @@
             this.txt_ID,
             this.txt_NameSupplier,
             this.txt_AddressSupplier});
-            this.dgv3ChamSupplier.Location = new System.Drawing.Point(-1, 112);
-            this.dgv3ChamSupplier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgv3ChamSupplier.Location = new System.Drawing.Point(-1, 84);
             this.dgv3ChamSupplier.Name = "dgv3ChamSupplier";
             this.dgv3ChamSupplier.ReadOnly = true;
             this.dgv3ChamSupplier.RowHeadersWidth = 51;
             this.dgv3ChamSupplier.RowTemplate.Height = 25;
-            this.dgv3ChamSupplier.Size = new System.Drawing.Size(624, 200);
+            this.dgv3ChamSupplier.Size = new System.Drawing.Size(546, 150);
             this.dgv3ChamSupplier.TabIndex = 0;
             // 
             // txt_ID
@@ -82,10 +85,9 @@
             // 
             // btnChon
             // 
-            this.btnChon.Location = new System.Drawing.Point(181, 339);
-            this.btnChon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnChon.Location = new System.Drawing.Point(158, 254);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(86, 31);
+            this.btnChon.Size = new System.Drawing.Size(75, 23);
             this.btnChon.TabIndex = 1;
             this.btnChon.Text = "Chọn";
             this.btnChon.UseVisualStyleBackColor = true;
@@ -93,28 +95,68 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(331, 339);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnHuy.Location = new System.Drawing.Point(290, 254);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(86, 31);
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 2;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(62, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 21);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Tìm Kiếm :";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(150, 42);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(140, 23);
+            this.txtSearch.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(307, 40);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 25);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Tìm Kiếm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(410, 40);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 25);
+            this.btnReset.TabIndex = 6;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
             // _3ChamSupplier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 388);
+            this.ClientSize = new System.Drawing.Size(546, 291);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.dgv3ChamSupplier);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "_3ChamSupplier";
             this.Text = "_3ChamSupplier";
             ((System.ComponentModel.ISupportInitialize)(this.dgv3ChamSupplier)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,5 +168,9 @@
         private DataGridViewTextBoxColumn txt_AddressSupplier;
         private Button btnChon;
         private Button btnHuy;
+        private Label label1;
+        private TextBox txtSearch;
+        private Button button1;
+        private Button btnReset;
     }
 }

@@ -46,5 +46,28 @@ namespace BanDienThoai.GUI
                 MessageBox.Show("Hình như bạn chưa chọn sản phẩm");
             }
         }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if(txtSearch.Text == "")
+            {
+                MessageBox.Show("Phải nhập từ khóa để tìm kiếm !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            dgvSanPham.DataSource = productBUS.GetProductByName(txtSearch.Text.Trim());
+            if(dgvSanPham.Rows.Count <= 1)
+            {
+                MessageBox.Show("Không tìm thấy !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GetAllProduct();
+                return;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
+            GetAllProduct();
+        }
     }
 }

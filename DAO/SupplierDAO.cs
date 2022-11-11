@@ -24,6 +24,19 @@ namespace BanDienThoai.DAO
             return dt;
         }
 
+        public static DataTable GetSupplierByName(string name)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Id, NameSupplier, AddressSupplier from dbo.Supplier where NameSupplier LIKE '%{name}%'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
         public static void CreateSupplier(Supplier supplier)
         {
             Connection.Conn.Open();

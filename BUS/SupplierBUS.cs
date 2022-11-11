@@ -16,6 +16,11 @@ namespace BanDienThoai.BUS
             return SupplierDAO.GetAllSupplier();
         }
 
+        public DataTable GetSupplierByName(string name)
+        {
+            return SupplierDAO.GetSupplierByName(name);
+        }
+
         public void CreateSupplier(Supplier supplier)
         {
             SupplierDAO.CreateSupplier(supplier);

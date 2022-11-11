@@ -26,6 +26,22 @@ INNER JOIN Category on Product.CategoryId = Category.Id";
             return dt;
         }
 
+        public static DataTable GetProductByName(string name)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Product.Id,Product.NameProduct,Product.Price,Product.Description,Product.Stock,Category.CategoryName 
+                            from Product 
+                            INNER JOIN Category on Product.CategoryId = Category.Id 
+                            where NameProduct LIKE '%{name}%'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
         public static void CreateProduct(Product product)
         {
             Connection.Conn.Open();

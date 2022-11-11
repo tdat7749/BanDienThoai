@@ -78,6 +78,16 @@ namespace BanDienThoai.GUI
                 MessageBox.Show("Số lượng không được để trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (!IsNumber(txtSoLuong.Text))
+            {
+                MessageBox.Show("Số lượng phải là số", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (int.Parse(txtSoLuong.Text) < 1)
+            {
+                MessageBox.Show("Số lượng không được bé hơn 0", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (IsNumber(txtSoLuong.Text))
             {
