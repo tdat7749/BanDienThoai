@@ -20,6 +20,10 @@ namespace BanDienThoai.BUS
         {
             return ProductDAO.GetProductByName(name);
         }
+        public DataTable GetProductByCategory(string name)
+        {
+            return ProductDAO.GetProductByCategory(name);
+        }
 
         public void CreateProduct(Product Product)
         {

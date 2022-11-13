@@ -34,5 +34,10 @@ namespace BanDienThoai.GUI
             childForm.Show();
 
         }
+
+        private void panel_main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

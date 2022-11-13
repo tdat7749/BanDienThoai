@@ -45,6 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbSanPham = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtTongTienKM = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.dtpNgayTao = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.btnKhuyenMai = new System.Windows.Forms.Button();
@@ -74,9 +76,9 @@
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtNameSearch = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbLoc = new System.Windows.Forms.ComboBox();
             this.btnLoc = new System.Windows.Forms.Button();
             this.btnThemVaoGio = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,9 +109,11 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pbSanPham);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(38, 42);
+            this.groupBox1.Location = new System.Drawing.Point(43, 56);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(523, 303);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(598, 404);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
@@ -117,145 +121,157 @@
             // 
             // txtMaSanPham
             // 
-            this.txtMaSanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaSanPham.Location = new System.Drawing.Point(331, 25);
+            this.txtMaSanPham.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaSanPham.Location = new System.Drawing.Point(378, 33);
+            this.txtMaSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaSanPham.Name = "txtMaSanPham";
-            this.txtMaSanPham.Size = new System.Drawing.Size(174, 29);
+            this.txtMaSanPham.Size = new System.Drawing.Size(198, 30);
             this.txtMaSanPham.TabIndex = 14;
+            this.txtMaSanPham.TextChanged += new System.EventHandler(this.txtMaSanPham_TextChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(185, 25);
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label15.Location = new System.Drawing.Point(211, 33);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(106, 21);
+            this.label15.Size = new System.Drawing.Size(116, 23);
             this.label15.TabIndex = 13;
             this.label15.Text = "Mã Sản Phẩm";
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSoLuong.Location = new System.Drawing.Point(331, 116);
+            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSoLuong.Location = new System.Drawing.Point(378, 155);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(174, 29);
+            this.txtSoLuong.Size = new System.Drawing.Size(198, 30);
             this.txtSoLuong.TabIndex = 12;
             this.txtSoLuong.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(185, 116);
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(211, 155);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 21);
+            this.label14.Size = new System.Drawing.Size(82, 23);
             this.label14.TabIndex = 11;
             this.label14.Text = "Số Lượng";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // txtMoTa
             // 
-            this.txtMoTa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMoTa.Location = new System.Drawing.Point(185, 220);
+            this.txtMoTa.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMoTa.Location = new System.Drawing.Point(211, 293);
+            this.txtMoTa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(320, 77);
+            this.txtMoTa.Size = new System.Drawing.Size(365, 101);
             this.txtMoTa.TabIndex = 10;
             this.txtMoTa.Text = "";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(61, 245);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(70, 327);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 21);
+            this.label5.Size = new System.Drawing.Size(58, 23);
             this.label5.TabIndex = 9;
             this.label5.Text = "Mô Tả";
             // 
             // txtTenHang
             // 
-            this.txtTenHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTenHang.Location = new System.Drawing.Point(331, 179);
+            this.txtTenHang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTenHang.Location = new System.Drawing.Point(378, 239);
+            this.txtTenHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenHang.Name = "txtTenHang";
-            this.txtTenHang.Size = new System.Drawing.Size(174, 29);
+            this.txtTenHang.Size = new System.Drawing.Size(198, 30);
             this.txtTenHang.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(185, 182);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(211, 243);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 21);
+            this.label4.Size = new System.Drawing.Size(133, 23);
             this.label4.TabIndex = 7;
             this.label4.Text = "Hãng Sản Phẩm";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtSoLuongConLai
             // 
-            this.txtSoLuongConLai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSoLuongConLai.Location = new System.Drawing.Point(331, 148);
+            this.txtSoLuongConLai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSoLuongConLai.Location = new System.Drawing.Point(378, 197);
+            this.txtSoLuongConLai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoLuongConLai.Name = "txtSoLuongConLai";
-            this.txtSoLuongConLai.Size = new System.Drawing.Size(174, 29);
+            this.txtSoLuongConLai.Size = new System.Drawing.Size(198, 30);
             this.txtSoLuongConLai.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(185, 148);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(211, 197);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 21);
+            this.label3.Size = new System.Drawing.Size(144, 23);
             this.label3.TabIndex = 5;
             this.label3.Text = "Số Lượng Còn Lại";
             // 
             // txtDonGia
             // 
-            this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDonGia.Location = new System.Drawing.Point(331, 85);
+            this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDonGia.Location = new System.Drawing.Point(378, 113);
+            this.txtDonGia.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtDonGia.Name = "txtDonGia";
-            this.txtDonGia.Size = new System.Drawing.Size(174, 29);
+            this.txtDonGia.Size = new System.Drawing.Size(198, 30);
             this.txtDonGia.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(185, 85);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(211, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 21);
+            this.label2.Size = new System.Drawing.Size(72, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Đơn Giá";
             // 
             // txtTenSanPham
             // 
-            this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTenSanPham.Location = new System.Drawing.Point(331, 55);
+            this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTenSanPham.Location = new System.Drawing.Point(378, 73);
+            this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenSanPham.Name = "txtTenSanPham";
-            this.txtTenSanPham.Size = new System.Drawing.Size(174, 29);
+            this.txtTenSanPham.Size = new System.Drawing.Size(198, 30);
             this.txtTenSanPham.TabIndex = 2;
+            this.txtTenSanPham.TextChanged += new System.EventHandler(this.txtTenSanPham_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(185, 55);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(211, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 21);
+            this.label1.Size = new System.Drawing.Size(118, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên Sản Phẩm";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pbSanPham
             // 
-            this.pbSanPham.Location = new System.Drawing.Point(20, 22);
+            this.pbSanPham.Location = new System.Drawing.Point(23, 29);
+            this.pbSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbSanPham.Name = "pbSanPham";
-            this.pbSanPham.Size = new System.Drawing.Size(129, 146);
+            this.pbSanPham.Size = new System.Drawing.Size(147, 195);
             this.pbSanPham.TabIndex = 0;
             this.pbSanPham.TabStop = false;
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtTongTienKM);
+            this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.dtpNgayTao);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.btnKhuyenMai);
@@ -277,37 +293,64 @@
             this.groupBox2.Controls.Add(this.txtMaNhanVien);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(593, 42);
+            this.groupBox2.Location = new System.Drawing.Point(678, 56);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(402, 489);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(459, 692);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Giao Hàng";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // txtTongTienKM
+            // 
+            this.txtTongTienKM.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTongTienKM.Location = new System.Drawing.Point(193, 566);
+            this.txtTongTienKM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTongTienKM.Name = "txtTongTienKM";
+            this.txtTongTienKM.Size = new System.Drawing.Size(198, 30);
+            this.txtTongTienKM.TabIndex = 34;
+            this.txtTongTienKM.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label16.Location = new System.Drawing.Point(6, 572);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(158, 23);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Tổng Tiền Đã K/M: ";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
             // dtpNgayTao
             // 
+            this.dtpNgayTao.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpNgayTao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayTao.Location = new System.Drawing.Point(169, 218);
+            this.dtpNgayTao.Location = new System.Drawing.Point(193, 243);
+            this.dtpNgayTao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpNgayTao.Name = "dtpNgayTao";
-            this.dtpNgayTao.Size = new System.Drawing.Size(174, 29);
+            this.dtpNgayTao.Size = new System.Drawing.Size(198, 30);
             this.dtpNgayTao.TabIndex = 32;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(24, 218);
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Location = new System.Drawing.Point(27, 243);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 21);
+            this.label13.Size = new System.Drawing.Size(83, 23);
             this.label13.TabIndex = 31;
             this.label13.Text = "Ngày Tạo";
             // 
             // btnKhuyenMai
             // 
-            this.btnKhuyenMai.Location = new System.Drawing.Point(349, 176);
+            this.btnKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnKhuyenMai.Location = new System.Drawing.Point(399, 197);
+            this.btnKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKhuyenMai.Name = "btnKhuyenMai";
-            this.btnKhuyenMai.Size = new System.Drawing.Size(30, 29);
+            this.btnKhuyenMai.Size = new System.Drawing.Size(34, 39);
             this.btnKhuyenMai.TabIndex = 30;
             this.btnKhuyenMai.Text = "...";
             this.btnKhuyenMai.UseVisualStyleBackColor = true;
@@ -315,45 +358,55 @@
             // 
             // btnKhachHang
             // 
-            this.btnKhachHang.Location = new System.Drawing.Point(349, 95);
+            this.btnKhachHang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnKhachHang.Location = new System.Drawing.Point(399, 113);
+            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(30, 29);
+            this.btnKhachHang.Size = new System.Drawing.Size(34, 39);
             this.btnKhachHang.TabIndex = 29;
             this.btnKhachHang.Text = "...";
             this.btnKhachHang.UseVisualStyleBackColor = true;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
             // btnNhanVien
             // 
-            this.btnNhanVien.Location = new System.Drawing.Point(349, 25);
+            this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNhanVien.Location = new System.Drawing.Point(399, 33);
+            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(30, 29);
+            this.btnNhanVien.Size = new System.Drawing.Size(34, 39);
             this.btnNhanVien.TabIndex = 28;
             this.btnNhanVien.Text = "...";
             this.btnNhanVien.UseVisualStyleBackColor = true;
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTongTien.Location = new System.Drawing.Point(169, 393);
+            this.txtTongTien.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTongTien.Location = new System.Drawing.Point(193, 524);
+            this.txtTongTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(174, 29);
+            this.txtTongTien.Size = new System.Drawing.Size(198, 30);
             this.txtTongTien.TabIndex = 27;
+            this.txtTongTien.TextChanged += new System.EventHandler(this.txtTongTien_TextChanged);
             // 
             // zzzz
             // 
             this.zzzz.AutoSize = true;
-            this.zzzz.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.zzzz.Location = new System.Drawing.Point(44, 396);
+            this.zzzz.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.zzzz.Location = new System.Drawing.Point(50, 528);
             this.zzzz.Name = "zzzz";
-            this.zzzz.Size = new System.Drawing.Size(89, 21);
+            this.zzzz.Size = new System.Drawing.Size(100, 23);
             this.zzzz.TabIndex = 26;
             this.zzzz.Text = "Tổng Tiền : ";
             // 
             // btnMuaHang
             // 
-            this.btnMuaHang.Location = new System.Drawing.Point(239, 443);
+            this.btnMuaHang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnMuaHang.Location = new System.Drawing.Point(272, 641);
+            this.btnMuaHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMuaHang.Name = "btnMuaHang";
-            this.btnMuaHang.Size = new System.Drawing.Size(104, 32);
+            this.btnMuaHang.Size = new System.Drawing.Size(119, 43);
             this.btnMuaHang.TabIndex = 25;
             this.btnMuaHang.Text = "Mua Hàng";
             this.btnMuaHang.UseVisualStyleBackColor = true;
@@ -361,9 +414,11 @@
             // 
             // btnXoaGioHang
             // 
-            this.btnXoaGioHang.Location = new System.Drawing.Point(39, 443);
+            this.btnXoaGioHang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnXoaGioHang.Location = new System.Drawing.Point(44, 641);
+            this.btnXoaGioHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnXoaGioHang.Name = "btnXoaGioHang";
-            this.btnXoaGioHang.Size = new System.Drawing.Size(104, 32);
+            this.btnXoaGioHang.Size = new System.Drawing.Size(119, 43);
             this.btnXoaGioHang.TabIndex = 24;
             this.btnXoaGioHang.Text = "Xóa";
             this.btnXoaGioHang.UseVisualStyleBackColor = true;
@@ -372,103 +427,115 @@
             // dgvGio
             // 
             this.dgvGio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGio.Location = new System.Drawing.Point(6, 253);
+            this.dgvGio.Location = new System.Drawing.Point(7, 281);
+            this.dgvGio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvGio.MultiSelect = false;
             this.dgvGio.Name = "dgvGio";
             this.dgvGio.ReadOnly = true;
             this.dgvGio.RowHeadersWidth = 51;
             this.dgvGio.RowTemplate.Height = 25;
             this.dgvGio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGio.Size = new System.Drawing.Size(390, 122);
+            this.dgvGio.Size = new System.Drawing.Size(446, 219);
             this.dgvGio.TabIndex = 23;
             // 
             // txtKhuyenMai
             // 
-            this.txtKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtKhuyenMai.Location = new System.Drawing.Point(169, 176);
+            this.txtKhuyenMai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtKhuyenMai.Location = new System.Drawing.Point(193, 197);
+            this.txtKhuyenMai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtKhuyenMai.Name = "txtKhuyenMai";
-            this.txtKhuyenMai.Size = new System.Drawing.Size(174, 29);
+            this.txtKhuyenMai.ReadOnly = true;
+            this.txtKhuyenMai.Size = new System.Drawing.Size(198, 30);
             this.txtKhuyenMai.TabIndex = 20;
+            this.txtKhuyenMai.TextChanged += new System.EventHandler(this.txtKhuyenMai_TextChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(24, 179);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(27, 201);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 21);
+            this.label10.Size = new System.Drawing.Size(100, 23);
             this.label10.TabIndex = 19;
             this.label10.Text = "Khuyến Mãi";
             // 
             // txtKhachHang
             // 
-            this.txtKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtKhachHang.Location = new System.Drawing.Point(169, 130);
+            this.txtKhachHang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtKhachHang.Location = new System.Drawing.Point(193, 157);
+            this.txtKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtKhachHang.Name = "txtKhachHang";
-            this.txtKhachHang.Size = new System.Drawing.Size(174, 29);
+            this.txtKhachHang.ReadOnly = true;
+            this.txtKhachHang.Size = new System.Drawing.Size(198, 30);
             this.txtKhachHang.TabIndex = 18;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(24, 133);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(27, 161);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 21);
+            this.label9.Size = new System.Drawing.Size(134, 23);
             this.label9.TabIndex = 17;
             this.label9.Text = "Tên Khách Hàng";
             // 
             // txtMaKhachHang
             // 
-            this.txtMaKhachHang.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaKhachHang.Location = new System.Drawing.Point(169, 95);
+            this.txtMaKhachHang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaKhachHang.Location = new System.Drawing.Point(193, 113);
+            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Size = new System.Drawing.Size(174, 29);
+            this.txtMaKhachHang.ReadOnly = true;
+            this.txtMaKhachHang.Size = new System.Drawing.Size(198, 30);
             this.txtMaKhachHang.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(24, 98);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(27, 117);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(119, 21);
+            this.label8.Size = new System.Drawing.Size(132, 23);
             this.label8.TabIndex = 15;
             this.label8.Text = "Mã Khách Hàng";
             // 
             // txtNhanVien
             // 
-            this.txtNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtNhanVien.Location = new System.Drawing.Point(169, 60);
+            this.txtNhanVien.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNhanVien.Location = new System.Drawing.Point(193, 73);
+            this.txtNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNhanVien.Name = "txtNhanVien";
-            this.txtNhanVien.Size = new System.Drawing.Size(174, 29);
+            this.txtNhanVien.ReadOnly = true;
+            this.txtNhanVien.Size = new System.Drawing.Size(198, 30);
             this.txtNhanVien.TabIndex = 14;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(24, 63);
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(27, 77);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 21);
+            this.label7.Size = new System.Drawing.Size(122, 23);
             this.label7.TabIndex = 13;
             this.label7.Text = "Tên Nhân Viên";
             // 
             // txtMaNhanVien
             // 
-            this.txtMaNhanVien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaNhanVien.Location = new System.Drawing.Point(169, 25);
+            this.txtMaNhanVien.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaNhanVien.Location = new System.Drawing.Point(193, 33);
+            this.txtMaNhanVien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.Size = new System.Drawing.Size(174, 29);
+            this.txtMaNhanVien.ReadOnly = true;
+            this.txtMaNhanVien.Size = new System.Drawing.Size(198, 30);
             this.txtMaNhanVien.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(24, 28);
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(27, 37);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 21);
+            this.label6.Size = new System.Drawing.Size(120, 23);
             this.label6.TabIndex = 11;
             this.label6.Text = "Mã Nhân Viên";
             // 
@@ -476,9 +543,11 @@
             // 
             this.groupBox3.Controls.Add(this.dgvSanPham);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(38, 403);
+            this.groupBox3.Location = new System.Drawing.Point(43, 537);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(523, 161);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(598, 215);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh Sách Sản Phẩm";
@@ -494,14 +563,15 @@
             this.description,
             this.stock});
             this.dgvSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSanPham.Location = new System.Drawing.Point(3, 19);
+            this.dgvSanPham.Location = new System.Drawing.Point(3, 24);
+            this.dgvSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvSanPham.MultiSelect = false;
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.ReadOnly = true;
             this.dgvSanPham.RowHeadersWidth = 51;
             this.dgvSanPham.RowTemplate.Height = 25;
             this.dgvSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSanPham.Size = new System.Drawing.Size(517, 139);
+            this.dgvSanPham.Size = new System.Drawing.Size(592, 187);
             this.dgvSanPham.TabIndex = 0;
             this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
             // 
@@ -563,56 +633,65 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(41, 371);
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(47, 495);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(34, 21);
+            this.label11.Size = new System.Drawing.Size(36, 23);
             this.label11.TabIndex = 31;
             this.label11.Text = "Lọc";
             // 
-            // textBox8
+            // txtNameSearch
             // 
-            this.textBox8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox8.Location = new System.Drawing.Point(303, 368);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(150, 29);
-            this.textBox8.TabIndex = 34;
+            this.txtNameSearch.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtNameSearch.Location = new System.Drawing.Point(346, 491);
+            this.txtNameSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNameSearch.Name = "txtNameSearch";
+            this.txtNameSearch.Size = new System.Drawing.Size(171, 30);
+            this.txtNameSearch.TabIndex = 34;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(231, 371);
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(264, 495);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 21);
+            this.label12.Size = new System.Drawing.Size(73, 23);
             this.label12.TabIndex = 33;
             this.label12.Text = "Từ Khóa";
             // 
-            // comboBox1
+            // cbbLoc
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(81, 368);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 29);
-            this.comboBox1.TabIndex = 35;
+            this.cbbLoc.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbbLoc.FormattingEnabled = true;
+            this.cbbLoc.Items.AddRange(new object[] {
+            "Tất Cả",
+            "Tên Sản Phẩm",
+            "Danh Mục"});
+            this.cbbLoc.Location = new System.Drawing.Point(93, 491);
+            this.cbbLoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbbLoc.Name = "cbbLoc";
+            this.cbbLoc.Size = new System.Drawing.Size(164, 31);
+            this.cbbLoc.TabIndex = 35;
             // 
             // btnLoc
             // 
-            this.btnLoc.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLoc.Location = new System.Drawing.Point(468, 368);
+            this.btnLoc.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLoc.Location = new System.Drawing.Point(535, 491);
+            this.btnLoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLoc.Name = "btnLoc";
-            this.btnLoc.Size = new System.Drawing.Size(75, 29);
+            this.btnLoc.Size = new System.Drawing.Size(86, 39);
             this.btnLoc.TabIndex = 36;
             this.btnLoc.Text = "Lọc";
             this.btnLoc.UseVisualStyleBackColor = true;
+            this.btnLoc.Click += new System.EventHandler(this.btnLoc_Click);
             // 
             // btnThemVaoGio
             // 
-            this.btnThemVaoGio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThemVaoGio.Location = new System.Drawing.Point(171, 570);
+            this.btnThemVaoGio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnThemVaoGio.Location = new System.Drawing.Point(195, 760);
+            this.btnThemVaoGio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThemVaoGio.Name = "btnThemVaoGio";
-            this.btnThemVaoGio.Size = new System.Drawing.Size(253, 29);
+            this.btnThemVaoGio.Size = new System.Drawing.Size(289, 39);
             this.btnThemVaoGio.TabIndex = 37;
             this.btnThemVaoGio.Text = "Thêm Sản Phẩm Vào Giỏ Hàng";
             this.btnThemVaoGio.UseVisualStyleBackColor = true;
@@ -634,18 +713,19 @@
             // 
             // MuaHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 624);
+            this.ClientSize = new System.Drawing.Size(1151, 832);
             this.Controls.Add(this.btnThemVaoGio);
             this.Controls.Add(this.btnLoc);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.cbbLoc);
+            this.Controls.Add(this.txtNameSearch);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MuaHang";
             this.Text = "MuaHang";
             this.Load += new System.EventHandler(this.MuaHang_Load);
@@ -698,9 +778,9 @@
         private Button btnXoaGioHang;
         private DataGridView dgvSanPham;
         private Label label11;
-        private TextBox textBox8;
+        private TextBox txtNameSearch;
         private Label label12;
-        private ComboBox comboBox1;
+        private ComboBox cbbLoc;
         private Button btnLoc;
         private DateTimePicker dtpNgayTao;
         private Label label13;
@@ -717,5 +797,7 @@
         private DataGridViewTextBoxColumn stock;
         private TextBox txtMaSanPham;
         private Label label15;
+        private TextBox txtTongTienKM;
+        private Label label16;
     }
 }

@@ -36,6 +36,7 @@ namespace BanDienThoai.GUI
             tbGioHang.Columns.Add("Số Lượng");
             tbGioHang.Columns.Add("Thành Tiền");
             dgvGio.DataSource = tbGioHang;
+            dgvGio.DefaultCellStyle.Font = new Font("Segoe UI", 10);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -55,14 +56,6 @@ namespace BanDienThoai.GUI
 
         private void btnThemVaoGio_Click(object sender, EventArgs e)
         {
-            foreach (DataRow row in tbGioHang.Rows)
-            {
-                if (row["Tên Sản Phẩm"].ToString().Equals(txtTenSanPham.Text))
-                {
-                    MessageBox.Show("Sản phẩm đã có trong giỏ hàng");
-                    return;
-                }
-            }
 
             if (txtTenSanPham.Text == "")
             {
@@ -84,19 +77,25 @@ namespace BanDienThoai.GUI
                 MessageBox.Show("Số lượng không được lớn hơn số lượng còn lại");
                 return;
             }
-            else
-            {
-                DataRow r = tbGioHang.NewRow();
-                r["Mã Sản Phẩm"] = txtMaSanPham.Text;
-                r["Tên Sản Phẩm"] = txtTenSanPham.Text;
-                r["Giá Tiền"] = txtDonGia.Text;
-                r["Số Lượng"] = txtSoLuong.Text;
-                r["Thành Tiền"] = (double.Parse(txtDonGia.Text) * double.Parse(txtSoLuong.Text)).ToString();
-                tbGioHang.Rows.Add(r);
-                
-            }
 
-            decimal sum = 0;
+            foreach (DataRow row in tbGioHang.Rows)
+            {
+                if (row["Tên Sản Phẩm"].ToString().Equals(txtTenSanPham.Text))
+                {
+                    row["Số Lượng"] = int.Parse(txtSoLuong.Text) + int.Parse(row["Số Lượng"].ToString());
+                    row["Thành Tiền"] = (double.Parse(row["Giá Tiền"].ToString()) * int.Parse(row["Số Lượng"].ToString()));
+                    goto C1;
+                }
+            }
+            DataRow r = tbGioHang.NewRow();
+            r["Mã Sản Phẩm"] = txtMaSanPham.Text;
+            r["Tên Sản Phẩm"] = txtTenSanPham.Text;
+            r["Giá Tiền"] = txtDonGia.Text;
+            r["Số Lượng"] = txtSoLuong.Text;
+            r["Thành Tiền"] = (double.Parse(txtDonGia.Text) * double.Parse(txtSoLuong.Text)).ToString();
+            tbGioHang.Rows.Add(r);
+
+        C1:    decimal sum = 0;
             foreach (DataRow row in tbGioHang.Rows)
             {
                 sum += decimal.Parse(row["Thành Tiền"].ToString());
@@ -197,7 +196,7 @@ namespace BanDienThoai.GUI
                 bill.StaffId = int.Parse(txtMaNhanVien.Text.Trim());
                 bill.FullName = txtKhachHang.Text.Trim();
                 bill.DateCreate = (DateTime)dtpNgayTao.Value;
-                bill.Total = decimal.Parse(txtTongTien.Text.Trim());
+                bill.Total = decimal.Parse(txtTongTienKM.Text.Trim());
 
                 billBUS.CreateBill(bill);
 
@@ -240,6 +239,84 @@ namespace BanDienThoai.GUI
             form.ShowDialog();
 
             txtKhuyenMai.Text = _3ChamKhuyenMai.SaleOff;
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTongTien_TextChanged(object sender, EventArgs e)
+        {
+            if(txtKhuyenMai.Text == "")
+            {
+                txtTongTienKM.Text = (double.Parse(txtTongTien.Text.Trim())).ToString();
+            }
+
+            if (txtKhuyenMai.Text != "")
+            {
+                txtTongTienKM.Text = (double.Parse(txtTongTien.Text.Trim()) - double.Parse(txtTongTien.Text.Trim()) * (double.Parse(txtKhuyenMai.Text) / 100)).ToString();
+            }
+        }
+
+        private void txtKhuyenMai_TextChanged(object sender, EventArgs e)
+        {
+
+
+            if (txtTongTien.Text != "")
+            {
+                txtTongTienKM.Text = (double.Parse(txtTongTien.Text.Trim()) - double.Parse(txtTongTien.Text.Trim()) * (double.Parse(txtKhuyenMai.Text) / 100)).ToString();
+            }
+        }
+
+        private void txtMaSanPham_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenSanPham_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLoc_Click(object sender, EventArgs e)
+        {
+            string item = cbbLoc.GetItemText(cbbLoc.SelectedItem);
+            string name = txtNameSearch.Text.Trim();
+
+            if(item == "Tên Sản Phẩm")
+            {
+                dgvSanPham.DataSource = productBUS.GetProductByName(name);
+            }
+            else if(item == "Danh Mục"){
+                dgvSanPham.DataSource = productBUS.GetProductByCategory(name);
+            }
+            else if(item == "Tất Cả")
+            {
+                dgvSanPham.DataSource = productBUS.GetAllProduct();
+            }
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            _3ChamNhanVien form = new _3ChamNhanVien();
+            form.ShowDialog();
+            txtMaNhanVien.Text = _3ChamNhanVien.id;
+            txtNhanVien.Text = _3ChamNhanVien.ho + " " + _3ChamNhanVien.ten;
+
+        }
+
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            _3ChamKhachHang form = new _3ChamKhachHang();
+            form.ShowDialog();
+            txtMaKhachHang.Text = _3ChamKhachHang.id;
+            txtKhachHang.Text = _3ChamKhachHang.ho + " " + _3ChamKhachHang.ten;
         }
     }
 }

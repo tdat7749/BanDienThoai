@@ -14,9 +14,11 @@ namespace BanDienThoai.DAO
         public static DataTable GetAllUser()
         {
             Connection.Conn.Open();
-            string query = @"select Account.FirstName,
+            string query = @"select Account.Id,
+                            Account.FirstName,
                             Account.LastName,
-                            Account.PhoneNumber 
+                            Account.PhoneNumber,
+                            Account.Address
                             from Account";
 ;
             SqlCommand command = new SqlCommand(query, Connection.Conn);
@@ -28,7 +30,6 @@ namespace BanDienThoai.DAO
             return dt;
         }
 
-        [Obsolete]
         public static void CreateUser(User user)
         {
             Connection.Conn.Open();
@@ -43,7 +44,6 @@ namespace BanDienThoai.DAO
             Connection.Conn.Close();
         }
 
-        [Obsolete]
         public static void UpdateUser(User user)
         {
             Connection.Conn.Open();

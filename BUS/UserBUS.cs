@@ -11,24 +11,22 @@ namespace BanDienThoai.BUS
 {
     internal class UserBUS
     {
-        public static DataTable GetAllUser()
+        public  DataTable GetAllUser()
         {
             return UserDAO.GetAllUser();
         }
 
-        [Obsolete]
-        public static void CreateUser(User user)
+        public  void CreateUser(User user)
         {
             UserDAO.CreateUser(user);
         }
 
-        [Obsolete]
-        public static void UpdateUser(User user)
+        public  void UpdateUser(User user)
         {
             UserDAO.UpdateUser(user);
         }
 
-        public static void DeleteUser(int ma)
+        public  void DeleteUser(int ma)
         {
             UserDAO.DeleteUser(ma);
         }
