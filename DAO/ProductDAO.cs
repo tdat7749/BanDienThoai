@@ -102,5 +102,16 @@ INNER JOIN Category on Product.CategoryId = Category.Id";
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }
+
+        public static void MinusStockProduct(int ma, int stock)
+        {
+            Connection.Conn.Open();
+            string query = $"UPDATE Product SET Stock = Stock - @Stock WHERE Id = @Id";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            command.Parameters.Add("@Id", SqlDbType.Int).Value = ma;
+            command.Parameters.Add("@Stock", SqlDbType.Int).Value = stock;
+            command.ExecuteNonQuery();
+            Connection.Conn.Close();
+        }
     }
 }

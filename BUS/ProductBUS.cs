@@ -40,5 +40,10 @@ namespace BanDienThoai.BUS
         {
             ProductDAO.UpdateStockProduct(ma, stock);
         }
+
+        public void MinusStockProduct(int ma, int stock)
+        {
+            ProductDAO.MinusStockProduct(ma, stock);
+        }
     }
 }

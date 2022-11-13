@@ -17,6 +17,8 @@ namespace BanDienThoai.GUI
     {
         DataTable tbGioHang = new DataTable();
         ProductBUS productBUS = new ProductBUS();
+        BillBUS billBUS = new BillBUS();
+        DetailBillBUS detailBillBUS = new DetailBillBUS();
         public MuaHang()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace BanDienThoai.GUI
         }
         private void MuaHang_Load(object sender, EventArgs e)
         {
+            tbGioHang.Columns.Add("Mã Sản Phẩm");
             tbGioHang.Columns.Add("Tên Sản Phẩm");
             tbGioHang.Columns.Add("Giá Tiền");
             tbGioHang.Columns.Add("Số Lượng");
@@ -84,6 +87,7 @@ namespace BanDienThoai.GUI
             else
             {
                 DataRow r = tbGioHang.NewRow();
+                r["Mã Sản Phẩm"] = txtMaSanPham.Text;
                 r["Tên Sản Phẩm"] = txtTenSanPham.Text;
                 r["Giá Tiền"] = txtDonGia.Text;
                 r["Số Lượng"] = txtSoLuong.Text;
@@ -105,6 +109,7 @@ namespace BanDienThoai.GUI
                 if (dgvSanPham.Rows[i].Cells[1].Value.ToString().Equals(txtTenSanPham.Text))
                 {
                     dgvSanPham.Rows[i].Cells[4].Value = int.Parse(txtSoLuongConLai.Text) - int.Parse(txtSoLuong.Text);
+                    txtMaSanPham.Clear();
                     txtTenSanPham.Clear();
                     txtDonGia.Clear();
                     txtSoLuong.Clear();
@@ -122,6 +127,7 @@ namespace BanDienThoai.GUI
             int i = dgvSanPham.CurrentRow.Index;
             if (i >= 0)
             {
+                txtMaSanPham.Text = dgvSanPham.Rows[i].Cells[0].Value.ToString();
                 txtTenSanPham.Text = dgvSanPham.Rows[i].Cells[1].Value.ToString();
                 txtDonGia.Text = dgvSanPham.Rows[i].Cells[2].Value.ToString();
                 txtSoLuongConLai.Text = dgvSanPham.Rows[i].Cells[4].Value.ToString();
@@ -156,11 +162,11 @@ namespace BanDienThoai.GUI
 
             for (int i = 0; i < dgvSanPham.Rows.Count; i++)
             {
-                if (dgvSanPham.Rows[i].Cells[1].Value.ToString().Equals(dgvGio.Rows[k].Cells[0].Value.ToString()))
+                if (dgvSanPham.Rows[i].Cells[1].Value.ToString().Equals(dgvGio.Rows[k].Cells[1].Value.ToString()))
                 {
-                    dgvSanPham.Rows[i].Cells[4].Value = int.Parse(dgvSanPham.Rows[i].Cells[4].Value.ToString()) + int.Parse(dgvGio.Rows[k].Cells[2].Value.ToString());
+                    dgvSanPham.Rows[i].Cells[4].Value = int.Parse(dgvSanPham.Rows[i].Cells[4].Value.ToString()) + int.Parse(dgvGio.Rows[k].Cells[3].Value.ToString());
                     decimal sum = decimal.Parse(txtTongTien.Text);
-                    sum -= decimal.Parse(dgvGio.Rows[k].Cells[3].Value.ToString());
+                    sum -= decimal.Parse(dgvGio.Rows[k].Cells[4].Value.ToString());
                     txtTongTien.Text = sum.ToString();
                     dgvGio.Rows.RemoveAt(k);
                     MessageBox.Show("Xóa Thành Công !");
@@ -168,6 +174,72 @@ namespace BanDienThoai.GUI
                 }
             }
             
+        }
+
+        private void btnMuaHang_Click(object sender, EventArgs e)
+        {
+            if(txtMaNhanVien.Text == "")
+            {
+                MessageBox.Show("Vui lòng lựa chọn nhân viên bán hàng !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if(txtMaKhachHang.Text == "")
+            {
+                MessageBox.Show("Vui lòng lựa chọn khách hàng !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là mua hàng chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                Bill bill = new Bill();
+                bill.UserId = int.Parse(txtMaKhachHang.Text.Trim());
+                bill.StaffId = int.Parse(txtMaNhanVien.Text.Trim());
+                bill.FullName = txtKhachHang.Text.Trim();
+                bill.DateCreate = (DateTime)dtpNgayTao.Value;
+                bill.Total = decimal.Parse(txtTongTien.Text.Trim());
+
+                billBUS.CreateBill(bill);
+
+                foreach (DataRow row in tbGioHang.Rows)
+                {
+                    DetailBill detailBill = new DetailBill();
+                    detailBill.BillId = billBUS.GetLastID();
+                    detailBill.ProductId = int.Parse(row["Mã Sản Phẩm"].ToString().Trim());
+                    detailBill.NameProduct = row["Tên Sản Phẩm"].ToString().Trim();
+                    detailBill.Price = decimal.Parse(row["Giá Tiền"].ToString().Trim());
+                    detailBill.Amount = int.Parse(row["Số Lượng"].ToString().Trim());
+                    detailBill.Total = decimal.Parse(row["Thành Tiền"].ToString().Trim());
+
+                    detailBillBUS.CreateDetailBill(detailBill);
+
+                    productBUS.MinusStockProduct(detailBill.ProductId, detailBill.Amount);
+
+                }
+                MessageBox.Show("Mua Hàng Thành Công !!");
+            }
+            else
+            {
+                MessageBox.Show("Hủy Mua Thành Công !!");
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnKhuyenMai_Click(object sender, EventArgs e)
+        {
+            if(dgvGio.RowCount <= 0)
+            {
+                MessageBox.Show("Vui lòng thêm sản phẩm vào giỏ hàng trước khi chọn khuyến mãi !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            _3ChamKhuyenMai form = new _3ChamKhuyenMai();
+            form.ShowDialog();
+
+            txtKhuyenMai.Text = _3ChamKhuyenMai.SaleOff;
         }
     }
 }

@@ -24,7 +24,6 @@ namespace BanDienThoai.DAO
 			return dt;
 		}
 
-		[Obsolete]
 		public static void CreateDetailBill(DetailBill detailBill)
 		{
 			Connection.Conn.Open();
@@ -41,7 +40,6 @@ namespace BanDienThoai.DAO
 			Connection.Conn.Close();
 		}
 
-		[Obsolete]
 		public static void UpdateDetailBill(DetailBill detailBill)
 		{
 			Connection.Conn.Open();

@@ -16,21 +16,24 @@ namespace BanDienThoai.BUS
             return BillDAO.GetAllBill();
         }
 
-        [Obsolete]
-        public static void CreateBill(Bill bill)
+        public void CreateBill(Bill bill)
         {
             BillDAO.CreateBill(bill);
         }
 
-        [Obsolete]
-        public static void UpdateBill(Bill bill)
+        public  void UpdateBill(Bill bill)
         {
             BillDAO.UpdateBill(bill);
         }
 
-        public static void DeleteBill(int ma)
+        public  void DeleteBill(int ma)
         {
             BillDAO.DeleteBill(ma);
+        }
+
+        public int GetLastID()
+        {
+            return BillDAO.GetLastID();
         }
     }
 }

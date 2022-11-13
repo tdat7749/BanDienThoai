@@ -16,6 +16,11 @@ namespace BanDienThoai.BUS
             return SalesDAO.GetAllSales();
         }
 
+        public DataTable GetSaleByName(string name)
+        {
+            return SalesDAO.GetSaleByName(name);
+        }
+
         public void CreateSale(Sales sales)
         {
             SalesDAO.CreateSale(sales);

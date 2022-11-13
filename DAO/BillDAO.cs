@@ -23,8 +23,6 @@ namespace BanDienThoai.DAO
             Connection.Conn.Close();
             return dt;
         }
-
-        [Obsolete]
         public static void CreateBill(Bill bill)
         {
             Connection.Conn.Open();
@@ -40,7 +38,6 @@ namespace BanDienThoai.DAO
             Connection.Conn.Close();
         }
 
-        [Obsolete]
         public static void UpdateBill(Bill bill)
         {
             Connection.Conn.Open();
@@ -70,6 +67,23 @@ namespace BanDienThoai.DAO
             command.Parameters.Add("@Id", SqlDbType.Int).Value = ma;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
+        }
+        public static int GetLastID()
+        {
+            Connection.Conn.Open();
+            string query = "SELECT TOP 1 Id as LastID FROM Bill ORDER BY Id DESC";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                int id = int.Parse(sr["LastID"].ToString());
+                Connection.Conn.Close();
+                return id;
+            }
+            Connection.Conn.Close();
+            return -1;
         }
     }
 }

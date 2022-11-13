@@ -11,24 +11,22 @@ namespace BanDienThoai.BUS
 {
     internal class DetailBillBUS
     {
-        public static DataTable GetAllDetailBill()
+        public DataTable GetAllDetailBill()
         {
             return DetailBillDAO.GetAllDetailBill();
         }
 
-        [Obsolete]
-        public static void CreateDetailBill(DetailBill detailBill )
+        public void CreateDetailBill(DetailBill detailBill )
         {
             DetailBillDAO.CreateDetailBill(detailBill);
         }
 
-        [Obsolete]
-        public static void UpdateDetailBill(DetailBill detailBill)
+        public void UpdateDetailBill(DetailBill detailBill)
         {
             DetailBillDAO.UpdateDetailBill(detailBill);
         }
 
-        public static void DeleteDetailBill(int ma)
+        public void DeleteDetailBill(int ma)
         {
             DetailBillDAO.DeleteDetailBill(ma);
         }

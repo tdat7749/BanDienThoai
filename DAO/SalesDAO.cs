@@ -24,6 +24,19 @@ namespace BanDienThoai.DAO
             return dt;
         }
 
+        public static DataTable GetSaleByName(string name)
+        {
+            Connection.Conn.Open();
+            string query = @$"select * from dbo.Sale where NameSale LIKE '%{name}%'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
         public static void CreateSale(Sales sale)
         {
             Connection.Conn.Open();
