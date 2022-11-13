@@ -35,28 +35,25 @@
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(198, 884);
+            this.panel1.Size = new System.Drawing.Size(173, 663);
             this.panel1.TabIndex = 0;
             // 
             // panel_main
             // 
-            this.panel_main.Location = new System.Drawing.Point(225, 0);
-            this.panel_main.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_main.Location = new System.Drawing.Point(197, 0);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1169, 884);
+            this.panel_main.Size = new System.Drawing.Size(1023, 663);
             this.panel_main.TabIndex = 1;
             this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
             // 
             // MainGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1394, 881);
+            this.ClientSize = new System.Drawing.Size(1199, 624);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainGUI";
             this.Text = "MainGUI";
             this.ResumeLayout(false);

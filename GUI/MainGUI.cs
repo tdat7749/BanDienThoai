@@ -16,7 +16,7 @@ namespace BanDienThoai.GUI
         public MainGUI()
         {
             InitializeComponent();
-            ChangeFormChild(new MuaHang());
+            ChangeFormChild(new KhachHangGUI());
         }
 
         private void ChangeFormChild(Form childForm)

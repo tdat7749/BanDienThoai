@@ -62,3 +62,6 @@ D:\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.genruntimeconfig.cache
 D:\BanDienThoai\obj\Debug\net6.0-windows\ref\BanDienThoai.dll
 D:\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI._3ChamNhanVien.resources
 D:\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI._3ChamKhachHang.resources
+E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI._3ChamKhachHang.resources
+E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI._3ChamNhanVien.resources
+E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.KhachHangGUI.resources

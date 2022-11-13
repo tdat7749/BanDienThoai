@@ -30,6 +30,25 @@ namespace BanDienThoai.DAO
             return dt;
         }
 
+        public static DataTable GetUserByPhoneNumber(string phoneNumber)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Account.Id,
+                            Account.FirstName,
+                            Account.LastName,
+                            Account.PhoneNumber,
+                            Account.Address
+                            from Account where PhoneNumber LIKE '%{phoneNumber}%'";
+            ;
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
         public static void CreateUser(User user)
         {
             Connection.Conn.Open();
@@ -47,7 +66,7 @@ namespace BanDienThoai.DAO
         public static void UpdateUser(User user)
         {
             Connection.Conn.Open();
-            string query = @"Update Account Set
+            string query = @"Update Account Set 
                             FirstName = @FirstName,
                             LastName = @LastName,
                             PhoneNumber = @PhoneNumber,

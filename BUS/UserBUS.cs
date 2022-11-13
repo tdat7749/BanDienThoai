@@ -16,6 +16,11 @@ namespace BanDienThoai.BUS
             return UserDAO.GetAllUser();
         }
 
+        public DataTable GetUserByPhoneNumber(string phoneNumber)
+        {
+            return UserDAO.GetUserByPhoneNumber(phoneNumber);
+        }
+
         public  void CreateUser(User user)
         {
             UserDAO.CreateUser(user);
