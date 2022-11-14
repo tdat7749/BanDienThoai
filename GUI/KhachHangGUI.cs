@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +20,11 @@ namespace BanDienThoai.GUI
         {
             InitializeComponent();
             GetAllCustomer();
+        }
+
+        public static bool IsPhoneNumber(string number)
+        {
+            return Regex.Match(number, @"^(\+[0-9]{9})$").Success;
         }
 
         public void GetAllCustomer()
@@ -47,6 +53,12 @@ namespace BanDienThoai.GUI
                 return;
             }
 
+            if (!IsPhoneNumber(txtSoDienThoai.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập đúng số điện thoại !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             User user = new User();
             user.FirstName = txtHo.Text.Trim();
             user.LastName = txtTen.Text.Trim();
@@ -70,6 +82,12 @@ namespace BanDienThoai.GUI
             if (txtHo.Text == "" || txtTen.Text == "" || txtSoDienThoai.Text == "" || txtDiaChi.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!IsPhoneNumber(txtSoDienThoai.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập đúng số điện thoại !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

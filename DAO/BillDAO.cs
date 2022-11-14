@@ -14,7 +14,8 @@ namespace BanDienThoai.DAO
         public static DataTable GetAllBill()
         {
             Connection.Conn.Open();
-            string query = "Select * From Bill";
+            string query = @"  select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
+  INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;
@@ -23,6 +24,118 @@ namespace BanDienThoai.DAO
             Connection.Conn.Close();
             return dt;
         }
+
+        public static DataTable GetBillByCustomerID(string id)
+        {
+            Connection.Conn.Open();
+            string query = @$"  select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
+  INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id WHERE UserId = {id}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetBillByCustomerName(string fullName)
+        {
+            Connection.Conn.Open();
+            string query = @$"  select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
+  INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id WHERE Bill.FullName LIKE N'%{fullName}%'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetBillByPrice(string priceFrom, string priceTo)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
+  INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id WHERE Bill.Total BETWEEN {priceFrom} AND {priceTo}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetBillByPriceFrom(string priceFrom)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
+  INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id WHERE Bill.Total >= {priceFrom}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetBillByPriceTo(string priceTo)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
+  INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id WHERE Bill.Total <= {priceTo}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetBillByDateCreate(string dateFrom, string dateTo)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
+  INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id WHERE Bill.DateCreate BETWEEN '{dateFrom}' AND '{dateTo}'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetBillByDateFrom(string dateFrom)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
+  INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id WHERE Bill.DateCreate >= {dateFrom}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+        public static DataTable GetBillByDateTo(string dateTo)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
+  INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id WHERE Bill.DateCreate <= {dateTo}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
         public static void CreateBill(Bill bill)
         {
             Connection.Conn.Open();

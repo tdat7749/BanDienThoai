@@ -11,10 +11,10 @@ namespace BanDienThoai.DAO
 {
     public class DetailImportBillDAO
     {
-        public static DataTable GetAllDetailImportBill()
+        public static DataTable GetDetailImportBillByID(string id)
         {
             Connection.Conn.Open();
-            string query = "Select * From DetailImportBill";
+            string query = $"Select ImportId,ProductId,NameProduct,Amount,Price,Total From DetailImportBill WHERE ImportId = {id}";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;

@@ -11,9 +11,9 @@ namespace BanDienThoai.BUS
 {
     public class DetailImportBillBUS
     {
-        public DataTable GetAllDetailImportBill()
+        public DataTable GetDetailImportBillByID(string id)
         {
-            return DetailImportBillDAO.GetAllDetailImportBill();
+            return DetailImportBillDAO.GetDetailImportBillByID(id);
         }
 
         public void CreateDetailImportBill(DetailImportBill detailImportBill)

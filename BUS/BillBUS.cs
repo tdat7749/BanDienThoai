@@ -11,9 +11,39 @@ namespace BanDienThoai.BUS
 {
     internal class BillBUS
     {
-        public static DataTable GetAllBill()
+        public DataTable GetAllBill()
         {
             return BillDAO.GetAllBill();
+        }
+
+        public DataTable GetBillByCustomerID(string id)
+        {
+            return BillDAO.GetBillByCustomerID(id);
+        }
+
+        public DataTable GetBillByCustomerName(string fullName)
+        {
+            return BillDAO.GetBillByCustomerName(fullName);
+        }
+
+        public DataTable GetBillByPrice(string priceFrom, string priceTo)
+        {
+            return BillDAO.GetBillByPrice(priceFrom,priceTo);
+        }
+
+        public DataTable GetBillByPriceFrom(string priceFrom)
+        {
+            return BillDAO.GetBillByPriceFrom(priceFrom);
+        }
+
+        public DataTable GetBillByPriceTo(string priceTo)
+        {
+            return BillDAO.GetBillByPriceTo(priceTo);
+        }
+
+        public DataTable GetBillByDateCreate(string dateFrom,string dateTo)
+        {
+            return BillDAO.GetBillByDateCreate(dateFrom, dateTo);
         }
 
         public void CreateBill(Bill bill)

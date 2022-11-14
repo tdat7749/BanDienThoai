@@ -14,7 +14,89 @@ namespace BanDienThoai.DAO
         public static DataTable GetAllImportBill()
         {
             Connection.Conn.Open();
-            string query = "Select * From ImportBill";
+            string query = @"select ImportBill.Id,ImportBill.StaffId, ImportBill.DateCreate,ImportBill.Total,Supplier.NameSupplier,CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from ImportBill
+                             INNER JOIN dbo.Staff on ImportBill.StaffId = Staff.Id
+                             INNER JOIN dbo.Supplier on ImportBill.SupplierId = Supplier.Id";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetImportBillByStaffID(string id)
+        {
+            Connection.Conn.Open();
+            string query = @$"select ImportBill.Id,ImportBill.StaffId, ImportBill.DateCreate,ImportBill.Total,Supplier.NameSupplier,CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from ImportBill
+                             INNER JOIN dbo.Staff on ImportBill.StaffId = Staff.Id
+                             INNER JOIN dbo.Supplier on ImportBill.SupplierId = Supplier.Id
+                            WHERE ImportBill.StaffId = {id}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetImportBillByPrice(string priceFrom, string priceTo)
+        {
+            Connection.Conn.Open();
+            string query = @$"select ImportBill.Id,ImportBill.StaffId, ImportBill.DateCreate,ImportBill.Total,Supplier.NameSupplier,CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from ImportBill
+                             INNER JOIN dbo.Staff on ImportBill.StaffId = Staff.Id
+                             INNER JOIN dbo.Supplier on ImportBill.SupplierId = Supplier.Id
+                            WHERE ImportBill.Total BETWEEN {priceFrom} AND {priceTo}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetImportBillByPriceFrom(string priceFrom)
+        {
+            Connection.Conn.Open();
+            string query = @$"select ImportBill.Id,ImportBill.StaffId, ImportBill.DateCreate,ImportBill.Total,Supplier.NameSupplier,CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from ImportBill
+                             INNER JOIN dbo.Staff on ImportBill.StaffId = Staff.Id
+                             INNER JOIN dbo.Supplier on ImportBill.SupplierId = Supplier.Id
+                            WHERE ImportBill.Total >= {priceFrom}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetImportBillByPriceTo(string priceTo)
+        {
+            Connection.Conn.Open();
+            string query = @$"select ImportBill.Id,ImportBill.StaffId, ImportBill.DateCreate,ImportBill.Total,Supplier.NameSupplier,CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from ImportBill
+                             INNER JOIN dbo.Staff on ImportBill.StaffId = Staff.Id
+                             INNER JOIN dbo.Supplier on ImportBill.SupplierId = Supplier.Id
+                            WHERE ImportBill.Total <= {priceTo}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetImportBillByDateCreate(string dateFrom, string dateTo)
+        {
+            Connection.Conn.Open();
+            string query = @$"select ImportBill.Id,ImportBill.StaffId, ImportBill.DateCreate,ImportBill.Total,Supplier.NameSupplier,CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from ImportBill
+                             INNER JOIN dbo.Staff on ImportBill.StaffId = Staff.Id
+                             INNER JOIN dbo.Supplier on ImportBill.SupplierId = Supplier.Id
+                            WHERE ImportBill.DateCreate BETWEEN '{dateFrom}' AND '{dateTo}'";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;

@@ -15,6 +15,30 @@ namespace BanDienThoai.BUS
         {
             return ImportBillDAO.GetAllImportBill();
         }
+        public DataTable GetImportBillByStaffID(string id)
+        {
+            return ImportBillDAO.GetImportBillByStaffID(id);
+        }
+
+        public DataTable GetImportBillByPrice(string priceFrom, string priceTo)
+        {
+            return ImportBillDAO.GetImportBillByPrice(priceFrom, priceTo);
+        }
+
+        public DataTable GetImportBillByPriceFrom(string priceFrom)
+        {
+            return ImportBillDAO.GetImportBillByPriceFrom(priceFrom);
+        }
+
+        public DataTable GetImportBillByPriceTo(string priceTo)
+        {
+            return ImportBillDAO.GetImportBillByPriceTo(priceTo);
+        }
+
+        public DataTable GetImportBillByDateCreate(string dateFrom, string dateTo)
+        {
+            return ImportBillDAO.GetImportBillByDateCreate(dateFrom, dateTo);
+        }
 
         public void CreateImportBill(ImportBill importBill)
         {

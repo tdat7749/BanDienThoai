@@ -16,6 +16,12 @@
     <Compile Update="GUI\3ChamSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\HoaDonGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\HoaDonNhapHangGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\KhachHangGUI.cs">
       <SubType>Form</SubType>
     </Compile>

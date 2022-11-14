@@ -55,6 +55,7 @@
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel1);
             this.Name = "MainGUI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainGUI";
             this.ResumeLayout(false);
 

@@ -11,9 +11,9 @@ namespace BanDienThoai.BUS
 {
     internal class DetailBillBUS
     {
-        public DataTable GetAllDetailBill()
+        public DataTable GetDetailBillByID(string id)
         {
-            return DetailBillDAO.GetAllDetailBill();
+            return DetailBillDAO.GetDetailBillByID(id);
         }
 
         public void CreateDetailBill(DetailBill detailBill )
