@@ -18,7 +18,7 @@ namespace BanDienThoai.DAO
                             Staff.FirstName,
                             Staff.LastName,
                             Staff.GioiTinh,
-                            Staff.ChucVu
+                            Staff.PhoneNumber
                             from Staff";
             ;
             SqlCommand command = new SqlCommand(query, Connection.Conn);
@@ -33,13 +33,13 @@ namespace BanDienThoai.DAO
         public static void CreateStaff(Staff Staff)
         {
             Connection.Conn.Open();
-            string query = @"INSERT INTO Staff(FirstName,LastName,GioiTinh,ChucVu)
-                           VALUES (@FirstName,@LastName,@GioiTinh,@ChucVu)";
+            string query = @"INSERT INTO Staff(FirstName,LastName,GioiTinh,PhoneNumber)
+                           VALUES (@FirstName,@LastName,@GioiTinh,@PhoneNumber)";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = Staff.FirstName;
             command.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = Staff.LastName;
             command.Parameters.Add("@GioiTinh", SqlDbType.NVarChar).Value = Staff.GioiTinh;
-            command.Parameters.Add("@ChucVu", SqlDbType.NVarChar).Value = Staff.ChucVu;
+            command.Parameters.Add("@PhoneNumber", SqlDbType.NVarChar).Value = Staff.PhoneNumber;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }
@@ -51,13 +51,13 @@ namespace BanDienThoai.DAO
                             FirstName = @FirstName,
                             LastName = @LastName,
                             GioiTinh = @GioiTinh,
-                            ChucVu = @ChucVu 
+                            PhoneNumber = @PhoneNumber 
                             Where Id = @Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@FirstName", SqlDbType.NVarChar).Value = Staff.FirstName;
             command.Parameters.Add("@LastName", SqlDbType.NVarChar).Value = Staff.LastName;
             command.Parameters.Add("@GioiTinh", SqlDbType.NVarChar).Value = Staff.GioiTinh;
-            command.Parameters.Add("@ChucVu", SqlDbType.NVarChar).Value = Staff.ChucVu;
+            command.Parameters.Add("@PhoneNumber", SqlDbType.NVarChar).Value = Staff.PhoneNumber;
             command.Parameters.Add("@Id", SqlDbType.Int).Value = Staff.Id;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
@@ -71,6 +71,24 @@ namespace BanDienThoai.DAO
             command.Parameters.Add("@Id", SqlDbType.Int).Value = ma;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
+        }
+
+        public static int GetLastID()
+        {
+            Connection.Conn.Open();
+            string query = "SELECT TOP 1 Id as LastID FROM Staff ORDER BY Id DESC";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                int id = int.Parse(sr["LastID"].ToString());
+                Connection.Conn.Close();
+                return id;
+            }
+            Connection.Conn.Close();
+            return -1;
         }
     }
 }

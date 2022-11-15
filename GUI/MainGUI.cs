@@ -16,7 +16,6 @@ namespace BanDienThoai.GUI
         public MainGUI()
         {
             InitializeComponent();
-            ChangeFormChild(new HoaDonGUI());
         }
 
         private void ChangeFormChild(Form childForm)
@@ -38,6 +37,51 @@ namespace BanDienThoai.GUI
         private void panel_main_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBanHang_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new MuaHang());
+        }
+
+        private void btnQLKhachHang_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new KhachHangGUI());
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new HoaDonGUI());
+        }
+
+        private void btnHoaDonNH_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new HoaDonNhapHangGUI());
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new NhanVienGUI());
+        }
+
+        private void btnNhapHang_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new NhapHangGUI());
+        }
+
+        private void btnKhuyenMai_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new SaleGUI());
         }
     }
 }

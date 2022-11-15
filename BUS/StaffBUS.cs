@@ -16,6 +16,11 @@ namespace BanDienThoai.BUS
             return StaffDAO.GetAllStaff();
         }
 
+        public int GetLastID()
+        {
+            return StaffDAO.GetLastID();
+        }
+
         public void CreateStaff(Staff per)
         {
             StaffDAO.CreateStaff(per);

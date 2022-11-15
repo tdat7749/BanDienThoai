@@ -16,6 +16,19 @@ namespace BanDienThoai.BUS
             return TaiKhoanDAO.GetAllTaiKhoan();
         }
 
+        public DataTable GetTaiKhoanBySDT(string sdt)
+        {
+            return TaiKhoanDAO.GetTaiKhoanBySDT(sdt);
+        }
+        public DataTable GetTaiKhoanByChucVu(string chucVu)
+        {
+            return TaiKhoanDAO.GetTaiKhoanByChucVu(chucVu);
+        }
+        public DataTable GetTaiKhoanByStaffName(string staffName)
+        {
+            return TaiKhoanDAO.GetTaiKhoanByStaffName(staffName);
+        }
+
         public void CreateTaiKhoan(TaiKhoan taikhoan)
         {
             TaiKhoanDAO.CreateTaiKhoan(taikhoan);

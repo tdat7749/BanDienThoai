@@ -67,3 +67,4 @@ E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI._3ChamNha
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.KhachHangGUI.resources
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.HoaDonGUI.resources
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.HoaDonNhapHangGUI.resources
+E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.NhanVienGUI.resources

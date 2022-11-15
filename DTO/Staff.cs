@@ -12,26 +12,26 @@ namespace BanDienThoai.DTO
         private string firstName;
         private string lastName;
         private string gioiTinh;
-        private string chucVu;
+        private string phoneNumber;
 
         public Staff()
         {
 
         }
 
-        public Staff(int id, string firstName, string lastName, string gioiTinh, string chucVu)
+        public Staff(int id, string firstName, string lastName, string gioiTinh, string phoneNumber)
         {
             this.id = id;
             this.firstName = firstName;
             this.lastName = lastName;
             this.gioiTinh = gioiTinh;
-            this.chucVu = chucVu;
+            this.phoneNumber = phoneNumber;
         }
 
         public int Id { get => id; set => id = value; }
         public string FirstName { get => firstName; set => firstName = value; }
         public string LastName { get => lastName; set => lastName = value; }
         public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
-        public string ChucVu { get => chucVu; set => chucVu = value; }
+        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
     }
 }
