@@ -112,3 +112,4 @@ D:\.C#\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI._3ChamCategory.res
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI._3ChamCategory.resources
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.SanPhamGUI.resources
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.ThongKeGUI.resources
+D:\.C#\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.ThongKeGUI.resources

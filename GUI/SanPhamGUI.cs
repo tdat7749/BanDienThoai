@@ -60,22 +60,13 @@ namespace BanDienThoai.GUI
                 return;
             }
 
-            if (File.Exists(url + urlImg))
+            if(txtMaSanPham.Text != "")
             {
-                DialogResult dialogResult1 = MessageBox.Show("Ảnh này đã tồn tại trong dữ liệu, bạn có muốn ghi đè ?", "Thông báo", MessageBoxButtons.YesNo);
-                if (dialogResult1 == DialogResult.Yes)
-                {
-                    File.Copy(urlCopy, url + urlImg, true);
-                }
-                else
-                {
-                    return;
-                }
+                MessageBox.Show("Sản phẩm đã có trong dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
-            {
-                File.Copy(urlCopy, url + urlImg);
-            }
+            File.Copy(urlCopy, url + urlImg);
+            
 
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là thêm sản phẩm này chứ ?", "Sản Phẩm", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -147,7 +138,7 @@ namespace BanDienThoai.GUI
                 Filter = "Image Files(*.PNG;*.JPG;*.JFIF)|*.PNG;*.JPG;*.JFIF",
                 Title = "Select Image"
             };
-            openFileDialog1.InitialDirectory = url;
+            //openFileDialog1.InitialDirectory = url;
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -192,6 +183,18 @@ namespace BanDienThoai.GUI
             form.ShowDialog();
             txtMaHang.Text = _3ChamCategory.id;
             txtTenHang.Text = _3ChamCategory.name;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtMaSanPham.Text = ""; txtTenSanPham.Text = "";
+            txtDonGia.Text = "";
+            txtMaHang.Text = "";
+            txtMoTa.Text = "";
+            txtSoLuongConLai.Text = "";
+            txtTenHang.Text = "";
+            pbSanPham.Image = null;
+            pbSanPham.Invalidate();
         }
 
         private void SanPhamGUI_Load(object sender, EventArgs e)
