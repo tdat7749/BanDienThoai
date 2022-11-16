@@ -14,7 +14,7 @@ namespace BanDienThoai.DAO
         public static DataTable GetAllProduct()
         {
             Connection.Conn.Open();
-            string query = @"select Product.Id,Product.NameProduct,Product.Price,Product.Description,Product.Stock,Category.CategoryName 
+            string query = @"select Product.Id,Product.NameProduct,Product.Price,Product.Description,Product.Stock,Image ,Category.CategoryName 
 from Product 
 INNER JOIN Category on Product.CategoryId = Category.Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
@@ -62,12 +62,12 @@ INNER JOIN Category on Product.CategoryId = Category.Id";
         public static void CreateProduct(Product product)
         {
             Connection.Conn.Open();
-            string query = @"INSERT INTO Product(NameProduct,Price,Amount,Description,Image,CategoryId)
-                           VALUES (@NameProduct,@Price,@Amount,@Description,@Image,@CategoryId)";
+            string query = @"INSERT INTO Product(NameProduct,Price,Stock,Description,Image,CategoryId)
+                           VALUES (@NameProduct,@Price,@Stock,@Description,@Image,@CategoryId)";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@NameProduct", SqlDbType.NVarChar).Value = product.Name;
             command.Parameters.Add("@Price", SqlDbType.Decimal).Value = product.Price;
-            command.Parameters.Add("@Amount", SqlDbType.Int).Value = 0;
+            command.Parameters.Add("@Stock", SqlDbType.Int).Value = 0;
             command.Parameters.Add("@Description", SqlDbType.NVarChar).Value = product.Description;
             command.Parameters.Add("@Image", SqlDbType.NVarChar).Value = product.Image;
             command.Parameters.Add("@CategoryId", SqlDbType.Int).Value = product.CategoryID;
