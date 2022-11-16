@@ -16,6 +16,9 @@
     <Compile Update="GUI\3ChamSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\DangNhapGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\HoaDonGUI.cs">
       <SubType>Form</SubType>
     </Compile>

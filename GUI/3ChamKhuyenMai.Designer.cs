@@ -73,16 +73,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(61, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 21);
+            this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 10;
             this.label1.Text = "Tìm Kiếm :";
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(289, 246);
+            this.btnHuy.Location = new System.Drawing.Point(288, 238);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 9;
@@ -92,7 +92,7 @@
             // 
             // btnChon
             // 
-            this.btnChon.Location = new System.Drawing.Point(157, 246);
+            this.btnChon.Location = new System.Drawing.Point(179, 238);
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(75, 23);
             this.btnChon.TabIndex = 8;

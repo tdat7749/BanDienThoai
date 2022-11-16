@@ -15,6 +15,11 @@ namespace BanDienThoai.BUS
         {
             return ImportBillDAO.GetAllImportBill();
         }
+
+        public DataTable GetImportBillByID(string id)
+        {
+            return ImportBillDAO.GetImportBillByID(id);
+        }
         public DataTable GetImportBillByStaffID(string id)
         {
             return ImportBillDAO.GetImportBillByStaffID(id);

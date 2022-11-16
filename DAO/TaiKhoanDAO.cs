@@ -11,6 +11,9 @@ namespace BanDienThoai.DAO
 {
     public class TaiKhoanDAO
     {
+        public static string StaffId;
+        public static string NamePermiss;
+        public static string StaffName;
         public static DataTable GetAllTaiKhoan()
         {
             Connection.Conn.Open();
@@ -72,6 +75,28 @@ namespace BanDienThoai.DAO
             dataAdapter.Fill(dt);
             Connection.Conn.Close();
             return dt;
+        }
+
+        public static bool CheckLogin(string userName,string password)
+        {
+            Connection.Conn.Open();
+            string query = $@"select StaffId,Permission.NamePermiss,CONCAT(Staff.FirstName,' ',Staff.LastName) AS StaffName from TaiKhoan
+                             INNER JOIN Staff on StaffId = Staff.Id
+                             INNER JOIN Permission on PermissId = Permission.Id
+                            WHERE UserName = '{userName}' AND Password = '{password}'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sqlData = null;
+            sqlData = command.ExecuteReader();
+            if (sqlData.Read())
+            {
+                NamePermiss = sqlData["NamePermiss"].ToString();
+                StaffId = sqlData["StaffId"].ToString();
+                StaffName = sqlData["StaffName"].ToString();
+                Connection.Conn.Close();
+                return true;
+            }
+            Connection.Conn.Close();
+            return false;
         }
 
         public static void CreateTaiKhoan(TaiKhoan taikhoan)

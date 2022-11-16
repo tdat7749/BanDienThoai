@@ -118,9 +118,9 @@
             // 
             // btnChon
             // 
-            this.btnChon.Location = new System.Drawing.Point(146, 247);
+            this.btnChon.Location = new System.Drawing.Point(208, 247);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(95, 23);
+            this.btnChon.Size = new System.Drawing.Size(79, 23);
             this.btnChon.TabIndex = 32;
             this.btnChon.Text = "Chọn";
             this.btnChon.UseVisualStyleBackColor = true;
@@ -128,9 +128,9 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(351, 247);
+            this.btnHuy.Location = new System.Drawing.Point(332, 247);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(89, 23);
+            this.btnHuy.Size = new System.Drawing.Size(76, 23);
             this.btnHuy.TabIndex = 33;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
@@ -138,10 +138,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(88, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 21);
+            this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 34;
             this.label1.Text = "Tìm Kiếm :";
             // 
@@ -156,7 +156,7 @@
             // 
             this.btnTimKiem.Location = new System.Drawing.Point(384, 49);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(90, 25);
+            this.btnTimKiem.Size = new System.Drawing.Size(85, 25);
             this.btnTimKiem.TabIndex = 36;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(500, 49);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 25);
+            this.button1.Size = new System.Drawing.Size(78, 25);
             this.button1.TabIndex = 37;
             this.button1.Text = "Reset";
             this.button1.UseVisualStyleBackColor = true;

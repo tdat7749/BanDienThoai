@@ -35,7 +35,7 @@
             this.btnBanHang = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_main = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlQuanLy = new System.Windows.Forms.Panel();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnKhuyenMai = new System.Windows.Forms.Button();
             this.btnNhapHang = new System.Windows.Forms.Button();
@@ -45,11 +45,13 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.pnlQuanLy.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.Red;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -80,12 +82,16 @@
             // 
             // btnBanHang
             // 
+            this.btnBanHang.BackColor = System.Drawing.Color.White;
+            this.btnBanHang.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btnBanHang.ForeColor = System.Drawing.Color.Black;
+            this.btnBanHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBanHang.Location = new System.Drawing.Point(0, 3);
             this.btnBanHang.Name = "btnBanHang";
             this.btnBanHang.Size = new System.Drawing.Size(200, 42);
             this.btnBanHang.TabIndex = 0;
             this.btnBanHang.Text = "Bán Hàng";
-            this.btnBanHang.UseVisualStyleBackColor = true;
+            this.btnBanHang.UseVisualStyleBackColor = false;
             this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
             // 
             // pictureBox1
@@ -102,25 +108,28 @@
             // 
             // panel_main
             // 
+            this.panel_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_main.Location = new System.Drawing.Point(201, 0);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(1019, 663);
             this.panel_main.TabIndex = 1;
             this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
             // 
-            // panel3
+            // pnlQuanLy
             // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Controls.Add(this.btnThongKe);
-            this.panel3.Controls.Add(this.btnKhuyenMai);
-            this.panel3.Controls.Add(this.btnNhapHang);
-            this.panel3.Controls.Add(this.btnNhanVien);
-            this.panel3.Controls.Add(this.btnHoaDonNH);
-            this.panel3.Controls.Add(this.btnHoaDon);
-            this.panel3.Location = new System.Drawing.Point(1, 287);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 339);
-            this.panel3.TabIndex = 2;
+            this.pnlQuanLy.BackColor = System.Drawing.Color.Red;
+            this.pnlQuanLy.Controls.Add(this.btnThongKe);
+            this.pnlQuanLy.Controls.Add(this.btnKhuyenMai);
+            this.pnlQuanLy.Controls.Add(this.btnNhapHang);
+            this.pnlQuanLy.Controls.Add(this.btnNhanVien);
+            this.pnlQuanLy.Controls.Add(this.btnHoaDonNH);
+            this.pnlQuanLy.Controls.Add(this.btnHoaDon);
+            this.pnlQuanLy.Location = new System.Drawing.Point(1, 287);
+            this.pnlQuanLy.Name = "pnlQuanLy";
+            this.pnlQuanLy.Size = new System.Drawing.Size(200, 339);
+            this.pnlQuanLy.TabIndex = 2;
             // 
             // btnThongKe
             // 
@@ -186,16 +195,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1199, 624);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlQuanLy);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
+            this.MdiChildrenMinimizedAnchorBottom = false;
             this.Name = "MainGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainGUI";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainGUI_FormClosing);
+            this.Load += new System.EventHandler(this.MainGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
+            this.pnlQuanLy.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -208,7 +221,7 @@
         private Panel panel2;
         private Button btnQLKhachHang;
         private Button btnBanHang;
-        private Panel panel3;
+        private Panel pnlQuanLy;
         private Button btnHoaDonNH;
         private Button btnHoaDon;
         private Button btnThongKe;

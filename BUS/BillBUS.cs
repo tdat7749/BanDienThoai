@@ -16,6 +16,11 @@ namespace BanDienThoai.BUS
             return BillDAO.GetAllBill();
         }
 
+        public DataTable GetBillByID(string id)
+        {
+            return BillDAO.GetBillByID(id);
+        }
+
         public DataTable GetBillByCustomerID(string id)
         {
             return BillDAO.GetBillByCustomerID(id);
