@@ -69,5 +69,10 @@ namespace BanDienThoai.GUI
             txtSearch.Text = "";
             GetAllProduct();
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

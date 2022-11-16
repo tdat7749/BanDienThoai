@@ -124,14 +124,24 @@ namespace BanDienThoai.GUI
         private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgvSanPham.CurrentRow.Index;
-            if (i >= 0)
+            if (i >= 0 && dgvSanPham.Rows[i].Cells[0].Value.ToString() != "")
             {
                 txtMaSanPham.Text = dgvSanPham.Rows[i].Cells[0].Value.ToString();
                 txtTenSanPham.Text = dgvSanPham.Rows[i].Cells[1].Value.ToString();
                 txtDonGia.Text = dgvSanPham.Rows[i].Cells[2].Value.ToString();
                 txtSoLuongConLai.Text = dgvSanPham.Rows[i].Cells[4].Value.ToString();
                 txtMoTa.Text = dgvSanPham.Rows[i].Cells[3].Value.ToString();
-                txtTenHang.Text = dgvSanPham.Rows[i].Cells[5].Value.ToString();
+                txtTenHang.Text = dgvSanPham.Rows[i].Cells[6].Value.ToString();
+
+                string url = Application.StartupPath;
+                url = Directory.GetParent(url).Parent.Parent.Parent.FullName;
+                url += @"\imgProduct\pictureC#\";
+
+
+                string urlImg = dgvSanPham.Rows[i].Cells[5].Value.ToString();
+                pbSanPham.SizeMode = PictureBoxSizeMode.StretchImage;
+                Bitmap bm = new Bitmap(url + urlImg);
+                pbSanPham.Image = bm;
             }
             else
             {
@@ -318,5 +328,7 @@ namespace BanDienThoai.GUI
             txtMaKhachHang.Text = _3ChamKhachHang.id;
             txtKhachHang.Text = _3ChamKhachHang.ho + " " + _3ChamKhachHang.ten;
         }
+
+ 
     }
 }

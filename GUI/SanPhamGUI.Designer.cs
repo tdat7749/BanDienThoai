@@ -36,8 +36,13 @@
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbbTenHang = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtMaHang = new System.Windows.Forms.TextBox();
+            this.lblIDHang = new System.Windows.Forms.Label();
+            this.txtTenHang = new System.Windows.Forms.TextBox();
             this.btnChonAnh = new System.Windows.Forms.Button();
             this.txtMaSanPham = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -93,7 +98,9 @@
             this.Price,
             this.description,
             this.stock,
-            this.Column1});
+            this.Column1,
+            this.Column2,
+            this.idCategory});
             this.dgvSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSanPham.Location = new System.Drawing.Point(3, 24);
             this.dgvSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -156,9 +163,29 @@
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "CategoryName";
+            this.Column2.HeaderText = "Hãng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // idCategory
+            // 
+            this.idCategory.DataPropertyName = "Id1";
+            this.idCategory.HeaderText = "Mã Hãng";
+            this.idCategory.MinimumWidth = 6;
+            this.idCategory.Name = "idCategory";
+            this.idCategory.ReadOnly = true;
+            this.idCategory.Visible = false;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbbTenHang);
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.txtMaHang);
+            this.groupBox1.Controls.Add(this.lblIDHang);
+            this.groupBox1.Controls.Add(this.txtTenHang);
             this.groupBox1.Controls.Add(this.btnChonAnh);
             this.groupBox1.Controls.Add(this.txtMaSanPham);
             this.groupBox1.Controls.Add(this.label15);
@@ -182,18 +209,50 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
             // 
-            // cbbTenHang
+            // button1
             // 
-            this.cbbTenHang.FormattingEnabled = true;
-            this.cbbTenHang.Location = new System.Drawing.Point(862, 80);
-            this.cbbTenHang.Name = "cbbTenHang";
-            this.cbbTenHang.Size = new System.Drawing.Size(200, 36);
-            this.cbbTenHang.TabIndex = 16;
+            this.button1.Location = new System.Drawing.Point(1066, 81);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(35, 32);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtMaHang
+            // 
+            this.txtMaHang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtMaHang.Location = new System.Drawing.Point(862, 79);
+            this.txtMaHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaHang.Name = "txtMaHang";
+            this.txtMaHang.ReadOnly = true;
+            this.txtMaHang.Size = new System.Drawing.Size(198, 30);
+            this.txtMaHang.TabIndex = 18;
+            // 
+            // lblIDHang
+            // 
+            this.lblIDHang.AutoSize = true;
+            this.lblIDHang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblIDHang.Location = new System.Drawing.Point(695, 88);
+            this.lblIDHang.Name = "lblIDHang";
+            this.lblIDHang.Size = new System.Drawing.Size(80, 23);
+            this.lblIDHang.TabIndex = 17;
+            this.lblIDHang.Text = "Mã Hãng";
+            // 
+            // txtTenHang
+            // 
+            this.txtTenHang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtTenHang.Location = new System.Drawing.Point(862, 122);
+            this.txtTenHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenHang.Name = "txtTenHang";
+            this.txtTenHang.ReadOnly = true;
+            this.txtTenHang.Size = new System.Drawing.Size(198, 30);
+            this.txtTenHang.TabIndex = 16;
             // 
             // btnChonAnh
             // 
             this.btnChonAnh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnChonAnh.Location = new System.Drawing.Point(275, 237);
+            this.btnChonAnh.Location = new System.Drawing.Point(279, 250);
             this.btnChonAnh.Name = "btnChonAnh";
             this.btnChonAnh.Size = new System.Drawing.Size(147, 38);
             this.btnChonAnh.TabIndex = 15;
@@ -227,7 +286,7 @@
             this.txtMoTa.Location = new System.Drawing.Point(471, 166);
             this.txtMoTa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(589, 105);
+            this.txtMoTa.Size = new System.Drawing.Size(589, 122);
             this.txtMoTa.TabIndex = 10;
             this.txtMoTa.Text = "";
             // 
@@ -245,7 +304,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(695, 88);
+            this.label4.Location = new System.Drawing.Point(695, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 23);
             this.label4.TabIndex = 7;
@@ -490,14 +549,19 @@
         private Label label8;
         private Button btnChonAnh;
         private OpenFileDialog openFileDialog1;
-        private ComboBox cbbTenHang;
+        private TextBox txtSoLuongConLai;
+        private Label label3;
+        private TextBox txtMaHang;
+        private Label lblIDHang;
+        private TextBox txtTenHang;
+        private Button button1;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn productname;
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn description;
         private DataGridViewTextBoxColumn stock;
         private DataGridViewTextBoxColumn Column1;
-        private TextBox txtSoLuongConLai;
-        private Label label3;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn idCategory;
     }
 }

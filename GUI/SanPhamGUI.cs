@@ -15,7 +15,7 @@ namespace BanDienThoai.GUI
     public partial class SanPhamGUI : Form
     {
         ProductBUS productBUS = new ProductBUS();
-        string urlImg;
+        string urlImg,urlCopy;
         string url = Application.StartupPath;
         public SanPhamGUI()
         {
@@ -53,13 +53,29 @@ namespace BanDienThoai.GUI
             if (txtTenSanPham.Text.Trim() == "" ||
                 txtDonGia.Text.Trim() == "" ||
                 txtMoTa.Text.Trim() == "" ||
-                cbbTenHang.Text.Trim() == ""
+                txtMaHang.Text.Trim() == ""
                 )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            if (File.Exists(url + urlImg))
+            {
+                DialogResult dialogResult1 = MessageBox.Show("Ảnh này đã tồn tại trong dữ liệu, bạn có muốn ghi đè ?", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult1 == DialogResult.Yes)
+                {
+                    File.Copy(urlCopy, url + urlImg, true);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                File.Copy(urlCopy, url + urlImg);
+            }
 
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là thêm sản phẩm này chứ ?", "Sản Phẩm", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -74,6 +90,8 @@ namespace BanDienThoai.GUI
                 productBUS.CreateProduct(product);
                 MessageBox.Show("Thêm sản phẩm thành công !!", "Nhân Viên", MessageBoxButtons.OK);
                 GetAllProDuct();
+
+                
             }
         }
 
@@ -85,18 +103,19 @@ namespace BanDienThoai.GUI
                 return;
 
             }
-            if (txtTenSanPham.Text == "" || txtDonGia.Text == "" || txtMoTa.Text == "" || cbbTenHang.GetItemText(cbbTenHang.SelectedItem) == "")
+            if (txtTenSanPham.Text == "" || txtDonGia.Text == "" || txtMoTa.Text == "" || txtTenHang.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             Product product = new Product();
+            product.Id = int.Parse(txtMaSanPham.Text);
             product.Name = txtTenSanPham.Text.Trim();
             product.Description = txtMoTa.Text.Trim();
             product.Image = urlImg;
             product.Price = decimal.Parse(txtDonGia.Text.Trim());
-            product.CategoryID = 1;
+            product.CategoryID = int.Parse(txtMaHang.Text);
 
             productBUS.UpdateProduct(product);
             MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
@@ -110,8 +129,12 @@ namespace BanDienThoai.GUI
                 MessageBox.Show("Vui lòng chọn sản phẩm muốn xóa", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            productBUS.DeleteProduct(int.Parse(txtMaSanPham.Text.Trim()));
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn xóa sản phẩm này chứ ?", "Sản Phẩm", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                productBUS.DeleteProduct(int.Parse(txtMaSanPham.Text.Trim()));
+            }
+                
             MessageBox.Show("Xóa thành công", "Thành Công", MessageBoxButtons.OK);
             GetAllProDuct();
         }
@@ -131,6 +154,7 @@ namespace BanDienThoai.GUI
                 try
                 {
                     urlImg = openFileDialog1.FileName;
+                    urlCopy = urlImg;
                     Bitmap bm = new Bitmap(urlImg);
                     pbSanPham.Image = bm;
                     pbSanPham.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -147,17 +171,27 @@ namespace BanDienThoai.GUI
         private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgvSanPham.CurrentRow.Index;
-            if (i >= 0)
+            if (i >= 0 && dgvSanPham.Rows[i].Cells[0].Value.ToString() != "")
             {
-                Bitmap bm = new Bitmap(url + dgvSanPham.Rows[i].Cells[5].Value.ToString());
+                urlImg = dgvSanPham.Rows[i].Cells[5].Value.ToString();
+                Bitmap bm = new Bitmap(url + urlImg);
                 pbSanPham.Image = bm;
                 txtMaSanPham.Text = dgvSanPham.Rows[i].Cells[0].Value.ToString();
                 txtTenSanPham.Text = dgvSanPham.Rows[i].Cells[1].Value.ToString();
                 txtDonGia.Text = dgvSanPham.Rows[i].Cells[2].Value.ToString();
                 txtSoLuongConLai.Text = dgvSanPham.Rows[i].Cells[4].Value.ToString();
                 txtMoTa.Text = dgvSanPham.Rows[i].Cells[3].Value.ToString();
-               // txtTenHang.Text = dgvSanPham.Rows[i].Cells[5].Value.ToString();
+                txtTenHang.Text = dgvSanPham.Rows[i].Cells[6].Value.ToString();
+                txtMaHang.Text = dgvSanPham.Rows[i].Cells[7].Value.ToString();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _3ChamCategory form = new _3ChamCategory();
+            form.ShowDialog();
+            txtMaHang.Text = _3ChamCategory.id;
+            txtTenHang.Text = _3ChamCategory.name;
         }
 
         private void SanPhamGUI_Load(object sender, EventArgs e)

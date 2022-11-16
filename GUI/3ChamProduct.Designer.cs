@@ -54,12 +54,13 @@
             this.txt_GiaTien,
             this.txt_MoTa,
             this.txtSoLuong});
-            this.dgvSanPham.Location = new System.Drawing.Point(2, 94);
+            this.dgvSanPham.Location = new System.Drawing.Point(2, 125);
+            this.dgvSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.ReadOnly = true;
             this.dgvSanPham.RowHeadersWidth = 51;
             this.dgvSanPham.RowTemplate.Height = 25;
-            this.dgvSanPham.Size = new System.Drawing.Size(645, 134);
+            this.dgvSanPham.Size = new System.Drawing.Size(737, 179);
             this.dgvSanPham.TabIndex = 31;
             // 
             // txt_ID
@@ -118,9 +119,10 @@
             // 
             // btnChon
             // 
-            this.btnChon.Location = new System.Drawing.Point(208, 247);
+            this.btnChon.Location = new System.Drawing.Point(238, 329);
+            this.btnChon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(79, 23);
+            this.btnChon.Size = new System.Drawing.Size(90, 31);
             this.btnChon.TabIndex = 32;
             this.btnChon.Text = "Chọn";
             this.btnChon.UseVisualStyleBackColor = true;
@@ -128,35 +130,39 @@
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(332, 247);
+            this.btnHuy.Location = new System.Drawing.Point(379, 329);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(76, 23);
+            this.btnHuy.Size = new System.Drawing.Size(87, 31);
             this.btnHuy.TabIndex = 33;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(88, 51);
+            this.label1.Location = new System.Drawing.Point(101, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 15);
+            this.label1.Size = new System.Drawing.Size(79, 20);
             this.label1.TabIndex = 34;
             this.label1.Text = "Tìm Kiếm :";
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(176, 49);
+            this.txtSearch.Location = new System.Drawing.Point(201, 65);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(177, 23);
+            this.txtSearch.Size = new System.Drawing.Size(202, 27);
             this.txtSearch.TabIndex = 35;
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(384, 49);
+            this.btnTimKiem.Location = new System.Drawing.Point(439, 65);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(85, 25);
+            this.btnTimKiem.Size = new System.Drawing.Size(97, 33);
             this.btnTimKiem.TabIndex = 36;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -164,9 +170,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(500, 49);
+            this.button1.Location = new System.Drawing.Point(571, 65);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 25);
+            this.button1.Size = new System.Drawing.Size(89, 33);
             this.button1.TabIndex = 37;
             this.button1.Text = "Reset";
             this.button1.UseVisualStyleBackColor = true;
@@ -174,9 +181,9 @@
             // 
             // _3ChamProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 291);
+            this.ClientSize = new System.Drawing.Size(737, 388);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtSearch);
@@ -184,6 +191,7 @@
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.dgvSanPham);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "_3ChamProduct";
             this.Text = "_3ChamProduct";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();

@@ -108,3 +108,4 @@ D:\.C#\BanDienThoai\obj\Debug\net6.0-windows\refint\BanDienThoai.dll
 D:\.C#\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.pdb
 D:\.C#\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.genruntimeconfig.cache
 D:\.C#\BanDienThoai\obj\Debug\net6.0-windows\ref\BanDienThoai.dll
+D:\.C#\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI._3ChamCategory.resources

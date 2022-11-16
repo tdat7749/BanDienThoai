@@ -49,7 +49,7 @@ namespace BanDienThoai.GUI
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn nhà cung cấp ! ");
+                MessageBox.Show("Vui lòng chọn nhân viên ! ");
                 return;
             }
         }
@@ -78,6 +78,11 @@ namespace BanDienThoai.GUI
         }
 
         private void btnChon_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

@@ -32,6 +32,27 @@ namespace BanDienThoai.DAO
             }
         }
 
+        public static DataTable GetCategoryByName(string name)
+        {
+            try
+            {
+                Connection.Conn.Open();
+                string query = $"Select * From Category where CategoryName LIKE '%{name}%'";
+                SqlCommand command = new SqlCommand(query, Connection.Conn);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter();
+                dataAdapter.SelectCommand = command;
+                DataTable dt = new DataTable();
+                dataAdapter.Fill(dt);
+                Connection.Conn.Close();
+                return dt;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
+
         public static void CreateCategory(Category category)
         {
             try

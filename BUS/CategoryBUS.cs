@@ -16,6 +16,11 @@ namespace BanDienThoai.BUS
             return CategoryDAO.GetAllCategory();
         }
 
+        public DataTable GetCategoryByName(string name)
+        {
+            return CategoryDAO.GetCategoryByName(name);
+        }
+
         public void CreateCategory(Category per)
         {
             CategoryDAO.CreateCategory(per);

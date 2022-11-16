@@ -69,12 +69,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.txtNameSearch = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -83,6 +77,14 @@
             this.btnThemVaoGio = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Img = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSanPham)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -264,7 +266,7 @@
             this.pbSanPham.Location = new System.Drawing.Point(23, 29);
             this.pbSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbSanPham.Name = "pbSanPham";
-            this.pbSanPham.Size = new System.Drawing.Size(147, 195);
+            this.pbSanPham.Size = new System.Drawing.Size(170, 195);
             this.pbSanPham.TabIndex = 0;
             this.pbSanPham.TabStop = false;
             // 
@@ -561,7 +563,9 @@
             this.productname,
             this.Price,
             this.description,
-            this.stock});
+            this.stock,
+            this.idCategory,
+            this.Img});
             this.dgvSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSanPham.Location = new System.Drawing.Point(3, 24);
             this.dgvSanPham.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -574,61 +578,6 @@
             this.dgvSanPham.Size = new System.Drawing.Size(592, 187);
             this.dgvSanPham.TabIndex = 0;
             this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id";
-            this.id.HeaderText = "ID";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 108;
-            // 
-            // category
-            // 
-            this.category.DataPropertyName = "CategoryName";
-            this.category.HeaderText = "Loại";
-            this.category.MinimumWidth = 6;
-            this.category.Name = "category";
-            this.category.ReadOnly = true;
-            this.category.Visible = false;
-            this.category.Width = 125;
-            // 
-            // productname
-            // 
-            this.productname.DataPropertyName = "NameProduct";
-            this.productname.HeaderText = "Tên Sản Phẩm";
-            this.productname.MinimumWidth = 6;
-            this.productname.Name = "productname";
-            this.productname.ReadOnly = true;
-            this.productname.Width = 108;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Giá";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 107;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "Description";
-            this.description.HeaderText = "Mô tả";
-            this.description.MinimumWidth = 6;
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            this.description.Width = 108;
-            // 
-            // stock
-            // 
-            this.stock.DataPropertyName = "Stock";
-            this.stock.HeaderText = "Số lượng còn lại";
-            this.stock.MinimumWidth = 6;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            this.stock.Width = 108;
             // 
             // label11
             // 
@@ -711,6 +660,80 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 125;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id";
+            this.id.HeaderText = "ID";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 108;
+            // 
+            // category
+            // 
+            this.category.DataPropertyName = "CategoryName";
+            this.category.HeaderText = "Loại";
+            this.category.MinimumWidth = 6;
+            this.category.Name = "category";
+            this.category.ReadOnly = true;
+            this.category.Visible = false;
+            this.category.Width = 125;
+            // 
+            // productname
+            // 
+            this.productname.DataPropertyName = "NameProduct";
+            this.productname.HeaderText = "Tên Sản Phẩm";
+            this.productname.MinimumWidth = 6;
+            this.productname.Name = "productname";
+            this.productname.ReadOnly = true;
+            this.productname.Width = 108;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Giá";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            this.Price.Width = 107;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "Description";
+            this.description.HeaderText = "Mô tả";
+            this.description.MinimumWidth = 6;
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            this.description.Width = 108;
+            // 
+            // stock
+            // 
+            this.stock.DataPropertyName = "Stock";
+            this.stock.HeaderText = "Số lượng còn lại";
+            this.stock.MinimumWidth = 6;
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            this.stock.Width = 108;
+            // 
+            // idCategory
+            // 
+            this.idCategory.DataPropertyName = "Id1";
+            this.idCategory.HeaderText = "Mã Hãng";
+            this.idCategory.MinimumWidth = 6;
+            this.idCategory.Name = "idCategory";
+            this.idCategory.ReadOnly = true;
+            this.idCategory.Width = 125;
+            // 
+            // Img
+            // 
+            this.Img.DataPropertyName = "Image";
+            this.Img.HeaderText = "Ảnh";
+            this.Img.MinimumWidth = 6;
+            this.Img.Name = "Img";
+            this.Img.ReadOnly = true;
+            this.Img.Visible = false;
+            this.Img.Width = 125;
+            // 
             // MuaHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -789,15 +812,17 @@
         private DataGridViewTextBoxColumn Column2;
         private TextBox txtSoLuong;
         private Label label14;
+        private TextBox txtMaSanPham;
+        private Label label15;
+        private TextBox txtTongTienKM;
+        private Label label16;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn category;
         private DataGridViewTextBoxColumn productname;
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn description;
         private DataGridViewTextBoxColumn stock;
-        private TextBox txtMaSanPham;
-        private Label label15;
-        private TextBox txtTongTienKM;
-        private Label label16;
+        private DataGridViewTextBoxColumn idCategory;
+        private DataGridViewTextBoxColumn Img;
     }
 }
