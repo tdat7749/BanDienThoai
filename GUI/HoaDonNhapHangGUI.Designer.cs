@@ -28,6 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoaDonNhapHangGUI));
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
@@ -89,6 +96,9 @@
             this.txt_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Totall = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pddHoaDon = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdHoaDon = new System.Drawing.Printing.PrintDocument();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -516,7 +526,7 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnTimKiem.Location = new System.Drawing.Point(607, 28);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(75, 32);
@@ -536,10 +546,10 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(324, 34);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 19);
+            this.label14.Size = new System.Drawing.Size(50, 15);
             this.label14.TabIndex = 2;
             this.label14.Text = "Từ Khóa";
             // 
@@ -558,16 +568,17 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(43, 34);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 19);
+            this.label13.Size = new System.Drawing.Size(58, 15);
             this.label13.TabIndex = 0;
             this.label13.Text = "Lựa Chọn";
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dgvHoaDon);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.Location = new System.Drawing.Point(48, 373);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(446, 225);
@@ -577,6 +588,14 @@
             // 
             // dgvHoaDon
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txt_Id,
@@ -585,9 +604,25 @@
             this.txt_TenNhanVien,
             this.txt_NgayLap,
             this.txt_TongTien});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHoaDon.Location = new System.Drawing.Point(0, 22);
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHoaDon.RowTemplate.Height = 25;
             this.dgvHoaDon.Size = new System.Drawing.Size(446, 203);
             this.dgvHoaDon.TabIndex = 0;
@@ -644,6 +679,7 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.dgvChiTietHoaDon);
+            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox5.Location = new System.Drawing.Point(513, 373);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(446, 225);
@@ -653,6 +689,14 @@
             // 
             // dgvChiTietHoaDon
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChiTietHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txt_BillId,
@@ -661,9 +705,25 @@
             this.txt_Price,
             this.txt_Amount,
             this.txt_Totall});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChiTietHoaDon.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvChiTietHoaDon.Location = new System.Drawing.Point(0, 22);
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvChiTietHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvChiTietHoaDon.RowTemplate.Height = 25;
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(446, 203);
             this.dgvChiTietHoaDon.TabIndex = 1;
@@ -718,11 +778,37 @@
             this.txt_Totall.Name = "txt_Totall";
             this.txt_Totall.ReadOnly = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(855, 215);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 32);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "In Hóa Đơn";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pddHoaDon
+            // 
+            this.pddHoaDon.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.pddHoaDon.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.pddHoaDon.ClientSize = new System.Drawing.Size(400, 300);
+            this.pddHoaDon.Enabled = true;
+            this.pddHoaDon.Icon = ((System.Drawing.Icon)(resources.GetObject("pddHoaDon.Icon")));
+            this.pddHoaDon.Name = "pddHoaDon";
+            this.pddHoaDon.Visible = false;
+            // 
+            // pdHoaDon
+            // 
+            this.pdHoaDon.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdHoaDon_PrintPage);
+            // 
             // HoaDonNhapHangGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 624);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox1);
@@ -810,5 +896,8 @@
         private DataGridViewTextBoxColumn txt_Price;
         private DataGridViewTextBoxColumn txt_Amount;
         private DataGridViewTextBoxColumn txt_Totall;
+        private Button button1;
+        private PrintPreviewDialog pddHoaDon;
+        private System.Drawing.Printing.PrintDocument pdHoaDon;
     }
 }

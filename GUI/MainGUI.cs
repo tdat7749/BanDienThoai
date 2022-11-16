@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BanDienThoai.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace BanDienThoai.GUI
         public MainGUI()
         {
             InitializeComponent();
+            
         }
 
         private void ChangeFormChild(Form childForm)
@@ -82,6 +84,19 @@ namespace BanDienThoai.GUI
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
             ChangeFormChild(new SaleGUI());
+        }
+
+        private void MainGUI_Load(object sender, EventArgs e)
+        {
+            if(TaiKhoanDAO.NamePermiss == "Nhân Viên")
+            {
+                pnlQuanLy.Hide();
+            }
+        }
+
+        private void MainGUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

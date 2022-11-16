@@ -29,6 +29,11 @@ namespace BanDienThoai.BUS
             return TaiKhoanDAO.GetTaiKhoanByStaffName(staffName);
         }
 
+        public bool CheckLogin(string userName,string password)
+        {
+            return TaiKhoanDAO.CheckLogin(userName, password);
+        }
+
         public void CreateTaiKhoan(TaiKhoan taikhoan)
         {
             TaiKhoanDAO.CreateTaiKhoan(taikhoan);

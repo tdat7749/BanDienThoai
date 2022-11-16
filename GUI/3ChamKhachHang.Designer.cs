@@ -52,13 +52,12 @@
             this.txt_LastName,
             this.txt_SoDienThoai,
             this.txt_DiaChi});
-            this.dgv3ChamUser.Location = new System.Drawing.Point(88, 126);
-            this.dgv3ChamUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgv3ChamUser.Location = new System.Drawing.Point(77, 94);
             this.dgv3ChamUser.Name = "dgv3ChamUser";
             this.dgv3ChamUser.ReadOnly = true;
             this.dgv3ChamUser.RowHeadersWidth = 51;
             this.dgv3ChamUser.RowTemplate.Height = 25;
-            this.dgv3ChamUser.Size = new System.Drawing.Size(624, 200);
+            this.dgv3ChamUser.Size = new System.Drawing.Size(546, 150);
             this.dgv3ChamUser.TabIndex = 14;
             // 
             // txt_ID
@@ -108,10 +107,9 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(558, 67);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReset.Location = new System.Drawing.Point(488, 50);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(86, 33);
+            this.btnReset.Size = new System.Drawing.Size(75, 25);
             this.btnReset.TabIndex = 20;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -119,38 +117,35 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(440, 67);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Location = new System.Drawing.Point(385, 50);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 33);
+            this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 19;
             this.button1.Text = "Tìm Kiếm";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(260, 70);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Location = new System.Drawing.Point(228, 52);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(159, 27);
+            this.txtSearch.Size = new System.Drawing.Size(140, 23);
             this.txtSearch.TabIndex = 18;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(160, 73);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(140, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 28);
+            this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 17;
             this.label1.Text = "Tìm Kiếm :";
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(420, 353);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnHuy.Location = new System.Drawing.Point(368, 265);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(86, 31);
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 16;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
@@ -158,10 +153,9 @@
             // 
             // btnChon
             // 
-            this.btnChon.Location = new System.Drawing.Point(270, 353);
-            this.btnChon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnChon.Location = new System.Drawing.Point(254, 265);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(86, 31);
+            this.btnChon.Size = new System.Drawing.Size(75, 23);
             this.btnChon.TabIndex = 15;
             this.btnChon.Text = "Chọn";
             this.btnChon.UseVisualStyleBackColor = true;
@@ -169,9 +163,9 @@
             // 
             // _3ChamKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
             this.Controls.Add(this.dgv3ChamUser);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.button1);
@@ -179,6 +173,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnChon);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "_3ChamKhachHang";
             this.Text = "_3ChamKhachHang";
             ((System.ComponentModel.ISupportInitialize)(this.dgv3ChamUser)).EndInit();

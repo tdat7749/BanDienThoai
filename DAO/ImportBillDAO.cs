@@ -26,6 +26,22 @@ namespace BanDienThoai.DAO
             return dt;
         }
 
+        public static DataTable GetImportBillByID(string id)
+        {
+            Connection.Conn.Open();
+            string query = $@"select ImportBill.Id, ImportBill.DateCreate,ImportBill.Total,ImportBill.SupplierId,Supplier.NameSupplier,CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from ImportBill
+                             INNER JOIN dbo.Staff on ImportBill.StaffId = Staff.Id
+                             INNER JOIN dbo.Supplier on ImportBill.SupplierId = Supplier.Id 
+                             WHERE ImportBill.Id = {id}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
         public static DataTable GetImportBillByStaffID(string id)
         {
             Connection.Conn.Open();
