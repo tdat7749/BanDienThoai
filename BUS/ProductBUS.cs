@@ -49,5 +49,20 @@ namespace BanDienThoai.BUS
         {
             ProductDAO.MinusStockProduct(ma, stock);
         }
+
+        public int GetSoLuongProduct()
+        {
+            return ProductDAO.GetSoLuongProduct();
+        }
+
+        public List<string> SelectNameProduct()
+        {
+            return ProductDAO.SelectNameProduct();
+        }
+
+        public int GetIdByName(string name)
+        {
+            return ProductDAO.GetIdByName(name);
+        }
     }
 }

@@ -316,13 +316,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 624);
+            this.ClientSize = new System.Drawing.Size(1023, 663);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dgvKhachHang);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "KhachHangGUI";
             this.Text = "KhachHangGUI";
             this.groupBox1.ResumeLayout(false);

@@ -98,5 +98,16 @@ namespace BanDienThoai.GUI
         {
 
         }
+
+        private void btnThongKe_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new ThongKeGUI());
+        }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new SanPhamGUI());
+
+        }
     }
 }

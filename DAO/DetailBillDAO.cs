@@ -72,5 +72,27 @@ namespace BanDienThoai.DAO
 			command.ExecuteNonQuery();
 			Connection.Conn.Close();
 		}
+
+		public static string GetTotalDetailBillByProductId(int id)
+        {
+			Connection.Conn.Open();
+			string query = $"SELECT SUM(Total) as Total from DetailBill WHERE ProductId = {id}";
+			SqlCommand command = new SqlCommand(query, Connection.Conn);
+			SqlDataReader sr = null;
+			sr = command.ExecuteReader();
+
+			if (sr.Read())
+			{
+				string Total = sr["Total"].ToString();
+				if (Total == "")
+				{
+					Total = "0";
+				}
+				Connection.Conn.Close();
+				return Total;
+			}
+			Connection.Conn.Close();
+			return null;
+		}
 	}
 }

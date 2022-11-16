@@ -409,7 +409,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 624);
+            this.ClientSize = new System.Drawing.Size(1023, 663);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnDatHang);
@@ -417,6 +417,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "NhapHangGUI";
             this.Text = "NhapHangGUI";
             this.Load += new System.EventHandler(this.NhapHangGUI_Load);

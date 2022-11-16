@@ -824,7 +824,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1007, 624);
+            this.ClientSize = new System.Drawing.Size(1023, 663);
             this.Controls.Add(this.btnInHoaDon);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox2);
@@ -832,6 +832,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HoaDonGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "HoaDonGUI";

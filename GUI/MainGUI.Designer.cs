@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_main = new System.Windows.Forms.Panel();
             this.pnlQuanLy = new System.Windows.Forms.Panel();
+            this.btnSanPham = new System.Windows.Forms.Button();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnKhuyenMai = new System.Windows.Forms.Button();
             this.btnNhapHang = new System.Windows.Forms.Button();
@@ -113,13 +114,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_main.Location = new System.Drawing.Point(201, 0);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(1019, 663);
+            this.panel_main.Size = new System.Drawing.Size(1023, 663);
             this.panel_main.TabIndex = 1;
             this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
             // 
             // pnlQuanLy
             // 
             this.pnlQuanLy.BackColor = System.Drawing.Color.Red;
+            this.pnlQuanLy.Controls.Add(this.btnSanPham);
             this.pnlQuanLy.Controls.Add(this.btnThongKe);
             this.pnlQuanLy.Controls.Add(this.btnKhuyenMai);
             this.pnlQuanLy.Controls.Add(this.btnNhapHang);
@@ -131,6 +133,16 @@
             this.pnlQuanLy.Size = new System.Drawing.Size(200, 339);
             this.pnlQuanLy.TabIndex = 2;
             // 
+            // btnSanPham
+            // 
+            this.btnSanPham.Location = new System.Drawing.Point(0, 291);
+            this.btnSanPham.Name = "btnSanPham";
+            this.btnSanPham.Size = new System.Drawing.Size(200, 42);
+            this.btnSanPham.TabIndex = 6;
+            this.btnSanPham.Text = "Sản Phẩm";
+            this.btnSanPham.UseVisualStyleBackColor = true;
+            this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
+            // 
             // btnThongKe
             // 
             this.btnThongKe.Location = new System.Drawing.Point(0, 243);
@@ -139,6 +151,7 @@
             this.btnThongKe.TabIndex = 5;
             this.btnThongKe.Text = "Thống Kê";
             this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
             // btnKhuyenMai
             // 
@@ -194,10 +207,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1199, 624);
+            this.ClientSize = new System.Drawing.Size(1223, 663);
             this.Controls.Add(this.pnlQuanLy);
             this.Controls.Add(this.panel_main);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MdiChildrenMinimizedAnchorBottom = false;
             this.Name = "MainGUI";
@@ -228,5 +242,6 @@
         private Button btnKhuyenMai;
         private Button btnNhapHang;
         private Button btnNhanVien;
+        private Button btnSanPham;
     }
 }

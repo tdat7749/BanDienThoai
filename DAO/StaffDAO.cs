@@ -90,5 +90,23 @@ namespace BanDienThoai.DAO
             Connection.Conn.Close();
             return -1;
         }
+
+        public static int GetSoLuongStaff()
+        {
+            Connection.Conn.Open();
+            string query = "SELECT COUNT(Id) as SoLuong from Staff";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                int soLuong = int.Parse(sr["SoLuong"].ToString());
+                Connection.Conn.Close();
+                return soLuong;
+            }
+            Connection.Conn.Close();
+            return -1;
+        }
     }
 }

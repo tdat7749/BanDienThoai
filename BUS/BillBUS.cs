@@ -70,5 +70,31 @@ namespace BanDienThoai.BUS
         {
             return BillDAO.GetLastID();
         }
+
+        public int GetSoLuongBill()
+        {
+            return BillDAO.GetSoLuongBill();
+        }
+
+        public string TongQuy1(string nam)
+        {
+            return BillDAO.TongQuy1(nam);
+        }
+
+        public string TongQuy2(string nam)
+        {
+            return BillDAO.TongQuy2(nam);
+        }
+
+        public string TongQuy3(string nam)
+        {
+            return BillDAO.TongQuy3(nam);
+        }
+
+        public string TongQuy4(string nam)
+        {
+            return BillDAO.TongQuy4(nam);
+        }
     }
+
 }

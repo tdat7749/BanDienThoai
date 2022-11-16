@@ -213,5 +213,111 @@ namespace BanDienThoai.DAO
             Connection.Conn.Close();
             return -1;
         }
+
+        public static int GetSoLuongBill()
+        {
+            Connection.Conn.Open();
+            string query = "SELECT COUNT(Id) as SoLuong from Bill";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                int soLuong = int.Parse(sr["SoLuong"].ToString());
+                Connection.Conn.Close();
+                return soLuong;
+            }
+            Connection.Conn.Close();
+            return -1;
+        }
+
+        public static string TongQuy1(string nam)
+        {
+            Connection.Conn.Open();
+            string query = $"SELECT SUM(Total) as Total from Bill WHERE DateCreate BETWEEN '{nam}-1-01' AND '{nam}-3-31'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                string Total = sr["Total"].ToString();
+                if(Total == "")
+                {
+                    Total = "0";
+                }
+                Connection.Conn.Close();
+                return Total;
+            }
+            Connection.Conn.Close();
+            return null;
+        }
+
+        public static string TongQuy2(string nam)
+        {
+            Connection.Conn.Open();
+            string query = $"SELECT SUM(Total) as Total from Bill WHERE DateCreate BETWEEN '{nam}-4-01' AND '{nam}-6-30'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                string Total = sr["Total"].ToString();
+                if (Total == "")
+                {
+                    Total = "0";
+                }
+                Connection.Conn.Close();
+                return Total;
+            }
+            Connection.Conn.Close();
+            return null;
+        }
+
+        public static string TongQuy3(string nam)
+        {
+            Connection.Conn.Open();
+            string query = $"SELECT SUM(Total) as Total from Bill WHERE DateCreate BETWEEN '{nam}-7-01' AND '{nam}-9-30'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                string Total = sr["Total"].ToString();
+                if (Total == "")
+                {
+                    Total = "0";
+                }
+                Connection.Conn.Close();
+                return Total;
+            }
+            Connection.Conn.Close();
+            return null;
+        }
+
+        public static string TongQuy4(string nam)
+        {
+            Connection.Conn.Open();
+            string query = $"SELECT SUM(Total) as Total from Bill WHERE DateCreate BETWEEN '{nam}-10-01' AND '{nam}-12-31'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                string Total = sr["Total"].ToString();
+                if (Total == "")
+                {
+                    Total = "0";
+                }
+                Connection.Conn.Close();
+                return Total;
+            }
+            Connection.Conn.Close();
+            return null;
+        }
     }
 }

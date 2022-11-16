@@ -14,7 +14,7 @@ namespace BanDienThoai.DAO
         {
             try
             {
-                Conn = new SqlConnection("Data Source=LAPTOP-L8E8SO4G\\CYRUS; Initial Catalog=bandienthoai1; Integrated Security=True");
+                Conn = new SqlConnection("Data Source=LAPTOP-ED3BE250; Initial Catalog=bandienthoai1; Integrated Security=True");
                 //Conn = new SqlConnection("Data Source=cai cho nay vao sql server xem; Initial Catalog=bandienthoai; Integrated Security=True");
                 // Dinh Thinh: LAPTOP-L8E8SO4G\\CYRUS
             }

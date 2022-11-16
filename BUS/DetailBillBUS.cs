@@ -30,5 +30,10 @@ namespace BanDienThoai.BUS
         {
             DetailBillDAO.DeleteDetailBill(ma);
         }
+
+        public string GetTotalDetailBillByProductId(int id)
+        {
+            return DetailBillDAO.GetTotalDetailBillByProductId(id);
+        }
     }
 }

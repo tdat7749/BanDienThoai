@@ -130,5 +130,68 @@ INNER JOIN Category on Product.CategoryId = Category.Id";
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }
+
+        public static int GetSoLuongProduct()
+        {
+            Connection.Conn.Open();
+            string query = "SELECT COUNT(Id) as SoLuong from Product";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                int soLuong = int.Parse(sr["SoLuong"].ToString());
+                Connection.Conn.Close();
+                return soLuong;
+            }
+            Connection.Conn.Close();
+            return -1;
+        }
+
+        public static List<string> SelectNameProduct()
+        {
+            try
+            {
+                Connection.Conn.Open();
+                string query = "SELECT NameProduct from Product";
+                SqlCommand command = new SqlCommand(query, Connection.Conn);
+                SqlDataReader sr = null;
+                sr = command.ExecuteReader();
+
+                List<string> list = new List<string>();
+
+                while (sr.Read())
+                {
+                    list.Add(sr["NameProduct"].ToString());
+                }
+                Connection.Conn.Close();
+                return list;
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+                Connection.Conn.Close();;
+                return null;
+            }
+        }
+
+        public static int GetIdByName(string name)
+        {
+            Connection.Conn.Open();
+            string query = $"SELECT Id from Product WHERE NameProduct = '{name}'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataReader sr = null;
+            sr = command.ExecuteReader();
+
+            if (sr.Read())
+            {
+                int Id = int.Parse(sr["Id"].ToString());
+                Connection.Conn.Close();
+                return Id;
+            }
+            Connection.Conn.Close();
+            return -1;
+        }
     }
 }

@@ -36,5 +36,10 @@ namespace BanDienThoai.BUS
         {
             StaffDAO.DeleteStaff(ma);
         }
+
+        public int GetSoLuongStaff()
+        {
+            return StaffDAO.GetSoLuongStaff();
+        }
     }
 }
