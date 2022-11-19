@@ -68,6 +68,7 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.cbbTenSanPham = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -245,11 +246,12 @@
             // 
             // cbbQuy
             // 
+            this.cbbQuy.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbbQuy.FormattingEnabled = true;
             this.cbbQuy.Items.AddRange(new object[] {
             "2021",
             "2022"});
-            this.cbbQuy.Location = new System.Drawing.Point(179, 273);
+            this.cbbQuy.Location = new System.Drawing.Point(194, 273);
             this.cbbQuy.Name = "cbbQuy";
             this.cbbQuy.Size = new System.Drawing.Size(193, 23);
             this.cbbQuy.TabIndex = 4;
@@ -446,6 +448,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.Green;
             this.label10.Location = new System.Drawing.Point(22, 275);
@@ -524,6 +527,7 @@
             // 
             // cbbTenSanPham
             // 
+            this.cbbTenSanPham.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbbTenSanPham.FormattingEnabled = true;
             this.cbbTenSanPham.Location = new System.Drawing.Point(111, 560);
             this.cbbTenSanPham.Name = "cbbTenSanPham";
@@ -531,12 +535,26 @@
             this.cbbTenSanPham.TabIndex = 7;
             this.cbbTenSanPham.SelectedIndexChanged += new System.EventHandler(this.cbbTenSanPham_SelectedIndexChanged);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Verdana", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.Color.Blue;
+            this.label11.Location = new System.Drawing.Point(352, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(354, 40);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Quản Lý Thống Kê";
+            // 
             // ThongKeGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Bisque;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1023, 663);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.cbbTenSanPham);
             this.Controls.Add(this.panel8);
@@ -618,5 +636,6 @@
         private PictureBox pictureBox8;
         private Label label14;
         private ComboBox cbbTenSanPham;
+        private Label label11;
     }
 }

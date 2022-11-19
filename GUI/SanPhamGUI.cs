@@ -21,7 +21,16 @@ namespace BanDienThoai.GUI
         {
             InitializeComponent();
             GetAllProDuct();
+label6.BackColor = SetTransparency(50, Color.White);
+            groupBox1.BackColor = SetTransparency(180, Color.White);
+            groupBox2.BackColor = SetTransparency(180, Color.White);
+            groupBox3.BackColor = SetTransparency(180, Color.White);
+            groupBox4.BackColor = SetTransparency(180, Color.White);
             
+        }
+static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
         public void GetAllProDuct()
         {
@@ -195,6 +204,8 @@ namespace BanDienThoai.GUI
             txtTenHang.Text = "";
             pbSanPham.Image = null;
             pbSanPham.Invalidate();
+            txtSearch.Text = "";
+            GetAllProDuct();
         }
 
         private void SanPhamGUI_Load(object sender, EventArgs e)

@@ -19,6 +19,15 @@ namespace BanDienThoai.GUI
         {
             InitializeComponent();
             GetAllSales();
+label1.BackColor= SetTransparency(50,Color.White);
+            label7.BackColor= SetTransparency(50,Color.White);
+            groupBox1.BackColor = SetTransparency(180,Color.White);
+            groupBox2.BackColor = SetTransparency(180, Color.White);
+        }
+
+static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -122,6 +131,20 @@ namespace BanDienThoai.GUI
 
             GetAllSales();
             MessageBox.Show("Xóa Thành Công !");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtID.Text = "";
+            txtKhuyenMai.Text = "";
+            txtTenKhuyenMai.Text = "";
+            txtTimKiem.Text = "";
+            GetAllSales();
         }
     }
 }

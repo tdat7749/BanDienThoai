@@ -41,5 +41,10 @@ namespace BanDienThoai.BUS
         {
             return StaffDAO.GetSoLuongStaff();
         }
+
+        public DataTable GetStaffByName(string name)
+        {
+            return StaffDAO.GetStaffByName(name);
+        }
     }
 }

@@ -33,8 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.txtTongTien = new System.Windows.Forms.TextBox();
@@ -99,6 +97,7 @@
             this.btnInHoaDon = new System.Windows.Forms.Button();
             this.pddHoaDon = new System.Windows.Forms.PrintPreviewDialog();
             this.pdHoaDon = new System.Drawing.Printing.PrintDocument();
+            this.label21 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -111,6 +110,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.dtpNgayLap);
             this.groupBox1.Controls.Add(this.txtTongTien);
             this.groupBox1.Controls.Add(this.label6);
@@ -124,7 +124,8 @@
             this.groupBox1.Controls.Add(this.txtMaHoaDon);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(38, 41);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox1.Location = new System.Drawing.Point(41, 72);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(446, 147);
             this.groupBox1.TabIndex = 0;
@@ -143,9 +144,11 @@
             // 
             // txtTongTien
             // 
+            this.txtTongTien.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTongTien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTongTien.Location = new System.Drawing.Point(327, 94);
             this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(113, 23);
             this.txtTongTien.TabIndex = 11;
             // 
@@ -161,9 +164,11 @@
             // 
             // txtKhachHang
             // 
+            this.txtKhachHang.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtKhachHang.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtKhachHang.Location = new System.Drawing.Point(327, 63);
             this.txtKhachHang.Name = "txtKhachHang";
+            this.txtKhachHang.ReadOnly = true;
             this.txtKhachHang.Size = new System.Drawing.Size(113, 23);
             this.txtKhachHang.TabIndex = 9;
             // 
@@ -179,9 +184,11 @@
             // 
             // txtNhanVien
             // 
+            this.txtNhanVien.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNhanVien.Location = new System.Drawing.Point(327, 32);
             this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.ReadOnly = true;
             this.txtNhanVien.Size = new System.Drawing.Size(113, 23);
             this.txtNhanVien.TabIndex = 7;
             // 
@@ -207,9 +214,11 @@
             // 
             // txtMaKhachHang
             // 
+            this.txtMaKhachHang.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtMaKhachHang.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaKhachHang.Location = new System.Drawing.Point(104, 63);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.ReadOnly = true;
             this.txtMaKhachHang.Size = new System.Drawing.Size(113, 23);
             this.txtMaKhachHang.TabIndex = 3;
             this.txtMaKhachHang.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
@@ -226,9 +235,11 @@
             // 
             // txtMaHoaDon
             // 
+            this.txtMaHoaDon.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtMaHoaDon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaHoaDon.Location = new System.Drawing.Point(104, 32);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
+            this.txtMaHoaDon.ReadOnly = true;
             this.txtMaHoaDon.Size = new System.Drawing.Size(113, 23);
             this.txtMaHoaDon.TabIndex = 1;
             this.txtMaHoaDon.TextChanged += new System.EventHandler(this.txt_TextChanged);
@@ -245,14 +256,15 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.btnTimKiem);
             this.groupBox3.Controls.Add(this.txtSearch);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.cbbLuaChon);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(142, 194);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox3.Location = new System.Drawing.Point(145, 225);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(706, 73);
             this.groupBox3.TabIndex = 13;
@@ -262,6 +274,7 @@
             // btnTimKiem
             // 
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTimKiem.Location = new System.Drawing.Point(598, 25);
@@ -275,6 +288,7 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSearch.Location = new System.Drawing.Point(406, 31);
             this.txtSearch.Name = "txtSearch";
@@ -293,6 +307,7 @@
             // 
             // cbbLuaChon
             // 
+            this.cbbLuaChon.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbbLuaChon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbbLuaChon.FormattingEnabled = true;
             this.cbbLuaChon.Items.AddRange(new object[] {
@@ -316,17 +331,20 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.BackColor = System.Drawing.Color.White;
             this.groupBox4.Controls.Add(this.dgvHoaDon);
             this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox4.Location = new System.Drawing.Point(38, 378);
+            this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox4.Location = new System.Drawing.Point(41, 409);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(446, 192);
+            this.groupBox4.Size = new System.Drawing.Size(459, 192);
             this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Hóa Đơn";
             // 
             // dgvHoaDon
             // 
+            this.dgvHoaDon.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -346,7 +364,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -417,17 +435,20 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Controls.Add(this.dgvChiTietHoaDon);
             this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox5.Location = new System.Drawing.Point(503, 378);
+            this.groupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox5.Location = new System.Drawing.Point(512, 409);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(446, 192);
+            this.groupBox5.Size = new System.Drawing.Size(450, 192);
             this.groupBox5.TabIndex = 15;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Chi Tiết Hóa Đơn";
             // 
             // dgvChiTietHoaDon
             // 
+            this.dgvChiTietHoaDon.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -444,27 +465,11 @@
             this.txt_Price,
             this.txt_Amount,
             this.txt_Totall});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvChiTietHoaDon.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvChiTietHoaDon.Location = new System.Drawing.Point(0, 28);
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChiTietHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvChiTietHoaDon.RowTemplate.Height = 25;
-            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(446, 161);
+            this.dgvChiTietHoaDon.Size = new System.Drawing.Size(434, 161);
             this.dgvChiTietHoaDon.TabIndex = 1;
             this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
             // 
@@ -518,7 +523,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.txtThanhTien);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtDonGia);
@@ -532,7 +537,8 @@
             this.groupBox2.Controls.Add(this.txtMaHoaDonCT);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(503, 41);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox2.Location = new System.Drawing.Point(506, 72);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(446, 147);
             this.groupBox2.TabIndex = 12;
@@ -541,9 +547,11 @@
             // 
             // txtThanhTien
             // 
+            this.txtThanhTien.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtThanhTien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtThanhTien.Location = new System.Drawing.Point(327, 94);
             this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.ReadOnly = true;
             this.txtThanhTien.Size = new System.Drawing.Size(113, 23);
             this.txtThanhTien.TabIndex = 11;
             // 
@@ -559,9 +567,12 @@
             // 
             // txtDonGia
             // 
+            this.txtDonGia.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDonGia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtDonGia.Location = new System.Drawing.Point(327, 63);
             this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.ReadOnly = true;
             this.txtDonGia.Size = new System.Drawing.Size(113, 23);
             this.txtDonGia.TabIndex = 9;
             // 
@@ -577,9 +588,11 @@
             // 
             // txtMaSanPham
             // 
+            this.txtMaSanPham.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtMaSanPham.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaSanPham.Location = new System.Drawing.Point(327, 32);
             this.txtMaSanPham.Name = "txtMaSanPham";
+            this.txtMaSanPham.ReadOnly = true;
             this.txtMaSanPham.Size = new System.Drawing.Size(113, 23);
             this.txtMaSanPham.TabIndex = 7;
             // 
@@ -595,9 +608,11 @@
             // 
             // txtSoLuong
             // 
+            this.txtSoLuong.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSoLuong.Location = new System.Drawing.Point(104, 94);
             this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.ReadOnly = true;
             this.txtSoLuong.Size = new System.Drawing.Size(113, 23);
             this.txtSoLuong.TabIndex = 5;
             // 
@@ -613,9 +628,11 @@
             // 
             // txtTenSanPham
             // 
+            this.txtTenSanPham.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTenSanPham.Location = new System.Drawing.Point(104, 63);
             this.txtTenSanPham.Name = "txtTenSanPham";
+            this.txtTenSanPham.ReadOnly = true;
             this.txtTenSanPham.Size = new System.Drawing.Size(113, 23);
             this.txtTenSanPham.TabIndex = 3;
             // 
@@ -631,9 +648,11 @@
             // 
             // txtMaHoaDonCT
             // 
+            this.txtMaHoaDonCT.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtMaHoaDonCT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaHoaDonCT.Location = new System.Drawing.Point(104, 32);
             this.txtMaHoaDonCT.Name = "txtMaHoaDonCT";
+            this.txtMaHoaDonCT.ReadOnly = true;
             this.txtMaHoaDonCT.Size = new System.Drawing.Size(113, 23);
             this.txtMaHoaDonCT.TabIndex = 1;
             // 
@@ -649,6 +668,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.BackColor = System.Drawing.Color.White;
             this.groupBox6.Controls.Add(this.dtpNgayDen);
             this.groupBox6.Controls.Add(this.dtpNgayTu);
             this.groupBox6.Controls.Add(this.label18);
@@ -662,7 +682,8 @@
             this.groupBox6.Controls.Add(this.label15);
             this.groupBox6.Controls.Add(this.btnLocGia);
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox6.Location = new System.Drawing.Point(142, 273);
+            this.groupBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.groupBox6.Location = new System.Drawing.Point(145, 304);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(706, 99);
             this.groupBox6.TabIndex = 14;
@@ -680,6 +701,7 @@
             // 
             // dtpNgayTu
             // 
+            this.dtpNgayTu.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
             this.dtpNgayTu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpNgayTu.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayTu.Location = new System.Drawing.Point(208, 64);
@@ -720,6 +742,7 @@
             // btnLocNgay
             // 
             this.btnLocNgay.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLocNgay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLocNgay.Image = ((System.Drawing.Image)(resources.GetObject("btnLocNgay.Image")));
             this.btnLocNgay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLocNgay.Location = new System.Drawing.Point(569, 64);
@@ -733,6 +756,7 @@
             // 
             // txtGiaDen
             // 
+            this.txtGiaDen.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtGiaDen.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtGiaDen.Location = new System.Drawing.Point(415, 33);
             this.txtGiaDen.Name = "txtGiaDen";
@@ -751,6 +775,7 @@
             // 
             // txtGiaTu
             // 
+            this.txtGiaTu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtGiaTu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtGiaTu.Location = new System.Drawing.Point(208, 33);
             this.txtGiaTu.Name = "txtGiaTu";
@@ -780,6 +805,7 @@
             // btnLocGia
             // 
             this.btnLocGia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLocGia.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLocGia.Image = ((System.Drawing.Image)(resources.GetObject("btnLocGia.Image")));
             this.btnLocGia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLocGia.Location = new System.Drawing.Point(569, 31);
@@ -796,7 +822,7 @@
             this.btnInHoaDon.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnInHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnInHoaDon.Image")));
             this.btnInHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInHoaDon.Location = new System.Drawing.Point(446, 580);
+            this.btnInHoaDon.Location = new System.Drawing.Point(449, 611);
             this.btnInHoaDon.Name = "btnInHoaDon";
             this.btnInHoaDon.Size = new System.Drawing.Size(102, 32);
             this.btnInHoaDon.TabIndex = 5;
@@ -819,12 +845,26 @@
             // 
             this.pdHoaDon.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdHoaDon_PrintPage);
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Verdana", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.Blue;
+            this.label21.Location = new System.Drawing.Point(353, 9);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(337, 40);
+            this.label21.TabIndex = 16;
+            this.label21.Text = "Quản Lý Hóa Đơn";
+            // 
             // HoaDonGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(60)))), ((int)(((byte)(71)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1023, 663);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.btnInHoaDon);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox2);
@@ -832,6 +872,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "HoaDonGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -850,6 +891,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -919,5 +961,6 @@
         private Button btnInHoaDon;
         private PrintPreviewDialog pddHoaDon;
         private System.Drawing.Printing.PrintDocument pdHoaDon;
+        private Label label21;
     }
 }

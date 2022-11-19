@@ -21,6 +21,13 @@ namespace BanDienThoai.GUI
         public ThongKeGUI()
         {
             InitializeComponent();
+            label11.BackColor = SetTransparency(50,Color.White);
+            label14.BackColor = SetTransparency(50, Color.White);
+        }
+
+	static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
 
         private void label1_Click(object sender, EventArgs e)

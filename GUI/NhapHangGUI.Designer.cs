@@ -43,9 +43,6 @@
             this.txtIDNCC = new System.Windows.Forms.TextBox();
             this.ncc = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnXoaSanPham = new System.Windows.Forms.Button();
-            this.btnSuaSanPham = new System.Windows.Forms.Button();
-            this.btnThemSanPham = new System.Windows.Forms.Button();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtGiaTien = new System.Windows.Forms.TextBox();
@@ -55,14 +52,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtIDSanPham = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnXoaSanPham = new System.Windows.Forms.Button();
+            this.btnSuaSanPham = new System.Windows.Forms.Button();
+            this.btnThemSanPham = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.btnDatHang = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -80,7 +83,7 @@
             this.groupBox1.Controls.Add(this.txtIDNCC);
             this.groupBox1.Controls.Add(this.ncc);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(66, 92);
+            this.groupBox1.Location = new System.Drawing.Point(66, 65);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(878, 140);
             this.groupBox1.TabIndex = 0;
@@ -105,12 +108,15 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtTenNhanVien
             // 
+            this.txtTenNhanVien.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTenNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTenNhanVien.Location = new System.Drawing.Point(428, 82);
             this.txtTenNhanVien.Name = "txtTenNhanVien";
+            this.txtTenNhanVien.ReadOnly = true;
             this.txtTenNhanVien.Size = new System.Drawing.Size(114, 23);
             this.txtTenNhanVien.TabIndex = 8;
             // 
@@ -126,9 +132,11 @@
             // 
             // txtIDNhanVien
             // 
+            this.txtIDNhanVien.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtIDNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtIDNhanVien.Location = new System.Drawing.Point(428, 34);
             this.txtIDNhanVien.Name = "txtIDNhanVien";
+            this.txtIDNhanVien.ReadOnly = true;
             this.txtIDNhanVien.Size = new System.Drawing.Size(114, 23);
             this.txtIDNhanVien.TabIndex = 6;
             // 
@@ -164,6 +172,7 @@
             // 
             // txtNhaCungCap
             // 
+            this.txtNhaCungCap.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtNhaCungCap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtNhaCungCap.Location = new System.Drawing.Point(123, 80);
             this.txtNhaCungCap.Name = "txtNhaCungCap";
@@ -183,6 +192,7 @@
             // 
             // txtIDNCC
             // 
+            this.txtIDNCC.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtIDNCC.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtIDNCC.Location = new System.Drawing.Point(123, 32);
             this.txtIDNCC.Name = "txtIDNCC";
@@ -202,9 +212,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnXoaSanPham);
-            this.groupBox2.Controls.Add(this.btnSuaSanPham);
-            this.groupBox2.Controls.Add(this.btnThemSanPham);
             this.groupBox2.Controls.Add(this.txtSoLuong);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtGiaTien);
@@ -215,57 +222,16 @@
             this.groupBox2.Controls.Add(this.txtIDSanPham);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(246, 256);
+            this.groupBox2.Location = new System.Drawing.Point(249, 211);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(553, 165);
+            this.groupBox2.Size = new System.Drawing.Size(553, 133);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin Sản Phẩm";
             // 
-            // btnXoaSanPham
-            // 
-            this.btnXoaSanPham.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnXoaSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaSanPham.Image")));
-            this.btnXoaSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaSanPham.Location = new System.Drawing.Point(349, 131);
-            this.btnXoaSanPham.Name = "btnXoaSanPham";
-            this.btnXoaSanPham.Size = new System.Drawing.Size(73, 29);
-            this.btnXoaSanPham.TabIndex = 10;
-            this.btnXoaSanPham.Text = "Xóa";
-            this.btnXoaSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoaSanPham.UseVisualStyleBackColor = true;
-            this.btnXoaSanPham.Click += new System.EventHandler(this.btnXoaSanPham_Click);
-            // 
-            // btnSuaSanPham
-            // 
-            this.btnSuaSanPham.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSuaSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaSanPham.Image")));
-            this.btnSuaSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaSanPham.Location = new System.Drawing.Point(240, 131);
-            this.btnSuaSanPham.Name = "btnSuaSanPham";
-            this.btnSuaSanPham.Size = new System.Drawing.Size(73, 29);
-            this.btnSuaSanPham.TabIndex = 9;
-            this.btnSuaSanPham.Text = "Sửa";
-            this.btnSuaSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaSanPham.UseVisualStyleBackColor = true;
-            this.btnSuaSanPham.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnThemSanPham
-            // 
-            this.btnThemSanPham.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnThemSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnThemSanPham.Image")));
-            this.btnThemSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemSanPham.Location = new System.Drawing.Point(123, 131);
-            this.btnThemSanPham.Name = "btnThemSanPham";
-            this.btnThemSanPham.Size = new System.Drawing.Size(73, 29);
-            this.btnThemSanPham.TabIndex = 8;
-            this.btnThemSanPham.Text = "Thêm";
-            this.btnThemSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemSanPham.UseVisualStyleBackColor = true;
-            this.btnThemSanPham.Click += new System.EventHandler(this.btnThemSanPham_Click);
-            // 
             // txtSoLuong
             // 
+            this.txtSoLuong.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSoLuong.Location = new System.Drawing.Point(397, 79);
             this.txtSoLuong.Name = "txtSoLuong";
@@ -284,6 +250,7 @@
             // 
             // txtGiaTien
             // 
+            this.txtGiaTien.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtGiaTien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtGiaTien.Location = new System.Drawing.Point(397, 32);
             this.txtGiaTien.Name = "txtGiaTien";
@@ -313,6 +280,7 @@
             // 
             // txtTenSanPham
             // 
+            this.txtTenSanPham.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTenSanPham.Location = new System.Drawing.Point(123, 80);
             this.txtTenSanPham.Name = "txtTenSanPham";
@@ -332,6 +300,7 @@
             // 
             // txtIDSanPham
             // 
+            this.txtIDSanPham.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtIDSanPham.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtIDSanPham.Location = new System.Drawing.Point(123, 32);
             this.txtIDSanPham.Name = "txtIDSanPham";
@@ -349,28 +318,73 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "ID";
             // 
+            // btnXoaSanPham
+            // 
+            this.btnXoaSanPham.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnXoaSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaSanPham.Image")));
+            this.btnXoaSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaSanPham.Location = new System.Drawing.Point(397, 22);
+            this.btnXoaSanPham.Name = "btnXoaSanPham";
+            this.btnXoaSanPham.Size = new System.Drawing.Size(139, 29);
+            this.btnXoaSanPham.TabIndex = 10;
+            this.btnXoaSanPham.Text = "Xóa Sản Phẩm";
+            this.btnXoaSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaSanPham.UseVisualStyleBackColor = true;
+            this.btnXoaSanPham.Click += new System.EventHandler(this.btnXoaSanPham_Click);
+            // 
+            // btnSuaSanPham
+            // 
+            this.btnSuaSanPham.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSuaSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaSanPham.Image")));
+            this.btnSuaSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaSanPham.Location = new System.Drawing.Point(220, 22);
+            this.btnSuaSanPham.Name = "btnSuaSanPham";
+            this.btnSuaSanPham.Size = new System.Drawing.Size(139, 29);
+            this.btnSuaSanPham.TabIndex = 9;
+            this.btnSuaSanPham.Text = "Sửa Sản Phẩm";
+            this.btnSuaSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaSanPham.UseVisualStyleBackColor = true;
+            this.btnSuaSanPham.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnThemSanPham
+            // 
+            this.btnThemSanPham.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnThemSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnThemSanPham.Image")));
+            this.btnThemSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemSanPham.Location = new System.Drawing.Point(19, 22);
+            this.btnThemSanPham.Name = "btnThemSanPham";
+            this.btnThemSanPham.Size = new System.Drawing.Size(139, 29);
+            this.btnThemSanPham.TabIndex = 8;
+            this.btnThemSanPham.Text = "Thêm Vào Giỏ";
+            this.btnThemSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemSanPham.UseVisualStyleBackColor = true;
+            this.btnThemSanPham.Click += new System.EventHandler(this.btnThemSanPham_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(396, 19);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Verdana", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(342, 9);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label6.Size = new System.Drawing.Size(190, 46);
+            this.label6.Size = new System.Drawing.Size(384, 40);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Nhập Hàng";
+            this.label6.Text = "Quản Lý Nhập Hàng";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dgvOrder
             // 
             this.dgvOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOrder.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Location = new System.Drawing.Point(66, 436);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.ReadOnly = true;
             this.dgvOrder.RowHeadersWidth = 51;
             this.dgvOrder.RowTemplate.Height = 25;
-            this.dgvOrder.Size = new System.Drawing.Size(858, 112);
+            this.dgvOrder.Size = new System.Drawing.Size(878, 112);
             this.dgvOrder.TabIndex = 7;
             this.dgvOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellClick);
             this.dgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentClick);
@@ -391,25 +405,56 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(84, 569);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 15);
+            this.label9.Size = new System.Drawing.Size(85, 21);
             this.label9.TabIndex = 9;
             this.label9.Text = "Tổng Tiền :";
             // 
             // txtTongTien
             // 
-            this.txtTongTien.Location = new System.Drawing.Point(165, 567);
+            this.txtTongTien.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtTongTien.Location = new System.Drawing.Point(175, 567);
             this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(147, 23);
             this.txtTongTien.TabIndex = 10;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnReset);
+            this.groupBox3.Controls.Add(this.btnThemSanPham);
+            this.groupBox3.Controls.Add(this.btnXoaSanPham);
+            this.groupBox3.Controls.Add(this.btnSuaSanPham);
+            this.groupBox3.Location = new System.Drawing.Point(175, 350);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(674, 60);
+            this.groupBox3.TabIndex = 11;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Thao Tác";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(564, 22);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(83, 29);
+            this.btnReset.TabIndex = 11;
+            this.btnReset.Text = "Reset";
+            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // NhapHangGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1023, 663);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnDatHang);
@@ -426,6 +471,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,5 +510,7 @@
         private Button btnDatHang;
         private Label label9;
         private TextBox txtTongTien;
+        private GroupBox groupBox3;
+        private Button btnReset;
     }
 }

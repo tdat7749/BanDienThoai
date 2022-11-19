@@ -84,7 +84,19 @@ namespace BanDienThoai.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (txtSearch.Text == "")
+            {
+                MessageBox.Show("Phải nhập từ khóa để tìm kiếm !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            dgv3ChamStaff.DataSource = StaffBUS.GetStaffByName(txtSearch.Text.Trim());
+            if (dgv3ChamStaff.Rows.Count <= 1)
+            {
+                MessageBox.Show("Không tìm thấy !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GetAllStaff();
+                return;
+            }
         }
     }
 }

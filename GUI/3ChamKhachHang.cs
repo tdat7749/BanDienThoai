@@ -75,5 +75,22 @@ namespace BanDienThoai.GUI
             txtSearch.Text = "";
             GetAllUser();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "")
+            {
+                MessageBox.Show("Phải nhập từ khóa để tìm kiếm !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            dgv3ChamUser.DataSource = UserBUS.GetUserByPhoneNumber(txtSearch.Text.Trim());
+            if (dgv3ChamUser.Rows.Count <= 1)
+            {
+                MessageBox.Show("Không tìm thấy !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GetAllUser();
+                return;
+            }
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace BanDienThoai.GUI
         public MainGUI()
         {
             InitializeComponent();
+            pictureBox1.BackColor = Color.Transparent;
             
         }
 
@@ -91,7 +92,14 @@ namespace BanDienThoai.GUI
             if(TaiKhoanDAO.NamePermiss == "Nhân Viên")
             {
                 pnlQuanLy.Hide();
+                ChangeFormChild(new MuaHang());
             }
+            else
+            {
+                ChangeFormChild(new ThongKeGUI());
+            }
+            
+
         }
 
         private void MainGUI_FormClosing(object sender, FormClosingEventArgs e)

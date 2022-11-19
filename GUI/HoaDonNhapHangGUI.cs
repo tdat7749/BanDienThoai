@@ -22,6 +22,17 @@ namespace BanDienThoai.GUI
         {
             InitializeComponent();
             GetAllImportBill();
+groupBox1.BackColor = SetTransparency(180,Color.White);
+            groupBox2.BackColor = SetTransparency(180, Color.White);
+            groupBox3.BackColor = SetTransparency(180, Color.White);
+            groupBox4.BackColor = SetTransparency(180, Color.White);
+            groupBox5.BackColor = SetTransparency(180, Color.White);
+            groupBox6.BackColor = SetTransparency(180, Color.White);
+            label21.BackColor = SetTransparency(50, Color.White);
+        }
+static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
 
         public void GetAllImportBill()
