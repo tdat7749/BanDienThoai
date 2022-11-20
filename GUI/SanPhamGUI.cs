@@ -88,7 +88,7 @@ static Color SetTransparency(int A, Color color)
                 product.CategoryID = 1;
 
                 productBUS.CreateProduct(product);
-                MessageBox.Show("Thêm sản phẩm thành công !!", "Nhân Viên", MessageBoxButtons.OK);
+                MessageBox.Show("Thêm sản phẩm thành công !!", "Sản Phẩm", MessageBoxButtons.OK);
                 GetAllProDuct();
 
                 
@@ -109,17 +109,21 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
-            Product product = new Product();
-            product.Id = int.Parse(txtMaSanPham.Text);
-            product.Name = txtTenSanPham.Text.Trim();
-            product.Description = txtMoTa.Text.Trim();
-            product.Image = urlImg;
-            product.Price = decimal.Parse(txtDonGia.Text.Trim());
-            product.CategoryID = int.Parse(txtMaHang.Text);
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc là sửa sản phẩm này chứ ?", "Sản Phẩm", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Product product = new Product();
+                product.Id = int.Parse(txtMaSanPham.Text);
+                product.Name = txtTenSanPham.Text.Trim();
+                product.Description = txtMoTa.Text.Trim();
+                product.Image = urlImg;
+                product.Price = decimal.Parse(txtDonGia.Text.Trim());
+                product.CategoryID = int.Parse(txtMaHang.Text);
 
-            productBUS.UpdateProduct(product);
-            MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
-            GetAllProDuct();
+                productBUS.UpdateProduct(product);
+                MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
+                GetAllProDuct();
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

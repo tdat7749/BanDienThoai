@@ -68,16 +68,19 @@ static Color SetTransparency(int A, Color color)
                 return;
             }*/
 
-            User user = new User();
-            user.FirstName = txtHo.Text.Trim();
-            user.LastName = txtTen.Text.Trim();
-            user.Address = txtDiaChi.Text.Trim();
-            user.PhoneNumber = txtSoDienThoai.Text.Trim();
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là thêm khách hàng này chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                User user = new User();
+                user.FirstName = txtHo.Text.Trim();
+                user.LastName = txtTen.Text.Trim();
+                user.Address = txtDiaChi.Text.Trim();
+                user.PhoneNumber = txtSoDienThoai.Text.Trim();
 
-            userBUS.CreateUser(user);
-            MessageBox.Show("Thêm khách hàng thành công", "Thành Công", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            GetAllCustomer();
-
+                userBUS.CreateUser(user);
+                MessageBox.Show("Thêm khách hàng thành công", "Thành Công", MessageBoxButtons.OK);
+                GetAllCustomer();
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -100,16 +103,20 @@ static Color SetTransparency(int A, Color color)
                 return;
             }*/
 
-            User user = new User();
-            user.Id = int.Parse(txtMaKhachHang.Text.Trim());
-            user.FirstName = txtHo.Text.Trim();
-            user.LastName = txtTen.Text.Trim();
-            user.Address = txtDiaChi.Text.Trim();
-            user.PhoneNumber = txtSoDienThoai.Text.Trim();
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là sửa khách hàng này chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                User user = new User();
+                user.Id = int.Parse(txtMaKhachHang.Text.Trim());
+                user.FirstName = txtHo.Text.Trim();
+                user.LastName = txtTen.Text.Trim();
+                user.Address = txtDiaChi.Text.Trim();
+                user.PhoneNumber = txtSoDienThoai.Text.Trim();
 
-            userBUS.UpdateUser(user);
-            MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
-            GetAllCustomer();
+                userBUS.UpdateUser(user);
+                MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
+                GetAllCustomer();
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -120,9 +127,13 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
-            userBUS.DeleteUser(int.Parse(txtMaKhachHang.Text.Trim()));
-            MessageBox.Show("Xóa thành công", "Thành Công", MessageBoxButtons.OK);
-            GetAllCustomer();
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là xóa khách hàng này chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                userBUS.DeleteUser(int.Parse(txtMaKhachHang.Text.Trim()));
+                MessageBox.Show("Xóa thành công", "Thành Công", MessageBoxButtons.OK);
+                GetAllCustomer();
+            }
         }
 
         private void btnTim_Click(object sender, EventArgs e)

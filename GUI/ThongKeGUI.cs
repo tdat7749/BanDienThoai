@@ -65,6 +65,8 @@ namespace BanDienThoai.GUI
                 cbbTenSanPham.Items.Add(item);
             }
 
+            dgvTongChiTieu.DataSource = billBUS.TongChiTieu();
+
         }
 
         private void cbbQuy_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,6 +85,24 @@ namespace BanDienThoai.GUI
             int id = productBUS.GetIdByName(name);
             lbTenSanPham.Text = name;
             lbTongTien.Text = detailBillBUS.GetTotalDetailBillByProductId(id) + "VND";
+        }
+
+        private void btnBaoCaoQuy_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn in báo cáo này chứ ?", "Sản Phẩm", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // do something
+            }
+        }
+
+        private void btnBaoCaoKH_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc là muốn in báo cáo này chứ ?", "Sản Phẩm", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // do something
+            }
         }
     }
 }

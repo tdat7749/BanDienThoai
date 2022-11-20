@@ -72,17 +72,21 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
-            Sales sale = new Sales();
-            sale.NameSale = txtTenKhuyenMai.Text.Trim();
-            sale.SaleOff = int.Parse(txtKhuyenMai.Text.Trim());
-            sale.TimeStart = (DateTime)dtpNgayBatDau.Value;
-            sale.TimeEnd = (DateTime)dtpNgayKetThuc.Value;
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là bạn muốn thêm khuyến mãi này chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Sales sale = new Sales();
+                sale.NameSale = txtTenKhuyenMai.Text.Trim();
+                sale.SaleOff = int.Parse(txtKhuyenMai.Text.Trim());
+                sale.TimeStart = (DateTime)dtpNgayBatDau.Value;
+                sale.TimeEnd = (DateTime)dtpNgayKetThuc.Value;
 
 
-            salesBUS.CreateSale(sale);
+                salesBUS.CreateSale(sale);
 
-            GetAllSales();
-            MessageBox.Show("Thêm Thành Công !");
+                GetAllSales();
+                MessageBox.Show("Thêm Thành Công !");
+            }
 
         }
 
@@ -105,18 +109,24 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
-            Sales sale = new Sales();
-            sale.Id = int.Parse(txtID.Text.Trim());
-            sale.NameSale = txtTenKhuyenMai.Text.Trim();
-            sale.SaleOff = int.Parse(txtKhuyenMai.Text.Trim());
-            sale.TimeStart = (DateTime)dtpNgayBatDau.Value;
-            sale.TimeEnd = (DateTime)dtpNgayKetThuc.Value;
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là bạn muốn sửa khuyến mãi này chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Sales sale = new Sales();
+                sale.Id = int.Parse(txtID.Text.Trim());
+                sale.NameSale = txtTenKhuyenMai.Text.Trim();
+                sale.SaleOff = int.Parse(txtKhuyenMai.Text.Trim());
+                sale.TimeStart = (DateTime)dtpNgayBatDau.Value;
+                sale.TimeEnd = (DateTime)dtpNgayKetThuc.Value;
 
 
-            salesBUS.UpdateSale(sale);
+                salesBUS.UpdateSale(sale);
 
-            GetAllSales();
-            MessageBox.Show("Sửa Thành Công !");
+                GetAllSales();
+                MessageBox.Show("Sửa Thành Công !");
+            }
+
+                
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -127,10 +137,14 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
-            salesBUS.DeleteSale(int.Parse(txtID.Text.Trim()));
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là bạn muốn xóa khuyến mãi này chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                salesBUS.DeleteSale(int.Parse(txtID.Text.Trim()));
 
-            GetAllSales();
-            MessageBox.Show("Xóa Thành Công !");
+                GetAllSales();
+                MessageBox.Show("Xóa Thành Công !");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

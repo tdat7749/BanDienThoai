@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainGUI));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnQLKhachHang = new System.Windows.Forms.Button();
@@ -55,12 +57,34 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.btnThoat);
+            this.panel1.Controls.Add(this.btnDangXuat);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 663);
             this.panel1.TabIndex = 0;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(119, 632);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.TabIndex = 3;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Location = new System.Drawing.Point(3, 632);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(75, 23);
+            this.btnDangXuat.TabIndex = 2;
+            this.btnDangXuat.Text = "Đăng Xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // pictureBox1
             // 
@@ -75,11 +99,12 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.btnHoaDon);
             this.panel2.Controls.Add(this.btnQLKhachHang);
             this.panel2.Controls.Add(this.btnBanHang);
             this.panel2.Location = new System.Drawing.Point(0, 181);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.Size = new System.Drawing.Size(200, 151);
             this.panel2.TabIndex = 0;
             // 
             // btnQLKhachHang
@@ -87,7 +112,7 @@
             this.btnQLKhachHang.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnQLKhachHang.Image = ((System.Drawing.Image)(resources.GetObject("btnQLKhachHang.Image")));
             this.btnQLKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 59);
+            this.btnQLKhachHang.Location = new System.Drawing.Point(0, 58);
             this.btnQLKhachHang.Name = "btnQLKhachHang";
             this.btnQLKhachHang.Size = new System.Drawing.Size(200, 42);
             this.btnQLKhachHang.TabIndex = 1;
@@ -132,10 +157,9 @@
             this.pnlQuanLy.Controls.Add(this.btnNhapHang);
             this.pnlQuanLy.Controls.Add(this.btnNhanVien);
             this.pnlQuanLy.Controls.Add(this.btnHoaDonNH);
-            this.pnlQuanLy.Controls.Add(this.btnHoaDon);
-            this.pnlQuanLy.Location = new System.Drawing.Point(1, 287);
+            this.pnlQuanLy.Location = new System.Drawing.Point(1, 338);
             this.pnlQuanLy.Name = "pnlQuanLy";
-            this.pnlQuanLy.Size = new System.Drawing.Size(200, 339);
+            this.pnlQuanLy.Size = new System.Drawing.Size(200, 288);
             this.pnlQuanLy.TabIndex = 2;
             // 
             // btnSanPham
@@ -143,7 +167,7 @@
             this.btnSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnSanPham.Image")));
             this.btnSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSanPham.Location = new System.Drawing.Point(0, 291);
+            this.btnSanPham.Location = new System.Drawing.Point(0, 243);
             this.btnSanPham.Name = "btnSanPham";
             this.btnSanPham.Size = new System.Drawing.Size(200, 42);
             this.btnSanPham.TabIndex = 6;
@@ -156,7 +180,7 @@
             this.btnThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 243);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 195);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Size = new System.Drawing.Size(200, 42);
             this.btnThongKe.TabIndex = 5;
@@ -169,7 +193,7 @@
             this.btnKhuyenMai.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnKhuyenMai.Image = ((System.Drawing.Image)(resources.GetObject("btnKhuyenMai.Image")));
             this.btnKhuyenMai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnKhuyenMai.Location = new System.Drawing.Point(0, 195);
+            this.btnKhuyenMai.Location = new System.Drawing.Point(0, 147);
             this.btnKhuyenMai.Name = "btnKhuyenMai";
             this.btnKhuyenMai.Size = new System.Drawing.Size(200, 42);
             this.btnKhuyenMai.TabIndex = 4;
@@ -182,7 +206,7 @@
             this.btnNhapHang.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNhapHang.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapHang.Image")));
             this.btnNhapHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapHang.Location = new System.Drawing.Point(0, 147);
+            this.btnNhapHang.Location = new System.Drawing.Point(0, 99);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(200, 42);
             this.btnNhapHang.TabIndex = 3;
@@ -195,7 +219,7 @@
             this.btnNhanVien.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnNhanVien.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.Image")));
             this.btnNhanVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 99);
+            this.btnNhanVien.Location = new System.Drawing.Point(0, 51);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(200, 42);
             this.btnNhanVien.TabIndex = 2;
@@ -208,7 +232,7 @@
             this.btnHoaDonNH.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnHoaDonNH.Image = ((System.Drawing.Image)(resources.GetObject("btnHoaDonNH.Image")));
             this.btnHoaDonNH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDonNH.Location = new System.Drawing.Point(0, 51);
+            this.btnHoaDonNH.Location = new System.Drawing.Point(0, 3);
             this.btnHoaDonNH.Name = "btnHoaDonNH";
             this.btnHoaDonNH.Size = new System.Drawing.Size(200, 42);
             this.btnHoaDonNH.TabIndex = 1;
@@ -221,7 +245,7 @@
             this.btnHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnHoaDon.Image")));
             this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.Location = new System.Drawing.Point(0, 3);
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 106);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(200, 42);
             this.btnHoaDon.TabIndex = 0;
@@ -269,5 +293,7 @@
         private Button btnNhanVien;
         private Button btnSanPham;
         private PictureBox pictureBox1;
+        private Button btnThoat;
+        private Button btnDangXuat;
     }
 }

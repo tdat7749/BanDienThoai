@@ -15,7 +15,8 @@ namespace BanDienThoai.DAO
         {
             Connection.Conn.Open();
             string query = @"  select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
-  INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id";
+                                INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id
+                                ORDER BY Bill.Id DESC";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;
@@ -142,6 +143,22 @@ namespace BanDienThoai.DAO
             Connection.Conn.Open();
             string query = @$"select Bill.Id, Bill.UserId, Bill.FullName, Bill.DateCreate,Bill.Total, CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from Bill
   INNER JOIN dbo.Staff on Bill.StaffId = Staff.Id WHERE Bill.DateCreate <= {dateTo}";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable TongChiTieu()
+        {
+            Connection.Conn.Open();
+            string query = @$"select TOP(5) Account.Id,Account.FirstName,Account.LastName,Account.PhoneNumber,SUM(Total) as TongChiTieu from Bill
+                            INNER JOIN Account on Bill.UserId = Account.Id
+                            GROUP BY Account.Id,Account.FirstName,Account.LastName,Account.PhoneNumber
+                            ORDER BY TongChiTieu DESC";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;

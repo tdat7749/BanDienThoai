@@ -142,30 +142,36 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
-            ImportBill importBill = new ImportBill();
-            importBill.StaffID = int.Parse(txtIDNhanVien.Text.Trim());
-            importBill.SupplierID = int.Parse(txtIDNCC.Text.Trim());
-            importBill.DateCreate = dtpNgayNhap.Value;
-            importBill.Total = decimal.Parse(txtTongTien.Text);
-
-            importBillBUS.CreateImportBill(importBill);
-
-
-            foreach(DataRow row in tbOrder.Rows)
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là bạn muốn nhập hàng chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                DetailImportBill detailImportBill = new DetailImportBill();
-                detailImportBill.ImportID = importBillBUS.GetLastID();
-                detailImportBill.ProductID = int.Parse(row["ID Sản Phẩm"].ToString());
-                detailImportBill.NameProduct = row["Sản Phẩm"].ToString();
-                detailImportBill.Price = decimal.Parse(row["Giá Tiền"].ToString());
-                detailImportBill.Amount = int.Parse(row["Số lượng"].ToString());
-                detailImportBill.Total = decimal.Parse(row["Thành Tiền"].ToString());
+                ImportBill importBill = new ImportBill();
+                importBill.StaffID = int.Parse(txtIDNhanVien.Text.Trim());
+                importBill.SupplierID = int.Parse(txtIDNCC.Text.Trim());
+                importBill.DateCreate = dtpNgayNhap.Value;
+                importBill.Total = decimal.Parse(txtTongTien.Text);
 
-                detailImportBillBUS.CreateDetailImportBill(detailImportBill);
-                productBUS.UpdateStockProduct(detailImportBill.ProductID, detailImportBill.Amount);
+                importBillBUS.CreateImportBill(importBill);
+
+
+                foreach (DataRow row in tbOrder.Rows)
+                {
+                    DetailImportBill detailImportBill = new DetailImportBill();
+                    detailImportBill.ImportID = importBillBUS.GetLastID();
+                    detailImportBill.ProductID = int.Parse(row["ID Sản Phẩm"].ToString());
+                    detailImportBill.NameProduct = row["Sản Phẩm"].ToString();
+                    detailImportBill.Price = decimal.Parse(row["Giá Tiền"].ToString());
+                    detailImportBill.Amount = int.Parse(row["Số lượng"].ToString());
+                    detailImportBill.Total = decimal.Parse(row["Thành Tiền"].ToString());
+
+                    detailImportBillBUS.CreateDetailImportBill(detailImportBill);
+                    productBUS.UpdateStockProduct(detailImportBill.ProductID, detailImportBill.Amount);
+                }
+
+                MessageBox.Show("Nhập hàng thành công !!");
             }
 
-            MessageBox.Show("Nhập hàng thành công !!");
+                
         }
 
         private void button2_Click(object sender, EventArgs e)

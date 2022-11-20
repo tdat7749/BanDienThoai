@@ -51,6 +51,11 @@ namespace BanDienThoai.BUS
             return BillDAO.GetBillByDateCreate(dateFrom, dateTo);
         }
 
+        public DataTable TongChiTieu()
+        {
+            return BillDAO.TongChiTieu();
+        }
+
         public void CreateBill(Bill bill)
         {
             BillDAO.CreateBill(bill);

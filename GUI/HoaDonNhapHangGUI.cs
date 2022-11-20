@@ -207,7 +207,12 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
-            InHoaDon();
+
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là in hóa đơn này chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                InHoaDon();
+            }
         }
 
         private void pdHoaDon_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

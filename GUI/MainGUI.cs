@@ -117,5 +117,19 @@ namespace BanDienThoai.GUI
             ChangeFormChild(new SanPhamGUI());
 
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            Close();
+            DangNhapGUI form = new DangNhapGUI();
+            form.ShowDialog();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+            DangNhapGUI form = new DangNhapGUI();
+            form.Close();
+        }
     }
 }

@@ -32,8 +32,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMaSanPham = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.txtMoTa = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTenHang = new System.Windows.Forms.TextBox();
@@ -45,6 +43,8 @@
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pbSanPham = new System.Windows.Forms.PictureBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtTongTienKM = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -99,8 +99,6 @@
             // 
             this.groupBox1.Controls.Add(this.txtMaSanPham);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.txtSoLuong);
-            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.txtMoTa);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtTenHang);
@@ -115,7 +113,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(36, 83);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(523, 303);
+            this.groupBox1.Size = new System.Drawing.Size(523, 271);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Sản Phẩm";
@@ -127,6 +125,7 @@
             this.txtMaSanPham.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMaSanPham.Location = new System.Drawing.Point(331, 25);
             this.txtMaSanPham.Name = "txtMaSanPham";
+            this.txtMaSanPham.ReadOnly = true;
             this.txtMaSanPham.Size = new System.Drawing.Size(174, 25);
             this.txtMaSanPham.TabIndex = 14;
             this.txtMaSanPham.TextChanged += new System.EventHandler(this.txtMaSanPham_TextChanged);
@@ -141,33 +140,13 @@
             this.label15.TabIndex = 13;
             this.label15.Text = "Mã Sản Phẩm";
             // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSoLuong.Location = new System.Drawing.Point(331, 116);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(174, 25);
-            this.txtSoLuong.TabIndex = 12;
-            this.txtSoLuong.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(185, 116);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 19);
-            this.label14.TabIndex = 11;
-            this.label14.Text = "Số Lượng";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
-            // 
             // txtMoTa
             // 
             this.txtMoTa.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtMoTa.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMoTa.Location = new System.Drawing.Point(185, 220);
+            this.txtMoTa.Location = new System.Drawing.Point(185, 185);
             this.txtMoTa.Name = "txtMoTa";
+            this.txtMoTa.ReadOnly = true;
             this.txtMoTa.Size = new System.Drawing.Size(320, 77);
             this.txtMoTa.TabIndex = 10;
             this.txtMoTa.Text = "";
@@ -176,7 +155,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(61, 245);
+            this.label5.Location = new System.Drawing.Point(61, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 19);
             this.label5.TabIndex = 9;
@@ -186,8 +165,9 @@
             // 
             this.txtTenHang.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtTenHang.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTenHang.Location = new System.Drawing.Point(331, 179);
+            this.txtTenHang.Location = new System.Drawing.Point(331, 152);
             this.txtTenHang.Name = "txtTenHang";
+            this.txtTenHang.ReadOnly = true;
             this.txtTenHang.Size = new System.Drawing.Size(174, 25);
             this.txtTenHang.TabIndex = 8;
             // 
@@ -195,7 +175,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(185, 182);
+            this.label4.Location = new System.Drawing.Point(185, 155);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 19);
             this.label4.TabIndex = 7;
@@ -206,7 +186,7 @@
             // 
             this.txtSoLuongConLai.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtSoLuongConLai.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSoLuongConLai.Location = new System.Drawing.Point(331, 148);
+            this.txtSoLuongConLai.Location = new System.Drawing.Point(331, 121);
             this.txtSoLuongConLai.Name = "txtSoLuongConLai";
             this.txtSoLuongConLai.Size = new System.Drawing.Size(174, 25);
             this.txtSoLuongConLai.TabIndex = 6;
@@ -215,7 +195,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(185, 148);
+            this.label3.Location = new System.Drawing.Point(185, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 19);
             this.label3.TabIndex = 5;
@@ -227,6 +207,7 @@
             this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDonGia.Location = new System.Drawing.Point(331, 85);
             this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.ReadOnly = true;
             this.txtDonGia.Size = new System.Drawing.Size(174, 25);
             this.txtDonGia.TabIndex = 4;
             // 
@@ -246,6 +227,7 @@
             this.txtTenSanPham.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTenSanPham.Location = new System.Drawing.Point(331, 55);
             this.txtTenSanPham.Name = "txtTenSanPham";
+            this.txtTenSanPham.ReadOnly = true;
             this.txtTenSanPham.Size = new System.Drawing.Size(174, 25);
             this.txtTenSanPham.TabIndex = 2;
             this.txtTenSanPham.TextChanged += new System.EventHandler(this.txtTenSanPham_TextChanged);
@@ -268,6 +250,29 @@
             this.pbSanPham.Size = new System.Drawing.Size(149, 146);
             this.pbSanPham.TabIndex = 0;
             this.pbSanPham.TabStop = false;
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSoLuong.Location = new System.Drawing.Point(367, 357);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.ReadOnly = true;
+            this.txtSoLuong.Size = new System.Drawing.Size(174, 25);
+            this.txtSoLuong.TabIndex = 12;
+            this.txtSoLuong.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label14.Location = new System.Drawing.Point(221, 360);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(143, 19);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Số Lượng Muốn Mua";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // groupBox2
             // 
@@ -308,6 +313,7 @@
             this.txtTongTienKM.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTongTienKM.Location = new System.Drawing.Point(169, 424);
             this.txtTongTienKM.Name = "txtTongTienKM";
+            this.txtTongTienKM.ReadOnly = true;
             this.txtTongTienKM.Size = new System.Drawing.Size(174, 25);
             this.txtTongTienKM.TabIndex = 34;
             this.txtTongTienKM.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -381,6 +387,7 @@
             this.txtTongTien.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTongTien.Location = new System.Drawing.Point(169, 393);
             this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(174, 25);
             this.txtTongTien.TabIndex = 27;
             this.txtTongTien.TextChanged += new System.EventHandler(this.txtTongTien_TextChanged);
@@ -751,6 +758,8 @@
             this.ClientSize = new System.Drawing.Size(1023, 663);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.btnThemVaoGio);
+            this.Controls.Add(this.txtSoLuong);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.cbbLoc);
             this.Controls.Add(this.txtNameSearch);

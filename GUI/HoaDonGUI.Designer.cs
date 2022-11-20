@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HoaDonGUI));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.txtTongTien = new System.Windows.Forms.TextBox();
@@ -62,12 +58,6 @@
             this.txt_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvChiTietHoaDon = new System.Windows.Forms.DataGridView();
-            this.txt_BillId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_NameProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_Totall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtThanhTien = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -98,6 +88,12 @@
             this.pddHoaDon = new System.Windows.Forms.PrintPreviewDialog();
             this.pdHoaDon = new System.Drawing.Printing.PrintDocument();
             this.label21 = new System.Windows.Forms.Label();
+            this.txt_BillId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_NameProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_Totall = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -333,7 +329,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.White;
             this.groupBox4.Controls.Add(this.dgvHoaDon);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox4.Location = new System.Drawing.Point(41, 409);
             this.groupBox4.Name = "groupBox4";
@@ -345,14 +341,6 @@
             // dgvHoaDon
             // 
             this.dgvHoaDon.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txt_Id,
@@ -361,25 +349,9 @@
             this.txt_TenKhachHang,
             this.txt_NgayLap,
             this.txt_TongTien});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHoaDon.Location = new System.Drawing.Point(0, 28);
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHoaDon.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHoaDon.RowTemplate.Height = 25;
             this.dgvHoaDon.Size = new System.Drawing.Size(446, 161);
             this.dgvHoaDon.TabIndex = 0;
@@ -437,7 +409,7 @@
             // 
             this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Controls.Add(this.dgvChiTietHoaDon);
-            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox5.Location = new System.Drawing.Point(512, 409);
             this.groupBox5.Name = "groupBox5";
@@ -449,14 +421,6 @@
             // dgvChiTietHoaDon
             // 
             this.dgvChiTietHoaDon.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvChiTietHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvChiTietHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvChiTietHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txt_BillId,
@@ -472,54 +436,6 @@
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(434, 161);
             this.dgvChiTietHoaDon.TabIndex = 1;
             this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
-            // 
-            // txt_BillId
-            // 
-            this.txt_BillId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_BillId.DataPropertyName = "BillId";
-            this.txt_BillId.HeaderText = "Mã Hóa Đơn";
-            this.txt_BillId.Name = "txt_BillId";
-            this.txt_BillId.ReadOnly = true;
-            // 
-            // txt_ProductId
-            // 
-            this.txt_ProductId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_ProductId.DataPropertyName = "ProductId";
-            this.txt_ProductId.HeaderText = "Mã Sản Phẩm";
-            this.txt_ProductId.Name = "txt_ProductId";
-            this.txt_ProductId.ReadOnly = true;
-            // 
-            // txt_NameProduct
-            // 
-            this.txt_NameProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_NameProduct.DataPropertyName = "NameProduct";
-            this.txt_NameProduct.HeaderText = "Tên Sản Phẩm";
-            this.txt_NameProduct.Name = "txt_NameProduct";
-            this.txt_NameProduct.ReadOnly = true;
-            // 
-            // txt_Price
-            // 
-            this.txt_Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_Price.DataPropertyName = "Price";
-            this.txt_Price.HeaderText = "Đơn Giá";
-            this.txt_Price.Name = "txt_Price";
-            this.txt_Price.ReadOnly = true;
-            // 
-            // txt_Amount
-            // 
-            this.txt_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_Amount.DataPropertyName = "Amount";
-            this.txt_Amount.HeaderText = "Số Lượng";
-            this.txt_Amount.Name = "txt_Amount";
-            this.txt_Amount.ReadOnly = true;
-            // 
-            // txt_Totall
-            // 
-            this.txt_Totall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_Totall.DataPropertyName = "Total";
-            this.txt_Totall.HeaderText = "Thành Tiền";
-            this.txt_Totall.Name = "txt_Totall";
-            this.txt_Totall.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -857,6 +773,54 @@
             this.label21.TabIndex = 16;
             this.label21.Text = "Quản Lý Hóa Đơn";
             // 
+            // txt_BillId
+            // 
+            this.txt_BillId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_BillId.DataPropertyName = "BillId";
+            this.txt_BillId.HeaderText = "Mã Hóa Đơn";
+            this.txt_BillId.Name = "txt_BillId";
+            this.txt_BillId.ReadOnly = true;
+            // 
+            // txt_ProductId
+            // 
+            this.txt_ProductId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_ProductId.DataPropertyName = "ProductId";
+            this.txt_ProductId.HeaderText = "Mã Sản Phẩm";
+            this.txt_ProductId.Name = "txt_ProductId";
+            this.txt_ProductId.ReadOnly = true;
+            // 
+            // txt_NameProduct
+            // 
+            this.txt_NameProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_NameProduct.DataPropertyName = "NameProduct";
+            this.txt_NameProduct.HeaderText = "Tên Sản Phẩm";
+            this.txt_NameProduct.Name = "txt_NameProduct";
+            this.txt_NameProduct.ReadOnly = true;
+            // 
+            // txt_Price
+            // 
+            this.txt_Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_Price.DataPropertyName = "Price";
+            this.txt_Price.HeaderText = "Đơn Giá (VND)";
+            this.txt_Price.Name = "txt_Price";
+            this.txt_Price.ReadOnly = true;
+            // 
+            // txt_Amount
+            // 
+            this.txt_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_Amount.DataPropertyName = "Amount";
+            this.txt_Amount.HeaderText = "Số Lượng";
+            this.txt_Amount.Name = "txt_Amount";
+            this.txt_Amount.ReadOnly = true;
+            // 
+            // txt_Totall
+            // 
+            this.txt_Totall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_Totall.DataPropertyName = "Total";
+            this.txt_Totall.HeaderText = "Thành Tiền (VND)";
+            this.txt_Totall.Name = "txt_Totall";
+            this.txt_Totall.ReadOnly = true;
+            // 
             // HoaDonGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -914,12 +878,6 @@
         private DataGridView dgvHoaDon;
         private GroupBox groupBox5;
         private DataGridView dgvChiTietHoaDon;
-        private DataGridViewTextBoxColumn txt_BillId;
-        private DataGridViewTextBoxColumn txt_ProductId;
-        private DataGridViewTextBoxColumn txt_NameProduct;
-        private DataGridViewTextBoxColumn txt_Price;
-        private DataGridViewTextBoxColumn txt_Amount;
-        private DataGridViewTextBoxColumn txt_Totall;
         private GroupBox groupBox2;
         private TextBox txtThanhTien;
         private Label label7;
@@ -962,5 +920,11 @@
         private PrintPreviewDialog pddHoaDon;
         private System.Drawing.Printing.PrintDocument pdHoaDon;
         private Label label21;
+        private DataGridViewTextBoxColumn txt_BillId;
+        private DataGridViewTextBoxColumn txt_ProductId;
+        private DataGridViewTextBoxColumn txt_NameProduct;
+        private DataGridViewTextBoxColumn txt_Price;
+        private DataGridViewTextBoxColumn txt_Amount;
+        private DataGridViewTextBoxColumn txt_Totall;
     }
 }

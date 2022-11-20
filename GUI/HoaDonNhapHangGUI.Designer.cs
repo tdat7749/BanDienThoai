@@ -84,16 +84,16 @@
             this.txt_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvChiTietHoaDon = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pddHoaDon = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdHoaDon = new System.Drawing.Printing.PrintDocument();
+            this.label21 = new System.Windows.Forms.Label();
             this.txt_BillId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_NameProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Totall = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pddHoaDon = new System.Windows.Forms.PrintPreviewDialog();
-            this.pdHoaDon = new System.Drawing.Printing.PrintDocument();
-            this.label21 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -669,7 +669,7 @@
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.dgvHoaDon);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.ForeColor = System.Drawing.Color.Black;
             this.groupBox4.Location = new System.Drawing.Point(36, 417);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -759,7 +759,7 @@
             // 
             this.groupBox5.BackColor = System.Drawing.Color.Transparent;
             this.groupBox5.Controls.Add(this.dgvChiTietHoaDon);
-            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox5.ForeColor = System.Drawing.Color.Black;
             this.groupBox5.Location = new System.Drawing.Point(501, 417);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -791,60 +791,6 @@
             this.dgvChiTietHoaDon.TabIndex = 1;
             this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
             this.dgvChiTietHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellContentClick);
-            // 
-            // txt_BillId
-            // 
-            this.txt_BillId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_BillId.DataPropertyName = "ImportId";
-            this.txt_BillId.HeaderText = "Mã Hóa Đơn";
-            this.txt_BillId.MinimumWidth = 6;
-            this.txt_BillId.Name = "txt_BillId";
-            this.txt_BillId.ReadOnly = true;
-            // 
-            // txt_ProductId
-            // 
-            this.txt_ProductId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_ProductId.DataPropertyName = "ProductId";
-            this.txt_ProductId.HeaderText = "Mã Sản Phẩm";
-            this.txt_ProductId.MinimumWidth = 6;
-            this.txt_ProductId.Name = "txt_ProductId";
-            this.txt_ProductId.ReadOnly = true;
-            // 
-            // txt_NameProduct
-            // 
-            this.txt_NameProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_NameProduct.DataPropertyName = "NameProduct";
-            this.txt_NameProduct.HeaderText = "Tên Sản Phẩm";
-            this.txt_NameProduct.MinimumWidth = 6;
-            this.txt_NameProduct.Name = "txt_NameProduct";
-            this.txt_NameProduct.ReadOnly = true;
-            // 
-            // txt_Price
-            // 
-            this.txt_Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_Price.DataPropertyName = "Price";
-            this.txt_Price.HeaderText = "Đơn Giá";
-            this.txt_Price.MinimumWidth = 6;
-            this.txt_Price.Name = "txt_Price";
-            this.txt_Price.ReadOnly = true;
-            // 
-            // txt_Amount
-            // 
-            this.txt_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_Amount.DataPropertyName = "Amount";
-            this.txt_Amount.HeaderText = "Số Lượng";
-            this.txt_Amount.MinimumWidth = 6;
-            this.txt_Amount.Name = "txt_Amount";
-            this.txt_Amount.ReadOnly = true;
-            // 
-            // txt_Totall
-            // 
-            this.txt_Totall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_Totall.DataPropertyName = "Total";
-            this.txt_Totall.HeaderText = "Thành Tiền";
-            this.txt_Totall.MinimumWidth = 6;
-            this.txt_Totall.Name = "txt_Totall";
-            this.txt_Totall.ReadOnly = true;
             // 
             // button1
             // 
@@ -888,6 +834,60 @@
             this.label21.Size = new System.Drawing.Size(312, 40);
             this.label21.TabIndex = 22;
             this.label21.Text = "HÓA ĐƠN NHẬP";
+            // 
+            // txt_BillId
+            // 
+            this.txt_BillId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_BillId.DataPropertyName = "ImportId";
+            this.txt_BillId.HeaderText = "Mã Hóa Đơn";
+            this.txt_BillId.MinimumWidth = 6;
+            this.txt_BillId.Name = "txt_BillId";
+            this.txt_BillId.ReadOnly = true;
+            // 
+            // txt_ProductId
+            // 
+            this.txt_ProductId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_ProductId.DataPropertyName = "ProductId";
+            this.txt_ProductId.HeaderText = "Mã Sản Phẩm";
+            this.txt_ProductId.MinimumWidth = 6;
+            this.txt_ProductId.Name = "txt_ProductId";
+            this.txt_ProductId.ReadOnly = true;
+            // 
+            // txt_NameProduct
+            // 
+            this.txt_NameProduct.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_NameProduct.DataPropertyName = "NameProduct";
+            this.txt_NameProduct.HeaderText = "Tên Sản Phẩm";
+            this.txt_NameProduct.MinimumWidth = 6;
+            this.txt_NameProduct.Name = "txt_NameProduct";
+            this.txt_NameProduct.ReadOnly = true;
+            // 
+            // txt_Price
+            // 
+            this.txt_Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_Price.DataPropertyName = "Price";
+            this.txt_Price.HeaderText = "Đơn Giá (VND)";
+            this.txt_Price.MinimumWidth = 6;
+            this.txt_Price.Name = "txt_Price";
+            this.txt_Price.ReadOnly = true;
+            // 
+            // txt_Amount
+            // 
+            this.txt_Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_Amount.DataPropertyName = "Amount";
+            this.txt_Amount.HeaderText = "Số Lượng";
+            this.txt_Amount.MinimumWidth = 6;
+            this.txt_Amount.Name = "txt_Amount";
+            this.txt_Amount.ReadOnly = true;
+            // 
+            // txt_Totall
+            // 
+            this.txt_Totall.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_Totall.DataPropertyName = "Total";
+            this.txt_Totall.HeaderText = "Thành Tiền (VND)";
+            this.txt_Totall.MinimumWidth = 6;
+            this.txt_Totall.Name = "txt_Totall";
+            this.txt_Totall.ReadOnly = true;
             // 
             // HoaDonNhapHangGUI
             // 
@@ -984,15 +984,15 @@
         private DataGridViewTextBoxColumn txt_TenNhanVien;
         private DataGridViewTextBoxColumn txt_NgayLap;
         private DataGridViewTextBoxColumn txt_TongTien;
+        private Button button1;
+        private PrintPreviewDialog pddHoaDon;
+        private System.Drawing.Printing.PrintDocument pdHoaDon;
+        private Label label21;
         private DataGridViewTextBoxColumn txt_BillId;
         private DataGridViewTextBoxColumn txt_ProductId;
         private DataGridViewTextBoxColumn txt_NameProduct;
         private DataGridViewTextBoxColumn txt_Price;
         private DataGridViewTextBoxColumn txt_Amount;
         private DataGridViewTextBoxColumn txt_Totall;
-        private Button button1;
-        private PrintPreviewDialog pddHoaDon;
-        private System.Drawing.Printing.PrintDocument pdHoaDon;
-        private Label label21;
     }
 }

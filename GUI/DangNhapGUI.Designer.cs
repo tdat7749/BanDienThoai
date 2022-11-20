@@ -68,6 +68,7 @@
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMatKhau.Location = new System.Drawing.Point(86, 169);
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(269, 32);
             this.txtMatKhau.TabIndex = 3;
             // 
