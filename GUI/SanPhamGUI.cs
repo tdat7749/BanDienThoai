@@ -65,8 +65,11 @@ namespace BanDienThoai.GUI
                 MessageBox.Show("Sản phẩm đã có trong dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            File.Copy(urlCopy, url + urlImg);
-            
+            if(urlCopy != "" && !urlCopy.Equals(url + urlImg))
+            {
+                File.Copy(urlCopy, url + urlImg);
+            }
+
 
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là thêm sản phẩm này chứ ?", "Sản Phẩm", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
