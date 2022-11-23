@@ -21,7 +21,16 @@ namespace BanDienThoai.GUI
         {
             InitializeComponent();
             GetAllProDuct();
+label6.BackColor = SetTransparency(50, Color.White);
+            groupBox1.BackColor = SetTransparency(180, Color.White);
+            groupBox2.BackColor = SetTransparency(180, Color.White);
+            groupBox3.BackColor = SetTransparency(180, Color.White);
+            groupBox4.BackColor = SetTransparency(180, Color.White);
             
+        }
+static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
         public void GetAllProDuct()
         {
@@ -82,7 +91,7 @@ namespace BanDienThoai.GUI
                 product.CategoryID = 1;
 
                 productBUS.CreateProduct(product);
-                MessageBox.Show("Thêm sản phẩm thành công !!", "Nhân Viên", MessageBoxButtons.OK);
+                MessageBox.Show("Thêm sản phẩm thành công !!", "Sản Phẩm", MessageBoxButtons.OK);
                 GetAllProDuct();
 
                 
@@ -103,17 +112,21 @@ namespace BanDienThoai.GUI
                 return;
             }
 
-            Product product = new Product();
-            product.Id = int.Parse(txtMaSanPham.Text);
-            product.Name = txtTenSanPham.Text.Trim();
-            product.Description = txtMoTa.Text.Trim();
-            product.Image = urlImg;
-            product.Price = decimal.Parse(txtDonGia.Text.Trim());
-            product.CategoryID = int.Parse(txtMaHang.Text);
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc là sửa sản phẩm này chứ ?", "Sản Phẩm", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Product product = new Product();
+                product.Id = int.Parse(txtMaSanPham.Text);
+                product.Name = txtTenSanPham.Text.Trim();
+                product.Description = txtMoTa.Text.Trim();
+                product.Image = urlImg;
+                product.Price = decimal.Parse(txtDonGia.Text.Trim());
+                product.CategoryID = int.Parse(txtMaHang.Text);
 
-            productBUS.UpdateProduct(product);
-            MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
-            GetAllProDuct();
+                productBUS.UpdateProduct(product);
+                MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
+                GetAllProDuct();
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -198,6 +211,8 @@ namespace BanDienThoai.GUI
             txtTenHang.Text = "";
             pbSanPham.Image = null;
             pbSanPham.Invalidate();
+            txtSearch.Text = "";
+            GetAllProDuct();
         }
 
         private void SanPhamGUI_Load(object sender, EventArgs e)

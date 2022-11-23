@@ -23,6 +23,16 @@ namespace BanDienThoai.GUI
         public NhapHangGUI()
         {
             InitializeComponent();
+groupBox1.BackColor = SetTransparency(180, Color.White);
+            groupBox2.BackColor = SetTransparency(180, Color.White);
+            groupBox3.BackColor = SetTransparency(180, Color.White);
+            label6.BackColor = SetTransparency(50, Color.White);
+            label9.BackColor = SetTransparency(50, Color.White);
+        }
+
+static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -126,36 +136,42 @@ namespace BanDienThoai.GUI
                 return;
             }
 
-            if(dgvOrder.RowCount <= 0)
+            if(dgvOrder.RowCount <= 1)
             {
                 MessageBox.Show("Chưa lựa chọn sản phẩm để nhập hàng !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            ImportBill importBill = new ImportBill();
-            importBill.StaffID = int.Parse(txtIDNhanVien.Text.Trim());
-            importBill.SupplierID = int.Parse(txtIDNCC.Text.Trim());
-            importBill.DateCreate = dtpNgayNhap.Value;
-            importBill.Total = decimal.Parse(txtTongTien.Text);
-
-            importBillBUS.CreateImportBill(importBill);
-
-
-            foreach(DataRow row in tbOrder.Rows)
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là bạn muốn nhập hàng chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                DetailImportBill detailImportBill = new DetailImportBill();
-                detailImportBill.ImportID = importBillBUS.GetLastID();
-                detailImportBill.ProductID = int.Parse(row["ID Sản Phẩm"].ToString());
-                detailImportBill.NameProduct = row["Sản Phẩm"].ToString();
-                detailImportBill.Price = decimal.Parse(row["Giá Tiền"].ToString());
-                detailImportBill.Amount = int.Parse(row["Số lượng"].ToString());
-                detailImportBill.Total = decimal.Parse(row["Thành Tiền"].ToString());
+                ImportBill importBill = new ImportBill();
+                importBill.StaffID = int.Parse(txtIDNhanVien.Text.Trim());
+                importBill.SupplierID = int.Parse(txtIDNCC.Text.Trim());
+                importBill.DateCreate = dtpNgayNhap.Value;
+                importBill.Total = decimal.Parse(txtTongTien.Text);
 
-                detailImportBillBUS.CreateDetailImportBill(detailImportBill);
-                productBUS.UpdateStockProduct(detailImportBill.ProductID, detailImportBill.Amount);
+                importBillBUS.CreateImportBill(importBill);
+
+
+                foreach (DataRow row in tbOrder.Rows)
+                {
+                    DetailImportBill detailImportBill = new DetailImportBill();
+                    detailImportBill.ImportID = importBillBUS.GetLastID();
+                    detailImportBill.ProductID = int.Parse(row["ID Sản Phẩm"].ToString());
+                    detailImportBill.NameProduct = row["Sản Phẩm"].ToString();
+                    detailImportBill.Price = decimal.Parse(row["Giá Tiền"].ToString());
+                    detailImportBill.Amount = int.Parse(row["Số lượng"].ToString());
+                    detailImportBill.Total = decimal.Parse(row["Thành Tiền"].ToString());
+
+                    detailImportBillBUS.CreateDetailImportBill(detailImportBill);
+                    productBUS.UpdateStockProduct(detailImportBill.ProductID, detailImportBill.Amount);
+                }
+
+                MessageBox.Show("Nhập hàng thành công !!");
             }
 
-            MessageBox.Show("Nhập hàng thành công !!");
+                
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -218,6 +234,29 @@ namespace BanDienThoai.GUI
             }
             tbOrder.Rows.RemoveAt(i);
             MessageBox.Show("Xóa Thành Công !");
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtIDNCC.Text = "";
+            txtNhaCungCap.Text = "";
+            txtIDNhanVien.Text = "";
+            txtTenNhanVien.Text = "";
+            txtTenSanPham.Text = "";
+            txtGiaTien.Text = "";
+            txtIDSanPham.Text = "";
+            txtSoLuong.Text = "";
+            tbOrder.Rows.Clear();
+            txtTongTien.Text = "0";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _3ChamNhanVien form = new _3ChamNhanVien();
+            form.ShowDialog();
+
+            txtIDNhanVien.Text = _3ChamNhanVien.id;
+            txtTenNhanVien.Text = _3ChamNhanVien.ho + " " + _3ChamNhanVien.ten;
         }
     }
 }

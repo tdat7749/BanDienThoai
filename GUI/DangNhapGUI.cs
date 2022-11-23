@@ -14,10 +14,18 @@ namespace BanDienThoai.GUI
     public partial class DangNhapGUI : Form
     {
         TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
-
         public DangNhapGUI()
         {
             InitializeComponent();
+            panel1.BackColor = SetTransparency(180,Color.FromArgb(214,207,249));
+            label1.BackColor = Color.Transparent;
+            label2.BackColor = Color.Transparent;
+            label3.BackColor = Color.Transparent;
+
+        }
+        static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -41,6 +49,12 @@ namespace BanDienThoai.GUI
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            Application.Exit();
         }
     }
 }

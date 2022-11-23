@@ -17,6 +17,7 @@ namespace BanDienThoai.GUI
         public MainGUI()
         {
             InitializeComponent();
+            pictureBox1.BackColor = Color.Transparent;
             
         }
 
@@ -24,6 +25,7 @@ namespace BanDienThoai.GUI
         {
             if (currentFormChild != null)
             {
+                
                 currentFormChild.Close();
             }
             currentFormChild = childForm;
@@ -91,7 +93,14 @@ namespace BanDienThoai.GUI
             if(TaiKhoanDAO.NamePermiss == "Nhân Viên")
             {
                 pnlQuanLy.Hide();
+                ChangeFormChild(new MuaHang());
             }
+            else
+            {
+                ChangeFormChild(new ThongKeGUI());
+            }
+            
+
         }
 
         private void MainGUI_FormClosing(object sender, FormClosingEventArgs e)
@@ -108,6 +117,19 @@ namespace BanDienThoai.GUI
         {
             ChangeFormChild(new SanPhamGUI());
 
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            Close();
+            DangNhapGUI form = new DangNhapGUI();
+            form.ShowDialog();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            Application.Exit();
         }
     }
 }

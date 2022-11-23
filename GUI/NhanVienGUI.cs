@@ -21,6 +21,14 @@ namespace BanDienThoai.GUI
         {
             InitializeComponent();
             GetAllStaff();
+            label11.BackColor = SetTransparency(50, Color.White);
+            groupBox1.BackColor = SetTransparency(180, Color.White);
+            groupBox2.BackColor = SetTransparency(180, Color.White);
+            groupBox3.BackColor = SetTransparency(180, Color.White);
+        }
+static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
 
         public void GetAllStaff()
@@ -233,6 +241,18 @@ namespace BanDienThoai.GUI
                 MessageBox.Show("Lựa chọn không hợp lệ !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtMaNhanVien.Text = "";
+            txtHoNhanVien.Text = "";
+            txtMatKhau.Text = "";
+            txtSoDienThoai.Text = "";
+            txtTaiKhoan.Text = "";
+            txtTenNhanVien.Text = "";
+            txtSearch.Text = "";
+            GetAllStaff();
         }
     }
 }

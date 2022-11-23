@@ -16,7 +16,8 @@ namespace BanDienThoai.DAO
             Connection.Conn.Open();
             string query = @"select ImportBill.Id,ImportBill.StaffId, ImportBill.DateCreate,ImportBill.Total,Supplier.NameSupplier,CONCAT(Staff.FirstName,' ',Staff.LastName) As StaffFullName from ImportBill
                              INNER JOIN dbo.Staff on ImportBill.StaffId = Staff.Id
-                             INNER JOIN dbo.Supplier on ImportBill.SupplierId = Supplier.Id";
+                             INNER JOIN dbo.Supplier on ImportBill.SupplierId = Supplier.Id
+                             ORDER BY  ImportBill.Id DESC";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;

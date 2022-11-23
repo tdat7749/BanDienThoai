@@ -20,6 +20,15 @@ namespace BanDienThoai.GUI
         {
             InitializeComponent();
             GetAllCustomer();
+label7.BackColor = SetTransparency(50, Color.White); 
+            label6.BackColor = SetTransparency(50, Color.White);
+            groupBox1.BackColor = SetTransparency(180, Color.White);
+            groupBox2.BackColor = SetTransparency(180, Color.White);
+
+        }
+static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
 
         public static bool IsPhoneNumber(string number)
@@ -53,22 +62,25 @@ namespace BanDienThoai.GUI
                 return;
             }
 
-            if (!IsPhoneNumber(txtSoDienThoai.Text.Trim()))
+            /*if (!IsPhoneNumber(txtSoDienThoai.Text.Trim()))
             {
                 MessageBox.Show("Vui lòng nhập đúng số điện thoại !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }*/
+
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là thêm khách hàng này chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                User user = new User();
+                user.FirstName = txtHo.Text.Trim();
+                user.LastName = txtTen.Text.Trim();
+                user.Address = txtDiaChi.Text.Trim();
+                user.PhoneNumber = txtSoDienThoai.Text.Trim();
+
+                userBUS.CreateUser(user);
+                MessageBox.Show("Thêm khách hàng thành công", "Thành Công", MessageBoxButtons.OK);
+                GetAllCustomer();
             }
-
-            User user = new User();
-            user.FirstName = txtHo.Text.Trim();
-            user.LastName = txtTen.Text.Trim();
-            user.Address = txtDiaChi.Text.Trim();
-            user.PhoneNumber = txtSoDienThoai.Text.Trim();
-
-            userBUS.CreateUser(user);
-            MessageBox.Show("Thêm khách hàng thành công", "Thành Công", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            GetAllCustomer();
-
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -85,22 +97,26 @@ namespace BanDienThoai.GUI
                 return;
             }
 
-            if (!IsPhoneNumber(txtSoDienThoai.Text.Trim()))
+            /*if (!IsPhoneNumber(txtSoDienThoai.Text.Trim()))
             {
                 MessageBox.Show("Vui lòng nhập đúng số điện thoại !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }*/
+
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là sửa khách hàng này chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                User user = new User();
+                user.Id = int.Parse(txtMaKhachHang.Text.Trim());
+                user.FirstName = txtHo.Text.Trim();
+                user.LastName = txtTen.Text.Trim();
+                user.Address = txtDiaChi.Text.Trim();
+                user.PhoneNumber = txtSoDienThoai.Text.Trim();
+
+                userBUS.UpdateUser(user);
+                MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
+                GetAllCustomer();
             }
-
-            User user = new User();
-            user.Id = int.Parse(txtMaKhachHang.Text.Trim());
-            user.FirstName = txtHo.Text.Trim();
-            user.LastName = txtTen.Text.Trim();
-            user.Address = txtDiaChi.Text.Trim();
-            user.PhoneNumber = txtSoDienThoai.Text.Trim();
-
-            userBUS.UpdateUser(user);
-            MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
-            GetAllCustomer();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -111,9 +127,13 @@ namespace BanDienThoai.GUI
                 return;
             }
 
-            userBUS.DeleteUser(int.Parse(txtMaKhachHang.Text.Trim()));
-            MessageBox.Show("Xóa thành công", "Thành Công", MessageBoxButtons.OK);
-            GetAllCustomer();
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là xóa khách hàng này chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                userBUS.DeleteUser(int.Parse(txtMaKhachHang.Text.Trim()));
+                MessageBox.Show("Xóa thành công", "Thành Công", MessageBoxButtons.OK);
+                GetAllCustomer();
+            }
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -136,6 +156,11 @@ namespace BanDienThoai.GUI
         private void btnReset_Click(object sender, EventArgs e)
         {
             txtSearch.Text = "";
+            txtDiaChi.Text = "";
+            txtHo.Text = "";
+            txtMaKhachHang.Text = "";
+            txtSoDienThoai.Text = "";
+            txtTen.Text = "";
             GetAllCustomer();
         }
     }

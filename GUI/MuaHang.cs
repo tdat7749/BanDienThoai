@@ -23,6 +23,16 @@ namespace BanDienThoai.GUI
         {
             InitializeComponent();
             GetAllProduct();
+groupBox1.BackColor = SetTransparency(180, Color.White);
+            groupBox2.BackColor = SetTransparency(180, Color.White);
+            groupBox3.BackColor = SetTransparency(180, Color.White);
+            label11.BackColor = SetTransparency(50,Color.White);
+            label12.BackColor = SetTransparency(50, Color.White);
+            label17.BackColor = SetTransparency(50, Color.White);
+        }
+static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
         public void GetAllProduct()
         {
@@ -59,22 +69,24 @@ namespace BanDienThoai.GUI
 
             if (txtTenSanPham.Text == "")
             {
-                MessageBox.Show("Chưa chọn sản phẩm");
+                MessageBox.Show("Chưa chọn sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else if (txtSoLuong.Text == "")
             {
-                MessageBox.Show("Nhập số lượng!");
+                MessageBox.Show("Nhập số lượng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             else if (int.Parse(txtSoLuong.Text) < 0)
             {
-                MessageBox.Show("Số lượng không được < 0");
+                MessageBox.Show("Số lượng không được < 0", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
             else if (int.Parse(txtSoLuong.Text) > int.Parse(txtSoLuongConLai.Text))
             {
-                MessageBox.Show("Số lượng không được lớn hơn số lượng còn lại");
+                MessageBox.Show("Số lượng không được lớn hơn số lượng còn lại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
 
@@ -145,7 +157,7 @@ namespace BanDienThoai.GUI
             }
             else
             {
-                MessageBox.Show("Hình như bạn chưa chọn sản phẩm");
+                MessageBox.Show("Hình như bạn chưa chọn sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -198,7 +210,7 @@ namespace BanDienThoai.GUI
                 return;
             }
 
-            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là mua hàng chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Có chắc chắn là bạn mua hàng chứ ?", "Mua Hàng", MessageBoxButtons.YesNo);
             if(dialogResult == DialogResult.Yes)
             {
                 Bill bill = new Bill();

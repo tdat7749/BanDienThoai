@@ -30,6 +30,25 @@ namespace BanDienThoai.DAO
             return dt;
         }
 
+        public static DataTable GetStaffByName(string name)
+        {
+            Connection.Conn.Open();
+            string query = $@"select Staff.Id, 
+                            Staff.FirstName,
+                            Staff.LastName,
+                            Staff.GioiTinh,
+                            Staff.PhoneNumber
+                            from Staff
+                            WHERE Staff.LastName = N'{name}' OR Staff.LastName = '{name}'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
         public static void CreateStaff(Staff Staff)
         {
             Connection.Conn.Open();
