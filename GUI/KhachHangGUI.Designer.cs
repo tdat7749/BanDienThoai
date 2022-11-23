@@ -88,7 +88,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(333, 109);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(249, 65);
-            this.txtDiaChi.TabIndex = 9;
+            this.txtDiaChi.TabIndex = 5;
             this.txtDiaChi.Text = "";
             // 
             // label5
@@ -108,7 +108,7 @@
             this.txtSoDienThoai.Location = new System.Drawing.Point(603, 70);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(180, 23);
-            this.txtSoDienThoai.TabIndex = 7;
+            this.txtSoDienThoai.TabIndex = 4;
             // 
             // label3
             // 
@@ -127,7 +127,7 @@
             this.txtTen.Location = new System.Drawing.Point(147, 67);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(167, 23);
-            this.txtTen.TabIndex = 5;
+            this.txtTen.TabIndex = 3;
             // 
             // label4
             // 
@@ -146,7 +146,7 @@
             this.txtHo.Location = new System.Drawing.Point(603, 39);
             this.txtHo.Name = "txtHo";
             this.txtHo.Size = new System.Drawing.Size(180, 23);
-            this.txtHo.TabIndex = 3;
+            this.txtHo.TabIndex = 2;
             // 
             // label2
             // 
@@ -279,7 +279,7 @@
             this.txtSearch.Location = new System.Drawing.Point(483, 342);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(180, 25);
-            this.txtSearch.TabIndex = 3;
+            this.txtSearch.TabIndex = 6;
             // 
             // dgvKhachHang
             // 

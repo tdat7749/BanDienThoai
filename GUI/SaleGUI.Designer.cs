@@ -100,7 +100,7 @@
             this.dtpNgayKetThuc.Location = new System.Drawing.Point(536, 94);
             this.dtpNgayKetThuc.Name = "dtpNgayKetThuc";
             this.dtpNgayKetThuc.Size = new System.Drawing.Size(200, 23);
-            this.dtpNgayKetThuc.TabIndex = 14;
+            this.dtpNgayKetThuc.TabIndex = 4;
             // 
             // dtpNgayBatDau
             // 
@@ -109,7 +109,7 @@
             this.dtpNgayBatDau.Location = new System.Drawing.Point(536, 49);
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
             this.dtpNgayBatDau.Size = new System.Drawing.Size(200, 23);
-            this.dtpNgayBatDau.TabIndex = 13;
+            this.dtpNgayBatDau.TabIndex = 3;
             // 
             // label6
             // 
@@ -128,7 +128,7 @@
             this.txtKhuyenMai.Location = new System.Drawing.Point(406, 156);
             this.txtKhuyenMai.Name = "txtKhuyenMai";
             this.txtKhuyenMai.Size = new System.Drawing.Size(200, 23);
-            this.txtKhuyenMai.TabIndex = 12;
+            this.txtKhuyenMai.TabIndex = 5;
             // 
             // label2
             // 
@@ -147,7 +147,7 @@
             this.txtID.Location = new System.Drawing.Point(120, 49);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(200, 23);
-            this.txtID.TabIndex = 10;
+            this.txtID.TabIndex = 1;
             // 
             // label5
             // 
@@ -187,7 +187,7 @@
             this.txtTenKhuyenMai.Location = new System.Drawing.Point(120, 97);
             this.txtTenKhuyenMai.Name = "txtTenKhuyenMai";
             this.txtTenKhuyenMai.Size = new System.Drawing.Size(200, 23);
-            this.txtTenKhuyenMai.TabIndex = 4;
+            this.txtTenKhuyenMai.TabIndex = 2;
             // 
             // btnXoa
             // 
@@ -301,7 +301,7 @@
             this.txtTimKiem.Location = new System.Drawing.Point(446, 396);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(156, 23);
-            this.txtTimKiem.TabIndex = 17;
+            this.txtTimKiem.TabIndex = 6;
             // 
             // label7
             // 

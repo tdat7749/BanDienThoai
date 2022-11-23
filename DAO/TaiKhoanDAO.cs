@@ -17,7 +17,7 @@ namespace BanDienThoai.DAO
         public static DataTable GetAllTaiKhoan()
         {
             Connection.Conn.Open();
-            string query = @"select StaffId,UserName,Password,Staff.FirstName,Staff.LastName,Staff.GioiTinh,Staff.PhoneNumber,Permission.NamePermiss from TaiKhoan
+            string query = @"select StaffId,UserName,Password,Staff.FirstName,Staff.LastName,Staff.GioiTinh,Staff.PhoneNumber,Permission.NamePermiss,Status from TaiKhoan
                              INNER JOIN Staff on StaffId = Staff.Id
                              INNER JOIN Permission on PermissId = Permission.Id";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
@@ -83,7 +83,7 @@ namespace BanDienThoai.DAO
             string query = $@"select StaffId,Permission.NamePermiss,CONCAT(Staff.FirstName,' ',Staff.LastName) AS StaffName from TaiKhoan
                              INNER JOIN Staff on StaffId = Staff.Id
                              INNER JOIN Permission on PermissId = Permission.Id
-                            WHERE UserName = '{userName}' AND Password = '{password}'";
+                            WHERE UserName = '{userName}' AND Password = '{password}' AND Status = 1";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataReader sqlData = null;
             sqlData = command.ExecuteReader();
@@ -102,13 +102,14 @@ namespace BanDienThoai.DAO
         public static void CreateTaiKhoan(TaiKhoan taikhoan)
         {
             Connection.Conn.Open();
-            string query = @"INSERT INTO TaiKhoan(StaffId,UserName,Password,PermissId)
-                           VALUES (@StaffId,@UserName,@Password,@PermissId)";
+            string query = @"INSERT INTO TaiKhoan(StaffId,UserName,Password,PermissId,Status)
+                           VALUES (@StaffId,@UserName,@Password,@PermissId,@Status)";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@StaffId", SqlDbType.NVarChar).Value = taikhoan.StaffId;
             command.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = taikhoan.UserName;
             command.Parameters.Add("@Password", SqlDbType.NVarChar).Value = taikhoan.Password;
             command.Parameters.Add("@PermissId", SqlDbType.Int).Value = taikhoan.PermissId;
+            command.Parameters.Add("@Status", SqlDbType.Int).Value = taikhoan.Status;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }
@@ -119,13 +120,15 @@ namespace BanDienThoai.DAO
             string query = @"Update TaiKhoan Set
                             UserName = @UserName,
                             Password = @Password,
-                            PermissId = @PermissId 
+                            PermissId = @PermissId,
+                            Status = @Status 
                             Where StaffId = @StaffId";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             command.Parameters.Add("@UserName", SqlDbType.NVarChar).Value = taikhoan.UserName;
             command.Parameters.Add("@Password", SqlDbType.NVarChar).Value = taikhoan.Password;
             command.Parameters.Add("@PermissId", SqlDbType.NVarChar).Value = taikhoan.PermissId;
             command.Parameters.Add("@StaffId", SqlDbType.NVarChar).Value = taikhoan.StaffId;
+            command.Parameters.Add("@Status", SqlDbType.Int).Value = taikhoan.Status;
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }

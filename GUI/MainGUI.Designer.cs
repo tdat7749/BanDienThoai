@@ -45,6 +45,7 @@
             this.btnNhapHang = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnHoaDonNH = new System.Windows.Forms.Button();
+            this.btnNhaCungCap = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -89,9 +90,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(40, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 172);
+            this.pictureBox1.Size = new System.Drawing.Size(123, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -102,7 +103,7 @@
             this.panel2.Controls.Add(this.btnHoaDon);
             this.panel2.Controls.Add(this.btnQLKhachHang);
             this.panel2.Controls.Add(this.btnBanHang);
-            this.panel2.Location = new System.Drawing.Point(0, 181);
+            this.panel2.Location = new System.Drawing.Point(0, 119);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 151);
             this.panel2.TabIndex = 0;
@@ -164,15 +165,16 @@
             // pnlQuanLy
             // 
             this.pnlQuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(131)))), ((int)(((byte)(239)))));
+            this.pnlQuanLy.Controls.Add(this.btnNhaCungCap);
             this.pnlQuanLy.Controls.Add(this.btnSanPham);
             this.pnlQuanLy.Controls.Add(this.btnThongKe);
             this.pnlQuanLy.Controls.Add(this.btnKhuyenMai);
             this.pnlQuanLy.Controls.Add(this.btnNhapHang);
             this.pnlQuanLy.Controls.Add(this.btnNhanVien);
             this.pnlQuanLy.Controls.Add(this.btnHoaDonNH);
-            this.pnlQuanLy.Location = new System.Drawing.Point(1, 338);
+            this.pnlQuanLy.Location = new System.Drawing.Point(1, 276);
             this.pnlQuanLy.Name = "pnlQuanLy";
-            this.pnlQuanLy.Size = new System.Drawing.Size(200, 288);
+            this.pnlQuanLy.Size = new System.Drawing.Size(200, 350);
             this.pnlQuanLy.TabIndex = 2;
             // 
             // btnSanPham
@@ -253,6 +255,19 @@
             this.btnHoaDonNH.UseVisualStyleBackColor = true;
             this.btnHoaDonNH.Click += new System.EventHandler(this.btnHoaDonNH_Click);
             // 
+            // btnNhaCungCap
+            // 
+            this.btnNhaCungCap.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNhaCungCap.Image = ((System.Drawing.Image)(resources.GetObject("btnNhaCungCap.Image")));
+            this.btnNhaCungCap.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhaCungCap.Location = new System.Drawing.Point(0, 291);
+            this.btnNhaCungCap.Name = "btnNhaCungCap";
+            this.btnNhaCungCap.Size = new System.Drawing.Size(200, 42);
+            this.btnNhaCungCap.TabIndex = 7;
+            this.btnNhaCungCap.Text = "Nhà Cung Cấp";
+            this.btnNhaCungCap.UseVisualStyleBackColor = true;
+            this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
+            // 
             // MainGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -295,5 +310,6 @@
         private PictureBox pictureBox1;
         private Button btnThoat;
         private Button btnDangXuat;
+        private Button btnNhaCungCap;
     }
 }

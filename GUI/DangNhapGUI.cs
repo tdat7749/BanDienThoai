@@ -46,7 +46,7 @@ namespace BanDienThoai.GUI
             }
             else
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tài khoản này không tồn tại hoặc đã bị khóa !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }

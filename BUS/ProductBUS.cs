@@ -16,6 +16,11 @@ namespace BanDienThoai.BUS
             return ProductDAO.GetAllProduct();
         }
 
+        public DataTable GetAllProductStatus()
+        {
+            return ProductDAO.GetAllProductStatus();
+        }
+
         public DataTable GetProductByName(string name)
         {
             return ProductDAO.GetProductByName(name);

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NhanVienGUI));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbbTrangThai = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.cbbGioiTinh = new System.Windows.Forms.ComboBox();
@@ -57,8 +59,10 @@
             this.txt_Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_TaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -75,6 +79,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.cbbTrangThai);
+            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtSoDienThoai);
             this.groupBox1.Controls.Add(this.cbbGioiTinh);
@@ -99,6 +105,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Nhân Viên";
             // 
+            // cbbTrangThai
+            // 
+            this.cbbTrangThai.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbbTrangThai.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbbTrangThai.FormattingEnabled = true;
+            this.cbbTrangThai.Items.AddRange(new object[] {
+            "Mở",
+            "Khóa"});
+            this.cbbTrangThai.Location = new System.Drawing.Point(705, 101);
+            this.cbbTrangThai.Name = "cbbTrangThai";
+            this.cbbTrangThai.Size = new System.Drawing.Size(137, 23);
+            this.cbbTrangThai.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(603, 104);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 15);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Trạng Thái";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -116,7 +145,7 @@
             this.txtSoDienThoai.Location = new System.Drawing.Point(146, 101);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(136, 23);
-            this.txtSoDienThoai.TabIndex = 16;
+            this.txtSoDienThoai.TabIndex = 6;
             // 
             // cbbGioiTinh
             // 
@@ -129,7 +158,7 @@
             this.cbbGioiTinh.Location = new System.Drawing.Point(706, 67);
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.Size = new System.Drawing.Size(137, 23);
-            this.cbbGioiTinh.TabIndex = 15;
+            this.cbbGioiTinh.TabIndex = 5;
             // 
             // cbbChucVu
             // 
@@ -142,7 +171,7 @@
             this.cbbChucVu.Location = new System.Drawing.Point(425, 101);
             this.cbbChucVu.Name = "cbbChucVu";
             this.cbbChucVu.Size = new System.Drawing.Size(137, 23);
-            this.cbbChucVu.TabIndex = 14;
+            this.cbbChucVu.TabIndex = 7;
             // 
             // label7
             // 
@@ -171,7 +200,7 @@
             this.txtMatKhau.Location = new System.Drawing.Point(425, 70);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Size = new System.Drawing.Size(136, 23);
-            this.txtMatKhau.TabIndex = 10;
+            this.txtMatKhau.TabIndex = 4;
             // 
             // label5
             // 
@@ -200,7 +229,7 @@
             this.txtTaiKhoan.Location = new System.Drawing.Point(146, 70);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(136, 23);
-            this.txtTaiKhoan.TabIndex = 6;
+            this.txtTaiKhoan.TabIndex = 3;
             // 
             // label3
             // 
@@ -219,7 +248,7 @@
             this.txtHoNhanVien.Location = new System.Drawing.Point(426, 39);
             this.txtHoNhanVien.Name = "txtHoNhanVien";
             this.txtHoNhanVien.Size = new System.Drawing.Size(136, 23);
-            this.txtHoNhanVien.TabIndex = 4;
+            this.txtHoNhanVien.TabIndex = 1;
             // 
             // label2
             // 
@@ -254,7 +283,7 @@
             // 
             this.txtMaNhanVien.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtMaNhanVien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMaNhanVien.Location = new System.Drawing.Point(147, 39);
+            this.txtMaNhanVien.Location = new System.Drawing.Point(146, 39);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
             this.txtMaNhanVien.ReadOnly = true;
             this.txtMaNhanVien.Size = new System.Drawing.Size(136, 23);
@@ -298,7 +327,7 @@
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(139, 29);
             this.btnXoa.TabIndex = 2;
-            this.btnXoa.Text = "Xóa Khách Hàng";
+            this.btnXoa.Text = "Xóa Nhân Viên";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -312,7 +341,7 @@
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(139, 29);
             this.btnSua.TabIndex = 1;
-            this.btnSua.Text = "Sửa Khách Hàng";
+            this.btnSua.Text = "Sửa Nhân Viên";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -326,7 +355,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(139, 29);
             this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "Thêm Khách Hàng";
+            this.btnThem.Text = "Thêm Nhân Viên";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -341,14 +370,17 @@
             this.txt_Ten,
             this.txt_TaiKhoan,
             this.txt_MatKhau,
+            this.Column2,
             this.txt_GioiTinh,
-            this.txt_ChucVu});
+            this.txt_ChucVu,
+            this.Column1});
             this.dgvNhanVien.Location = new System.Drawing.Point(57, 381);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowTemplate.Height = 25;
             this.dgvNhanVien.Size = new System.Drawing.Size(885, 231);
             this.dgvNhanVien.TabIndex = 2;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellContentClick);
             // 
             // txt_MaNhanVien
             // 
@@ -385,6 +417,12 @@
             this.txt_MatKhau.HeaderText = "Mật Khẩu";
             this.txt_MatKhau.Name = "txt_MatKhau";
             // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "PhoneNumber";
+            this.Column2.HeaderText = "Số Điện Thoại";
+            this.Column2.Name = "Column2";
+            // 
             // txt_GioiTinh
             // 
             this.txt_GioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -398,6 +436,13 @@
             this.txt_ChucVu.DataPropertyName = "NamePermiss";
             this.txt_ChucVu.HeaderText = "Chức Vụ";
             this.txt_ChucVu.Name = "txt_ChucVu";
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "Status";
+            this.Column1.HeaderText = "Trạng Thái";
+            this.Column1.Name = "Column1";
             // 
             // groupBox3
             // 
@@ -461,7 +506,7 @@
             this.txtSearch.Location = new System.Drawing.Point(349, 34);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(136, 25);
-            this.txtSearch.TabIndex = 15;
+            this.txtSearch.TabIndex = 10;
             // 
             // label8
             // 
@@ -481,9 +526,9 @@
             this.label11.ForeColor = System.Drawing.Color.Blue;
             this.label11.Location = new System.Drawing.Point(338, 9);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(401, 40);
+            this.label11.Size = new System.Drawing.Size(370, 40);
             this.label11.TabIndex = 4;
-            this.label11.Text = "Quản Lý Khách Hàng";
+            this.label11.Text = "Quản Lý Nhân Viên";
             // 
             // NhanVienGUI
             // 
@@ -539,16 +584,20 @@
         private ComboBox cbbLuaChon;
         private TextBox txtSearch;
         private Label label8;
+        private Label label10;
+        private TextBox txtSoDienThoai;
+        private Label label11;
+        private Button btnReset;
+        private ComboBox cbbTrangThai;
+        private Label label12;
         private DataGridViewTextBoxColumn txt_MaNhanVien;
         private DataGridViewTextBoxColumn txt_Ho;
         private DataGridViewTextBoxColumn txt_Ten;
         private DataGridViewTextBoxColumn txt_TaiKhoan;
         private DataGridViewTextBoxColumn txt_MatKhau;
+        private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn txt_GioiTinh;
         private DataGridViewTextBoxColumn txt_ChucVu;
-        private Label label10;
-        private TextBox txtSoDienThoai;
-        private Label label11;
-        private Button btnReset;
+        private DataGridViewTextBoxColumn Column1;
     }
 }

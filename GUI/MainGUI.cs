@@ -131,5 +131,11 @@ namespace BanDienThoai.GUI
             System.Diagnostics.Process.GetCurrentProcess().Kill();
             Application.Exit();
         }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new SupplierGUI());
+
+        }
     }
 }

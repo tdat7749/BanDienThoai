@@ -78,6 +78,10 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBaoCaoKH = new System.Windows.Forms.Button();
             this.btnBaoCaoQuy = new System.Windows.Forms.Button();
+            this.pddBaoCaoTop5 = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdBaoCaoTop5 = new System.Drawing.Printing.PrintDocument();
+            this.pddBaoCaoQuy = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdBaoCaoQuy = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -652,6 +656,34 @@
             this.btnBaoCaoQuy.UseVisualStyleBackColor = true;
             this.btnBaoCaoQuy.Click += new System.EventHandler(this.btnBaoCaoQuy_Click);
             // 
+            // pddBaoCaoTop5
+            // 
+            this.pddBaoCaoTop5.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.pddBaoCaoTop5.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.pddBaoCaoTop5.ClientSize = new System.Drawing.Size(400, 300);
+            this.pddBaoCaoTop5.Enabled = true;
+            this.pddBaoCaoTop5.Icon = ((System.Drawing.Icon)(resources.GetObject("pddBaoCaoTop5.Icon")));
+            this.pddBaoCaoTop5.Name = "pddBaoCao";
+            this.pddBaoCaoTop5.Visible = false;
+            // 
+            // pdBaoCaoTop5
+            // 
+            this.pdBaoCaoTop5.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdBaoCaoTop5_PrintPage);
+            // 
+            // pddBaoCaoQuy
+            // 
+            this.pddBaoCaoQuy.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.pddBaoCaoQuy.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.pddBaoCaoQuy.ClientSize = new System.Drawing.Size(400, 300);
+            this.pddBaoCaoQuy.Enabled = true;
+            this.pddBaoCaoQuy.Icon = ((System.Drawing.Icon)(resources.GetObject("pddBaoCaoQuy.Icon")));
+            this.pddBaoCaoQuy.Name = "pddBaoCaoQuy";
+            this.pddBaoCaoQuy.Visible = false;
+            // 
+            // pdBaoCaoQuy
+            // 
+            this.pdBaoCaoQuy.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdBaoCaoQuy_PrintPage);
+            // 
             // ThongKeGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -756,5 +788,9 @@
         private DataGridViewTextBoxColumn Column4;
         private Button btnBaoCaoKH;
         private Button btnBaoCaoQuy;
+        private PrintPreviewDialog pddBaoCaoTop5;
+        private System.Drawing.Printing.PrintDocument pdBaoCaoTop5;
+        private PrintPreviewDialog pddBaoCaoQuy;
+        private System.Drawing.Printing.PrintDocument pdBaoCaoQuy;
     }
 }

@@ -62,7 +62,8 @@ static Color SetTransparency(int A, Color color)
             if (txtTenSanPham.Text.Trim() == "" ||
                 txtDonGia.Text.Trim() == "" ||
                 txtMoTa.Text.Trim() == "" ||
-                txtMaHang.Text.Trim() == ""
+                txtMaHang.Text.Trim() == "" ||
+                cbbTrangThai.Text.Trim() == ""
                 )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -85,7 +86,15 @@ static Color SetTransparency(int A, Color color)
                 product.Description = txtMoTa.Text.Trim();
                 product.Image = urlImg;
                 product.Price = decimal.Parse(txtDonGia.Text.Trim());
-                product.CategoryID = 1;
+                product.CategoryID = int.Parse(txtMaHang.Text);
+
+                if(cbbTrangThai.GetItemText(cbbTrangThai.SelectedItem).Trim() == "Đang Kinh Doanh")
+                {
+                    product.Status = 1;
+                }else if(cbbTrangThai.GetItemText(cbbTrangThai.SelectedItem).Trim() == "Ngừng Kinh Doanh")
+                {
+                    product.Status = 0;
+                }
 
                 productBUS.CreateProduct(product);
                 MessageBox.Show("Thêm sản phẩm thành công !!", "Sản Phẩm", MessageBoxButtons.OK);
@@ -119,6 +128,15 @@ static Color SetTransparency(int A, Color color)
                 product.Image = urlImg;
                 product.Price = decimal.Parse(txtDonGia.Text.Trim());
                 product.CategoryID = int.Parse(txtMaHang.Text);
+
+                if (cbbTrangThai.GetItemText(cbbTrangThai.SelectedItem).Trim() == "Đang Kinh Doanh")
+                {
+                    product.Status = 1;
+                }
+                else if (cbbTrangThai.GetItemText(cbbTrangThai.SelectedItem).Trim() == "Ngừng Kinh Doanh")
+                {
+                    product.Status = 0;
+                }
 
                 productBUS.UpdateProduct(product);
                 MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
@@ -187,6 +205,17 @@ static Color SetTransparency(int A, Color color)
                 txtMoTa.Text = dgvSanPham.Rows[i].Cells[3].Value.ToString();
                 txtTenHang.Text = dgvSanPham.Rows[i].Cells[6].Value.ToString();
                 txtMaHang.Text = dgvSanPham.Rows[i].Cells[7].Value.ToString();
+                cbbTrangThai.Text = dgvSanPham.Rows[i].Cells[8].Value.ToString();
+
+                if(dgvSanPham.Rows[i].Cells[8].Value.ToString() == "1")
+                {
+                    cbbTrangThai.Text = "Đang Kinh Doanh";
+                }
+
+                if (dgvSanPham.Rows[i].Cells[8].Value.ToString() == "0")
+                {
+                    cbbTrangThai.Text = "Ngừng Kinh Doanh";
+                }
             }
         }
 
