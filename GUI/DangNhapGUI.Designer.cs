@@ -68,7 +68,7 @@
             this.txtTaiKhoan.Location = new System.Drawing.Point(33, 54);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(366, 32);
-            this.txtTaiKhoan.TabIndex = 2;
+            this.txtTaiKhoan.TabIndex = 1;
             // 
             // txtMatKhau
             // 
@@ -77,7 +77,7 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(366, 32);
-            this.txtMatKhau.TabIndex = 3;
+            this.txtMatKhau.TabIndex = 2;
             // 
             // btnDangNhap
             // 
@@ -143,7 +143,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DangNhapGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DangNhapGUI";
+            this.Text = "Đăng Nhập";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -236,23 +236,14 @@ static Color SetTransparency(int A, Color color)
 
         private void pdHoaDon_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            //lấy thông tin từ bảng cấu hình
-            //var diachi = db.CauHinhs.SingleOrDefault(x => x.tukhoa == "diachi").giatri;
-            //var phone = db.CauHinhs.SingleOrDefault(x => x.tukhoa == "phone").giatri;
-
-            //lấy hóa đơn dựa vào idhoadon
-            //var hd = db.HoaDonBanHangs.SingleOrDefault(x => x.IDHoaDon == idHoaDon);
-
-            //lấy bề rộng của giấy in
             var w = pdHoaDon.DefaultPageSettings.PaperSize.Width;
             
             
-            // Lấy thông tin hóa đơn và chi tiết hóa đơn đẩy vào DataTable
             dtCTHoaDon = detailBillBUS.GetDetailBillByID(txtMaHoaDon.Text.Trim());
             dtHoaDon = billBUS.GetBillByID(txtMaHoaDon.Text.Trim());
 
             //vẽ header của bill
-            //1. tên cửa hàng (quán karaoke)
+            //1. tên cửa hàng 
             e.Graphics.DrawString("Nhóm 8 Bán Điện Thoại", new Font("Courier New", 12, FontStyle.Bold), Brushes.Black, new Point(30, 20));
             e.Graphics.DrawString(string.Format("Mã Hóa Đơn : {0}", txtMaHoaDon.Text.Trim()), new Font("Courier New", 12, FontStyle.Bold), Brushes.Black, new Point(w / 2 + 80, 20));
 
@@ -288,22 +279,6 @@ static Color SetTransparency(int A, Color color)
 
             y += 10;
 
-
-            //tổng tiền --- tổng thiệt hại
-            // int sum = 0;
-            //tính thời gian sử dụng phòng
-            //var tgsd = ((DateTime)hd.ThoiGianKThuc - (DateTime)hd.ThoiGianBDau).TotalMinutes;
-            //var gio = (int)(tgsd / 60);
-            //var phut = tgsd % 60;
-
-            //tiền sử dụng phòng
-            //var tienphong = (int)Math.Round((double)(tgsd / 60 * hd.DonGiaPhong) / 1000, 3) * 1000;
-            //sum += tienphong;
-            //hiển thị thời gian sử dụng phòng
-            //e.Graphics.DrawString(String.Format("Thời gian sử dụng: {0}:{1}", gio, phut), new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(10, y));
-
-            //hiển thị tiền phòng
-            //e.Graphics.DrawString(String.Format("Thành tiền: {0:N0} VNĐ", tienphong), new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(w / 2, y));
 
 
             //set lại tọa độ cho 2 điểm để vẽ đường thẳng thứ 2

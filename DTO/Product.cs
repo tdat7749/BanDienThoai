@@ -14,8 +14,9 @@ namespace BanDienThoai.DTO
         private decimal price;
         private int categoryID;
         private string image;
+        private int status;
 
-        public Product(int id, string name, string description, decimal price, int categoryID,string image)
+        public Product(int id, string name, string description, decimal price, int categoryID,string image,int status)
         {
             this.id = id;
             this.name = name;
@@ -23,6 +24,7 @@ namespace BanDienThoai.DTO
             this.price = price;
             this.categoryID = categoryID;
             this.image = image;
+            this.status = status;
         }
 
         public Product()
@@ -36,5 +38,6 @@ namespace BanDienThoai.DTO
         public decimal Price { get => price; set => price = value; }
         public int CategoryID { get => categoryID; set => categoryID = value; }
         public string Image { get => image; set => image = value; }
+        public int Status { get => status; set => status = value; }
     }
 }

@@ -36,7 +36,7 @@ static Color SetTransparency(int A, Color color)
         }
         public void GetAllProduct()
         {
-            dgvSanPham.DataSource = productBUS.GetAllProduct();
+            dgvSanPham.DataSource = productBUS.GetAllProductStatus();
         }
         private void MuaHang_Load(object sender, EventArgs e)
         {

@@ -49,6 +49,15 @@ static Color SetTransparency(int A, Color color)
                 cbbGioiTinh.Text = dgvNhanVien.Rows[i].Cells[5].Value.ToString();
                 txtSoDienThoai.Text = dgvNhanVien.Rows[i].Cells[6].Value.ToString();
                 cbbChucVu.Text = dgvNhanVien.Rows[i].Cells[7].Value.ToString();
+                if(dgvNhanVien.Rows[i].Cells[8].Value.ToString() == "1")
+                {
+                    cbbTrangThai.Text = "Mở";
+                }
+
+                if (dgvNhanVien.Rows[i].Cells[8].Value.ToString() == "0")
+                {
+                    cbbTrangThai.Text = "Khóa";
+                }
             }
         }
 
@@ -66,7 +75,8 @@ static Color SetTransparency(int A, Color color)
                 txtTenNhanVien.Text.Trim() == "" ||
                 txtSoDienThoai.Text.Trim() == "" ||
                 cbbGioiTinh.Text.Trim() == "" ||
-                cbbChucVu.Text.Trim() == ""
+                cbbChucVu.Text.Trim() == "" ||
+                cbbTrangThai.Text.Trim() == ""
                 )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -103,6 +113,15 @@ static Color SetTransparency(int A, Color color)
                 if (cbbChucVu.GetItemText(cbbChucVu.SelectedItem).Trim() == "Nhân Viên")
                 {
                     taiKhoan.PermissId = 3;
+                }
+
+                if (cbbTrangThai.GetItemText(cbbTrangThai.SelectedItem).Trim() == "Mở")
+                {
+                    taiKhoan.Status = 1;
+                }
+                if (cbbTrangThai.GetItemText(cbbTrangThai.SelectedItem).Trim() == "Khóa")
+                {
+                    taiKhoan.Status = 0;
                 }
 
                 taiKhoanBUS.CreateTaiKhoan(taiKhoan);
@@ -166,6 +185,15 @@ static Color SetTransparency(int A, Color color)
                 if (cbbChucVu.GetItemText(cbbChucVu.SelectedItem).Trim() == "Nhân Viên")
                 {
                     taiKhoan.PermissId = 3;
+                }
+
+                if (cbbTrangThai.GetItemText(cbbTrangThai.SelectedItem).Trim() == "Mở")
+                {
+                    taiKhoan.Status = 1;
+                }
+                if (cbbTrangThai.GetItemText(cbbTrangThai.SelectedItem).Trim() == "Khóa")
+                {
+                    taiKhoan.Status = 0;
                 }
 
                 taiKhoanBUS.UpdateTaiKhoan(taiKhoan);
@@ -253,6 +281,11 @@ static Color SetTransparency(int A, Color color)
             txtTenNhanVien.Text = "";
             txtSearch.Text = "";
             GetAllStaff();
+        }
+
+        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
