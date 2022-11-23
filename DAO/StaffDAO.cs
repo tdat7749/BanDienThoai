@@ -19,7 +19,7 @@ namespace BanDienThoai.DAO
                             Staff.LastName,
                             Staff.GioiTinh,
                             Staff.PhoneNumber
-                            from Staff";
+                            from Staff inner join TaiKhoan on Staff.Id = TaiKhoan.StaffId where TaiKhoan.Status = 1";
             ;
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();

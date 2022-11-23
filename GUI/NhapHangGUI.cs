@@ -99,6 +99,16 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
+            foreach (DataRow row in tbOrder.Rows)
+            {
+                if (row["Sản Phẩm"].ToString().Equals(txtTenSanPham.Text))
+                {
+                    row["Số Lượng"] = int.Parse(txtSoLuong.Text) + int.Parse(row["Số Lượng"].ToString());
+                    row["Thành Tiền"] = (double.Parse(row["Giá Tiền"].ToString()) * int.Parse(row["Số Lượng"].ToString()));
+                    goto C1;
+                }
+            }
+
             if (IsNumber(txtSoLuong.Text))
             {
                 DataRow r = tbOrder.NewRow();
@@ -115,11 +125,12 @@ static Color SetTransparency(int A, Color color)
                 MessageBox.Show("Vui lòng nhập ô số lượng là số > 0!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            foreach(DataRow row in tbOrder.Rows)
+        C1: decimal sum = 0;
+            foreach (DataRow row in tbOrder.Rows)
             {
-                txtTongTien.Text = (decimal.Parse(txtTongTien.Text) + decimal.Parse(row["Thành Tiền"].ToString())).ToString();
+                sum += decimal.Parse(row["Thành Tiền"].ToString());
             }
+            txtTongTien.Text = sum.ToString();
         }
 
         private void btnDatHang_Click(object sender, EventArgs e)
@@ -214,7 +225,7 @@ static Color SetTransparency(int A, Color color)
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgvOrder.CurrentRow.Index;
-            if (i >= 0)
+            if (i >= 0 && dgvOrder.Rows[i].Cells[0].Value.ToString() != "")
             {
                 txtIDSanPham.Text = dgvOrder.Rows[i].Cells[0].Value.ToString();
                 txtTenSanPham.Text = dgvOrder.Rows[i].Cells[1].Value.ToString();

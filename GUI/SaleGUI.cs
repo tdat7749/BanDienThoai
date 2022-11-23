@@ -48,7 +48,7 @@ static Color SetTransparency(int A, Color color)
         private void dgvSale_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgvSale.CurrentRow.Index;
-            if (i >= 0)
+            if (i >= 0 && dgvSale.Rows[i].Cells[0].Value.ToString() != "")
             {
                 txtID.Text = dgvSale.Rows[i].Cells[0].Value.ToString();
                 txtTenKhuyenMai.Text = dgvSale.Rows[i].Cells[1].Value.ToString();
