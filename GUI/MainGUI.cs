@@ -25,6 +25,7 @@ namespace BanDienThoai.GUI
         {
             if (currentFormChild != null)
             {
+                
                 currentFormChild.Close();
             }
             currentFormChild = childForm;
@@ -127,9 +128,8 @@ namespace BanDienThoai.GUI
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Close();
-            DangNhapGUI form = new DangNhapGUI();
-            form.Close();
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+            Application.Exit();
         }
     }
 }

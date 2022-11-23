@@ -34,6 +34,7 @@
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnQLKhachHang = new System.Windows.Forms.Button();
             this.btnBanHang = new System.Windows.Forms.Button();
             this.panel_main = new System.Windows.Forms.Panel();
@@ -44,7 +45,6 @@
             this.btnNhapHang = new System.Windows.Forms.Button();
             this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnHoaDonNH = new System.Windows.Forms.Button();
-            this.btnHoaDon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.Color.IndianRed;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(131)))), ((int)(((byte)(239)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnDangXuat);
@@ -89,9 +89,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 184);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 172);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -106,6 +106,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 151);
             this.panel2.TabIndex = 0;
+            // 
+            // btnHoaDon
+            // 
+            this.btnHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnHoaDon.Image")));
+            this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHoaDon.Location = new System.Drawing.Point(0, 106);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Size = new System.Drawing.Size(200, 42);
+            this.btnHoaDon.TabIndex = 0;
+            this.btnHoaDon.Text = "Hóa Đơn";
+            this.btnHoaDon.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnQLKhachHang
             // 
@@ -150,7 +163,7 @@
             // 
             // pnlQuanLy
             // 
-            this.pnlQuanLy.BackColor = System.Drawing.Color.IndianRed;
+            this.pnlQuanLy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(131)))), ((int)(((byte)(239)))));
             this.pnlQuanLy.Controls.Add(this.btnSanPham);
             this.pnlQuanLy.Controls.Add(this.btnThongKe);
             this.pnlQuanLy.Controls.Add(this.btnKhuyenMai);
@@ -239,19 +252,6 @@
             this.btnHoaDonNH.Text = "      Hóa Đơn Nhập Hàng";
             this.btnHoaDonNH.UseVisualStyleBackColor = true;
             this.btnHoaDonNH.Click += new System.EventHandler(this.btnHoaDonNH_Click);
-            // 
-            // btnHoaDon
-            // 
-            this.btnHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnHoaDon.Image = ((System.Drawing.Image)(resources.GetObject("btnHoaDon.Image")));
-            this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.Location = new System.Drawing.Point(0, 106);
-            this.btnHoaDon.Name = "btnHoaDon";
-            this.btnHoaDon.Size = new System.Drawing.Size(200, 42);
-            this.btnHoaDon.TabIndex = 0;
-            this.btnHoaDon.Text = "Hóa Đơn";
-            this.btnHoaDon.UseVisualStyleBackColor = true;
-            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // MainGUI
             // 

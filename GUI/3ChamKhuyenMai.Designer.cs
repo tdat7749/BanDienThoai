@@ -190,7 +190,7 @@
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.dgvKhuyenMai);
             this.Name = "_3ChamKhuyenMai";
-            this.Text = "_3ChamKhuyenMai";
+            this.Text = "Khuyến Mãi";
             this.Load += new System.EventHandler(this._3ChamKhuyenMai_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhuyenMai)).EndInit();
             this.ResumeLayout(false);

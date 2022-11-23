@@ -257,7 +257,6 @@
             this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtSoLuong.Location = new System.Drawing.Point(367, 357);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.ReadOnly = true;
             this.txtSoLuong.Size = new System.Drawing.Size(174, 25);
             this.txtSoLuong.TabIndex = 12;
             this.txtSoLuong.TextChanged += new System.EventHandler(this.textBox7_TextChanged);

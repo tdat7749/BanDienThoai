@@ -168,7 +168,7 @@
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.dgv3ChamSupplier);
             this.Name = "_3ChamSupplier";
-            this.Text = "_3ChamSupplier";
+            this.Text = "Nhà Cung Cấp";
             ((System.ComponentModel.ISupportInitialize)(this.dgv3ChamSupplier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

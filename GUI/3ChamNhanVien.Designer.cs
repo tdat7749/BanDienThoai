@@ -191,7 +191,7 @@
             this.Controls.Add(this.btnChon);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "_3ChamNhanVien";
-            this.Text = "_3ChamNhanVien";
+            this.Text = "Nhân Viên";
             ((System.ComponentModel.ISupportInitialize)(this.dgv3ChamStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

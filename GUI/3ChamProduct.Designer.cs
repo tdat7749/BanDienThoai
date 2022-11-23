@@ -201,7 +201,7 @@
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.dgvSanPham);
             this.Name = "_3ChamProduct";
-            this.Text = "_3ChamProduct";
+            this.Text = "Sản Phẩm";
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -157,7 +157,7 @@
             this.Controls.Add(this.dgvCategory);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "_3ChamCategory";
-            this.Text = "_3ChamCategory";
+            this.Text = "Danh Mục";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
