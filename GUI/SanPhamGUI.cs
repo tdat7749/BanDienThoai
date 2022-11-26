@@ -56,26 +56,48 @@ static Color SetTransparency(int A, Color color)
             }
             
         }
-
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (txtMaSanPham.Text != "")
+            {
+                MessageBox.Show("Sản phẩm đã có trong dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (txtTenSanPham.Text.Trim() == "" ||
                 txtDonGia.Text.Trim() == "" ||
                 txtMoTa.Text.Trim() == "" ||
                 txtMaHang.Text.Trim() == "" ||
-                cbbTrangThai.Text.Trim() == ""
+                cbbTrangThai.Text.Trim() == "" 
                 )
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            if(txtMaSanPham.Text != "")
+            if( pbSanPham.Image == null)
             {
-                MessageBox.Show("Sản phẩm đã có trong dữ liệu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn ảnh", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-             File.Copy(urlCopy, url + urlImg,true);
+
+            if (!IsNumber(txtDonGia.Text))
+            {
+                MessageBox.Show("Đơn giá phải là số!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!urlCopy.Equals(url + urlImg)){
+                File.Copy(urlCopy, url + urlImg, true);
+            }
 
 
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là thêm sản phẩm này chứ ?", "Sản Phẩm", MessageBoxButtons.YesNo);
@@ -99,7 +121,7 @@ static Color SetTransparency(int A, Color color)
                 productBUS.CreateProduct(product);
                 MessageBox.Show("Thêm sản phẩm thành công !!", "Sản Phẩm", MessageBoxButtons.OK);
                 GetAllProDuct();
-
+                reset();
                 
             }
         }
@@ -115,6 +137,12 @@ static Color SetTransparency(int A, Color color)
             if (txtTenSanPham.Text == "" || txtDonGia.Text == "" || txtMoTa.Text == "" || txtTenHang.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!IsNumber(txtDonGia.Text))
+            {
+                MessageBox.Show("Đơn giá phải là số!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -141,6 +169,7 @@ static Color SetTransparency(int A, Color color)
                 productBUS.UpdateProduct(product);
                 MessageBox.Show("Sửa thông tin thành công", "Thành Công", MessageBoxButtons.OK);
                 GetAllProDuct();
+           
             }
         }
 
@@ -227,7 +256,7 @@ static Color SetTransparency(int A, Color color)
             txtTenHang.Text = _3ChamCategory.name;
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void reset()
         {
             txtMaSanPham.Text = ""; txtTenSanPham.Text = "";
             txtDonGia.Text = "";
@@ -238,6 +267,11 @@ static Color SetTransparency(int A, Color color)
             pbSanPham.Image = null;
             pbSanPham.Invalidate();
             txtSearch.Text = "";
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            reset();
             GetAllProDuct();
         }
 

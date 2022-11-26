@@ -63,7 +63,15 @@ static Color SetTransparency(int A, Color color)
         {
 
         }
-
+        public bool IsNumber(string pValue)
+        {
+            foreach (Char c in pValue)
+            {
+                if (!Char.IsDigit(c))
+                    return false;
+            }
+            return true;
+        }
         private void btnThemVaoGio_Click(object sender, EventArgs e)
         {
 
@@ -77,9 +85,14 @@ static Color SetTransparency(int A, Color color)
                 MessageBox.Show("Nhập số lượng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else if (int.Parse(txtSoLuong.Text) < 0)
+            else if (!IsNumber(txtSoLuong.Text))
             {
-                MessageBox.Show("Số lượng không được < 0", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Số lượng nhập không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (int.Parse(txtSoLuong.Text) <= 0)
+            {
+                MessageBox.Show("Số lượng không được <= 0", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return;
             }
@@ -310,7 +323,11 @@ static Color SetTransparency(int A, Color color)
         {
             string item = cbbLoc.GetItemText(cbbLoc.SelectedItem);
             string name = txtNameSearch.Text.Trim();
-
+            if(item == "" || name == "")
+            {
+                MessageBox.Show("Vui lòng chọn các lựa chọn để lọc !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }    
             if(item == "Tên Sản Phẩm")
             {
                 dgvSanPham.DataSource = productBUS.GetProductByName(name);
