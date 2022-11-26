@@ -23,11 +23,11 @@ namespace BanDienThoai.GUI
         {
             InitializeComponent();
             GetAllProduct();
-groupBox1.BackColor = SetTransparency(180, Color.White);
+            groupBox1.BackColor = SetTransparency(180, Color.White);
             groupBox2.BackColor = SetTransparency(180, Color.White);
             groupBox3.BackColor = SetTransparency(180, Color.White);
-            label11.BackColor = SetTransparency(50,Color.White);
-            label12.BackColor = SetTransparency(50, Color.White);
+            //label11.BackColor = SetTransparency(50,Color.White);
+            //label12.BackColor = SetTransparency(50, Color.White);
             label17.BackColor = SetTransparency(50, Color.White);
         }
 static Color SetTransparency(int A, Color color)
@@ -238,6 +238,7 @@ static Color SetTransparency(int A, Color color)
 
                 }
                 MessageBox.Show("Mua Hàng Thành Công !!");
+                
             }
             else
             {

@@ -38,7 +38,6 @@ namespace BanDienThoai.GUI
 
             if (taiKhoanBUS.CheckLogin(txtTaiKhoan.Text.Trim(), txtMatKhau.Text.Trim()) == true)
             {
-                MessageBox.Show("Đăng Nhập Thành Công");
                 this.Hide();
                 MainGUI form = new MainGUI();
                 form.Show();

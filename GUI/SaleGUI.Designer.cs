@@ -114,6 +114,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(247, 159);
             this.label6.Name = "label6";
@@ -133,6 +134,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(44, 54);
             this.label2.Name = "label2";
@@ -152,6 +154,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(439, 100);
             this.label5.Name = "label5";
@@ -162,6 +165,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(439, 52);
             this.label4.Name = "label4";
@@ -173,6 +177,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(44, 100);
             this.label3.Name = "label3";

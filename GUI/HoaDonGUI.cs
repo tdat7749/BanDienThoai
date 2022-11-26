@@ -292,8 +292,8 @@ static Color SetTransparency(int A, Color color)
             e.Graphics.DrawString("STT", new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(10, y));
             e.Graphics.DrawString("Tên Sản Phẩm", new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(50, y));
             e.Graphics.DrawString("Số Lượng", new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(w / 2, y));
-            e.Graphics.DrawString("Đơn giá", new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(w / 2 + 100, y));
-            e.Graphics.DrawString("Thành tiền", new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(w - 200, y));
+            e.Graphics.DrawString("Đơn giá (VND)", new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(w / 2 + 100, y));
+            e.Graphics.DrawString("Thành tiền (VND)", new Font("Courier New", 10, FontStyle.Bold), Brushes.Black, new Point(w - 200, y));
 
             
 

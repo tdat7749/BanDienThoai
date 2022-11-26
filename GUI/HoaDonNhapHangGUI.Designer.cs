@@ -107,6 +107,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.Location = new System.Drawing.Point(80, 36);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -155,6 +156,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(232, 97);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -177,6 +179,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(232, 66);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -199,6 +202,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(232, 35);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -221,6 +225,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(6, 97);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -243,6 +248,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.Location = new System.Drawing.Point(6, 66);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -265,6 +271,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label12.Location = new System.Drawing.Point(6, 35);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -322,6 +329,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label18.Location = new System.Drawing.Point(360, 67);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -333,6 +341,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label19.Location = new System.Drawing.Point(170, 67);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -344,6 +353,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label20.Location = new System.Drawing.Point(80, 67);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -381,6 +391,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label17.Location = new System.Drawing.Point(360, 36);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -402,6 +413,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label16.Location = new System.Drawing.Point(170, 36);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -477,6 +489,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(232, 97);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -499,6 +512,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(232, 66);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -521,6 +535,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(232, 35);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -532,6 +547,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(6, 97);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -554,6 +570,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(6, 66);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -576,6 +593,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(6, 35);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -632,6 +650,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label14.Location = new System.Drawing.Point(324, 34);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -657,6 +676,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(43, 34);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -893,7 +913,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1023, 663);
             this.Controls.Add(this.label21);

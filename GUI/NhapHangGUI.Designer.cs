@@ -123,6 +123,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.Location = new System.Drawing.Point(311, 85);
             this.label7.Name = "label7";
@@ -143,6 +144,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.Location = new System.Drawing.Point(622, 39);
             this.label10.Name = "label10";
@@ -153,6 +155,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(311, 37);
             this.label8.Name = "label8";
@@ -183,12 +186,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(6, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nhà Cung Cấp";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtIDNCC
             // 
@@ -203,12 +208,14 @@
             // ncc
             // 
             this.ncc.AutoSize = true;
+            this.ncc.BackColor = System.Drawing.Color.Transparent;
             this.ncc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ncc.Location = new System.Drawing.Point(6, 35);
             this.ncc.Name = "ncc";
             this.ncc.Size = new System.Drawing.Size(99, 15);
             this.ncc.TabIndex = 0;
             this.ncc.Text = "ID Nhà Cung Cấp";
+            this.ncc.Click += new System.EventHandler(this.ncc_Click);
             // 
             // groupBox2
             // 
@@ -241,6 +248,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(280, 82);
             this.label5.Name = "label5";
@@ -261,6 +269,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(280, 35);
             this.label4.Name = "label4";
@@ -291,6 +300,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(6, 83);
             this.label2.Name = "label2";
@@ -311,6 +321,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(6, 35);
             this.label3.Name = "label3";
@@ -405,6 +416,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.Location = new System.Drawing.Point(84, 569);
             this.label9.Name = "label9";

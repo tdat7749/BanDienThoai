@@ -269,5 +269,15 @@ static Color SetTransparency(int A, Color color)
             txtIDNhanVien.Text = _3ChamNhanVien.id;
             txtTenNhanVien.Text = _3ChamNhanVien.ho + " " + _3ChamNhanVien.ten;
         }
+
+        private void ncc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

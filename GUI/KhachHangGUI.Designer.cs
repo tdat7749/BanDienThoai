@@ -345,11 +345,11 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Verdana", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Blue;
-            this.label7.Location = new System.Drawing.Point(404, 9);
+            this.label7.Location = new System.Drawing.Point(329, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(235, 40);
+            this.label7.Size = new System.Drawing.Size(401, 40);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Khách hàng";
+            this.label7.Text = "Quản Lý Khách Hàng";
             // 
             // KhachHangGUI
             // 

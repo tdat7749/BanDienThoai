@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_3ChamNhanVien));
             this.dgv3ChamStaff = new System.Windows.Forms.DataGridView();
-            this.txt_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReset = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnChon = new System.Windows.Forms.Button();
+            this.txt_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv3ChamStaff)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,51 +60,6 @@
             this.dgv3ChamStaff.RowTemplate.Height = 25;
             this.dgv3ChamStaff.Size = new System.Drawing.Size(546, 150);
             this.dgv3ChamStaff.TabIndex = 7;
-            // 
-            // txt_ID
-            // 
-            this.txt_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_ID.DataPropertyName = "Id";
-            this.txt_ID.HeaderText = "ID";
-            this.txt_ID.MinimumWidth = 6;
-            this.txt_ID.Name = "txt_ID";
-            this.txt_ID.ReadOnly = true;
-            // 
-            // txt_FirstName
-            // 
-            this.txt_FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_FirstName.DataPropertyName = "FirstName";
-            this.txt_FirstName.HeaderText = "Họ";
-            this.txt_FirstName.MinimumWidth = 6;
-            this.txt_FirstName.Name = "txt_FirstName";
-            this.txt_FirstName.ReadOnly = true;
-            // 
-            // txt_LastName
-            // 
-            this.txt_LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_LastName.DataPropertyName = "LastName";
-            this.txt_LastName.HeaderText = "Tên";
-            this.txt_LastName.MinimumWidth = 6;
-            this.txt_LastName.Name = "txt_LastName";
-            this.txt_LastName.ReadOnly = true;
-            // 
-            // txt_GioiTinh
-            // 
-            this.txt_GioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_GioiTinh.DataPropertyName = "GioiTinh";
-            this.txt_GioiTinh.HeaderText = "Giới Tính";
-            this.txt_GioiTinh.MinimumWidth = 6;
-            this.txt_GioiTinh.Name = "txt_GioiTinh";
-            this.txt_GioiTinh.ReadOnly = true;
-            // 
-            // txt_ChucVu
-            // 
-            this.txt_ChucVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.txt_ChucVu.DataPropertyName = "PhoneNumber";
-            this.txt_ChucVu.HeaderText = "Chức Vụ";
-            this.txt_ChucVu.MinimumWidth = 6;
-            this.txt_ChucVu.Name = "txt_ChucVu";
-            this.txt_ChucVu.ReadOnly = true;
             // 
             // btnReset
             // 
@@ -175,6 +130,51 @@
             this.btnChon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChon.UseVisualStyleBackColor = true;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
+            // 
+            // txt_ID
+            // 
+            this.txt_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_ID.DataPropertyName = "Id";
+            this.txt_ID.HeaderText = "ID";
+            this.txt_ID.MinimumWidth = 6;
+            this.txt_ID.Name = "txt_ID";
+            this.txt_ID.ReadOnly = true;
+            // 
+            // txt_FirstName
+            // 
+            this.txt_FirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_FirstName.DataPropertyName = "FirstName";
+            this.txt_FirstName.HeaderText = "Họ";
+            this.txt_FirstName.MinimumWidth = 6;
+            this.txt_FirstName.Name = "txt_FirstName";
+            this.txt_FirstName.ReadOnly = true;
+            // 
+            // txt_LastName
+            // 
+            this.txt_LastName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_LastName.DataPropertyName = "LastName";
+            this.txt_LastName.HeaderText = "Tên";
+            this.txt_LastName.MinimumWidth = 6;
+            this.txt_LastName.Name = "txt_LastName";
+            this.txt_LastName.ReadOnly = true;
+            // 
+            // txt_GioiTinh
+            // 
+            this.txt_GioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_GioiTinh.DataPropertyName = "GioiTinh";
+            this.txt_GioiTinh.HeaderText = "Giới Tính";
+            this.txt_GioiTinh.MinimumWidth = 6;
+            this.txt_GioiTinh.Name = "txt_GioiTinh";
+            this.txt_GioiTinh.ReadOnly = true;
+            // 
+            // txt_ChucVu
+            // 
+            this.txt_ChucVu.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.txt_ChucVu.DataPropertyName = "PhoneNumber";
+            this.txt_ChucVu.HeaderText = "Số Điện Thoại";
+            this.txt_ChucVu.MinimumWidth = 6;
+            this.txt_ChucVu.Name = "txt_ChucVu";
+            this.txt_ChucVu.ReadOnly = true;
             // 
             // _3ChamNhanVien
             // 
