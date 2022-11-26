@@ -63,7 +63,9 @@ static Color SetTransparency(int A, Color color)
 
         public static bool IsPhoneNumber(string number)
         {
-            return Regex.Match(number, @"^(\+[0-9]{10})$").Success;
+            Regex regex = new Regex("(84|0[3|5|7|8|9])+([0-9]{8})\\b$");
+            return regex.IsMatch(number);
+            //return Regex.Match(number, @"^(\+[0-9]{10})$").Success;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -83,11 +85,11 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
-            /*if (!IsPhoneNumber(txtSoDienThoai.Text.Trim()))
+            if (!IsPhoneNumber(txtSoDienThoai.Text.Trim()))
             {
                 MessageBox.Show("Vui lòng nhập đúng số điện thoại !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }*/
+            }
 
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là thêm nhân viên này chứ ?", "Nhân Viên", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -155,11 +157,11 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
-            /*if (!IsPhoneNumber(txtSoDienThoai.Text.Trim()))
+            if (!IsPhoneNumber(txtSoDienThoai.Text.Trim()))
             {
                 MessageBox.Show("Vui lòng nhập đúng số điện thoại !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }*/
+            }
 
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là sửa thông tin nhân viên này chứ ?", "Nhân Viên", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
