@@ -84,16 +84,16 @@
             this.txt_TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvChiTietHoaDon = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pddHoaDon = new System.Windows.Forms.PrintPreviewDialog();
-            this.pdHoaDon = new System.Drawing.Printing.PrintDocument();
-            this.label21 = new System.Windows.Forms.Label();
             this.txt_BillId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_ProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_NameProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_Totall = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pddHoaDon = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdHoaDon = new System.Drawing.Printing.PrintDocument();
+            this.label21 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -792,49 +792,6 @@
             this.dgvChiTietHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellClick);
             this.dgvChiTietHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiTietHoaDon_CellContentClick);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(62)))), ((int)(((byte)(59)))));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(437, 622);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 32);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "In Hóa Đơn";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pddHoaDon
-            // 
-            this.pddHoaDon.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.pddHoaDon.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.pddHoaDon.ClientSize = new System.Drawing.Size(400, 300);
-            this.pddHoaDon.Enabled = true;
-            this.pddHoaDon.Icon = ((System.Drawing.Icon)(resources.GetObject("pddHoaDon.Icon")));
-            this.pddHoaDon.Name = "pddHoaDon";
-            this.pddHoaDon.Visible = false;
-            // 
-            // pdHoaDon
-            // 
-            this.pdHoaDon.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdHoaDon_PrintPage);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Verdana", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label21.ForeColor = System.Drawing.Color.Blue;
-            this.label21.Location = new System.Drawing.Point(363, 9);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(312, 40);
-            this.label21.TabIndex = 22;
-            this.label21.Text = "HÓA ĐƠN NHẬP";
-            // 
             // txt_BillId
             // 
             this.txt_BillId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -888,6 +845,49 @@
             this.txt_Totall.MinimumWidth = 6;
             this.txt_Totall.Name = "txt_Totall";
             this.txt_Totall.ReadOnly = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(62)))), ((int)(((byte)(59)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(437, 622);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 32);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "In Hóa Đơn";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pddHoaDon
+            // 
+            this.pddHoaDon.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.pddHoaDon.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.pddHoaDon.ClientSize = new System.Drawing.Size(400, 300);
+            this.pddHoaDon.Enabled = true;
+            this.pddHoaDon.Icon = ((System.Drawing.Icon)(resources.GetObject("pddHoaDon.Icon")));
+            this.pddHoaDon.Name = "pddHoaDon";
+            this.pddHoaDon.Visible = false;
+            // 
+            // pdHoaDon
+            // 
+            this.pdHoaDon.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdHoaDon_PrintPage);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Verdana", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.Color.Blue;
+            this.label21.Location = new System.Drawing.Point(363, 9);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(312, 40);
+            this.label21.TabIndex = 22;
+            this.label21.Text = "HÓA ĐƠN NHẬP";
             // 
             // HoaDonNhapHangGUI
             // 

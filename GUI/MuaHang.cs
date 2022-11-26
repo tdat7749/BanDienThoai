@@ -320,7 +320,7 @@ static Color SetTransparency(int A, Color color)
             }
             else if(item == "Tất Cả")
             {
-                dgvSanPham.DataSource = productBUS.GetAllProduct();
+                dgvSanPham.DataSource = productBUS.GetAllProductStatus();
             }
         }
 
