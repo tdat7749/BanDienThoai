@@ -251,7 +251,14 @@ static Color SetTransparency(int A, Color color)
 
                 }
                 MessageBox.Show("Mua Hàng Thành Công !!");
-                
+                txtMaNhanVien.Text = "";
+                txtNhanVien.Text = "";
+                txtMaKhachHang.Text = "";
+                txtKhachHang.Text = "";
+                txtKhuyenMai.Text = "";
+                tbGioHang.Clear();
+                txtTongTien.Text = "0";
+                txtTongTienKM.Text = "0";
             }
             else
             {
