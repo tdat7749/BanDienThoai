@@ -39,7 +39,8 @@ namespace BanDienThoai.DAO
                             Staff.GioiTinh,
                             Staff.PhoneNumber
                             from Staff
-                            WHERE Staff.LastName = N'{name}' OR Staff.LastName = '{name}'";
+                            INNER JOIN TaiKhoan on Staff.Id = TaiKhoan.StaffId
+                            WHERE Staff.LastName = N'{name}' AND Status = 1";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;

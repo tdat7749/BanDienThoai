@@ -66,7 +66,7 @@ namespace BanDienThoai.GUI
             }
             else
             {
-                MessageBox.Show("Hình như bạn chưa chọn sản phẩm");
+                MessageBox.Show("Hình như bạn chưa chọn danh mục");
             }
         }
     }

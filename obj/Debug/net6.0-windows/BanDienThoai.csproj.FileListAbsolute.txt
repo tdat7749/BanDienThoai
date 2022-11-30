@@ -114,3 +114,4 @@ E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.SanPhamGU
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.ThongKeGUI.resources
 D:\.C#\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.ThongKeGUI.resources
 E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.SupplierGUI.resources
+E:\BanDienThoai\BanDienThoai\obj\Debug\net6.0-windows\BanDienThoai.GUI.DanhMucGUI.resources

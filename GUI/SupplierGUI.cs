@@ -19,6 +19,14 @@ namespace BanDienThoai.GUI
         {
             InitializeComponent();
             GetAllSupplier();
+
+            groupBox1.BackColor = SetTransparency(180, Color.White);
+            groupBox2.BackColor = SetTransparency(180, Color.White);
+        }
+
+        static Color SetTransparency(int A, Color color)
+        {
+            return Color.FromArgb(A, color.R, color.G, color.B);
         }
 
         public void GetAllSupplier()

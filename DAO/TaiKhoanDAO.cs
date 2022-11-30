@@ -51,7 +51,7 @@ namespace BanDienThoai.DAO
             string query = $@"select StaffId,UserName,Password,Staff.FirstName,Staff.LastName,Staff.GioiTinh,Staff.PhoneNumber,Permission.NamePermiss,Status from TaiKhoan
                              INNER JOIN Staff on StaffId = Staff.Id
                              INNER JOIN Permission on PermissId = Permission.Id 
-                             WHERE Staff.PhoneNumber LIKE N'%{chucVu}%'";
+                             WHERE Permission.NamePermiss LIKE N'%{chucVu}%'";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;
@@ -67,7 +67,7 @@ namespace BanDienThoai.DAO
             string query = $@"select StaffId,UserName,Password,Staff.FirstName,Staff.LastName,Staff.GioiTinh,Staff.PhoneNumber,Permission.NamePermiss,Status from TaiKhoan
                              INNER JOIN Staff on StaffId = Staff.Id
                              INNER JOIN Permission on PermissId = Permission.Id 
-                             WHERE Staff.PhoneNumber LIKE N'%{staffName}%'";
+                             WHERE Staff.LastName LIKE N'%{staffName}%'";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;

@@ -137,5 +137,10 @@ namespace BanDienThoai.GUI
             ChangeFormChild(new SupplierGUI());
 
         }
+
+        private void btnDanhMuc_Click(object sender, EventArgs e)
+        {
+            ChangeFormChild(new DanhMucGUI());
+        }
     }
 }

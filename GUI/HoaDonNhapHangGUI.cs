@@ -125,11 +125,11 @@ static Color SetTransparency(int A, Color color)
                 return;
             }
 
-            if (double.Parse(txtGiaTu.Text.Trim()) > double.Parse(txtGiaDen.Text.Trim()))
+            /*if (double.Parse(txtGiaTu.Text.Trim()) > double.Parse(txtGiaDen.Text.Trim()))
             {
                 MessageBox.Show("Vui lòng nhập giá từ bé hơn giá đến !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
-            }
+            }*/
 
             if (txtGiaTu.Text != "" && txtGiaDen.Text == "")
             {

@@ -48,7 +48,7 @@ namespace BanDienThoai.GUI
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn nhà cung cấp ! ");
+                MessageBox.Show("Vui lòng chọn khách hàng ! ");
                 return;
             }
         }

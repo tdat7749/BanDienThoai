@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BanDienThoai.BUS;
+using BanDienThoai.DAO;
 using BanDienThoai.DTO;
 
 
@@ -29,6 +30,11 @@ namespace BanDienThoai.GUI
             //label11.BackColor = SetTransparency(50,Color.White);
             //label12.BackColor = SetTransparency(50, Color.White);
             label17.BackColor = SetTransparency(50, Color.White);
+
+
+
+            txtMaNhanVien.Text = TaiKhoanDAO.StaffId;
+            txtNhanVien.Text = TaiKhoanDAO.StaffName;
         }
 static Color SetTransparency(int A, Color color)
         {

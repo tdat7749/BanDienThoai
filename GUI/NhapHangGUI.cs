@@ -1,4 +1,5 @@
 ﻿using BanDienThoai.BUS;
+using BanDienThoai.DAO;
 using BanDienThoai.DTO;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,11 @@ groupBox1.BackColor = SetTransparency(180, Color.White);
             groupBox3.BackColor = SetTransparency(180, Color.White);
             label6.BackColor = SetTransparency(50, Color.White);
             label9.BackColor = SetTransparency(50, Color.White);
+
+
+
+            txtIDNhanVien.Text = TaiKhoanDAO.StaffId;
+            txtTenNhanVien.Text = TaiKhoanDAO.StaffName;
         }
 
 static Color SetTransparency(int A, Color color)
