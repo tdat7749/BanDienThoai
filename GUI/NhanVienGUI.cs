@@ -90,6 +90,14 @@ static Color SetTransparency(int A, Color color)
                 MessageBox.Show("Vui lòng nhập đúng số điện thoại !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            for (int i = 0; i < dgvNhanVien.Rows.Count -1; i++)
+            {
+                if (dgvNhanVien.Rows[i].Cells[1].Value.ToString().Equals(txtTaiKhoan.Text))
+                {
+                    MessageBox.Show("Tên tài khoản đã được sử dụng!!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
 
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc là thêm nhân viên này chứ ?", "Nhân Viên", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -108,6 +116,8 @@ static Color SetTransparency(int A, Color color)
                 taiKhoan.StaffId = staffBUS.GetLastID();
                 taiKhoan.UserName = txtTaiKhoan.Text.Trim();
                 taiKhoan.Password = txtMatKhau.Text.Trim();
+                
+
                 if (cbbChucVu.GetItemText(cbbChucVu.SelectedItem).Trim() == "Quản Trị Viên")
                 {
                     taiKhoan.PermissId = 4;

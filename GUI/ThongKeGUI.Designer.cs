@@ -261,6 +261,7 @@
             // cbbQuy
             // 
             this.cbbQuy.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbbQuy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbQuy.FormattingEnabled = true;
             this.cbbQuy.Items.AddRange(new object[] {
             "2021",
@@ -543,6 +544,7 @@
             // cbbTenSanPham
             // 
             this.cbbTenSanPham.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbbTenSanPham.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbTenSanPham.FormattingEnabled = true;
             this.cbbTenSanPham.Location = new System.Drawing.Point(31, 412);
             this.cbbTenSanPham.Name = "cbbTenSanPham";

@@ -43,7 +43,7 @@ static Color SetTransparency(int A, Color color)
         private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgvHoaDon.CurrentRow.Index;
-            if (i >= 0)
+            if (i >= 0 && dgvHoaDon.Rows[i].Cells[0].Value.ToString() != "")
             {
                 txtMaHoaDon.Text = dgvHoaDon.Rows[i].Cells[0].Value.ToString();
                 txtMaNhanVien.Text = dgvHoaDon.Rows[i].Cells[1].Value.ToString();
@@ -60,7 +60,7 @@ static Color SetTransparency(int A, Color color)
         private void dgvChiTietHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgvChiTietHoaDon.CurrentRow.Index;
-            if (i >= 0)
+            if (i >= 0 && dgvChiTietHoaDon.Rows[i].Cells[0].Value.ToString() != "")
             {
                 txtMaHoaDonCT.Text = dgvChiTietHoaDon.Rows[i].Cells[0].Value.ToString();
                 txtMaSanPham.Text = dgvChiTietHoaDon.Rows[i].Cells[1].Value.ToString();
@@ -225,7 +225,6 @@ static Color SetTransparency(int A, Color color)
             dtHoaDon = importBillBUS.GetImportBillByID(txtMaHoaDon.Text.Trim());
 
             //vẽ header của bill
-            //1. tên cửa hàng (quán karaoke)
             e.Graphics.DrawString("Nhóm 8 Bán Điện Thoại", new Font("Courier New", 12, FontStyle.Bold), Brushes.Black, new Point(30, 20));
             e.Graphics.DrawString(string.Format("Mã Hóa Đơn : {0}", txtMaHoaDon.Text.Trim()), new Font("Courier New", 12, FontStyle.Bold), Brushes.Black, new Point(w / 2 + 80, 20));
 

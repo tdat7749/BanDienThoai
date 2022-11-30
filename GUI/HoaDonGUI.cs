@@ -50,7 +50,7 @@ static Color SetTransparency(int A, Color color)
         private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgvHoaDon.CurrentRow.Index;
-            if(i >= 0)
+            if(i >= 0 && dgvHoaDon.Rows[i].Cells[0].Value.ToString() != "")
             {
                 txtMaHoaDon.Text = dgvHoaDon.Rows[i].Cells[0].Value.ToString();
                 txtMaKhachHang.Text = dgvHoaDon.Rows[i].Cells[1].Value.ToString();
@@ -59,7 +59,6 @@ static Color SetTransparency(int A, Color color)
                 txtTongTien.Text = dgvHoaDon.Rows[i].Cells[4].Value.ToString();
                 txtNhanVien.Text = dgvHoaDon.Rows[i].Cells[5].Value.ToString();
 
-
                 dgvChiTietHoaDon.DataSource = detailBillBUS.GetDetailBillByID(txtMaHoaDon.Text.Trim());
             }
         }
@@ -67,7 +66,7 @@ static Color SetTransparency(int A, Color color)
         private void dgvChiTietHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgvChiTietHoaDon.CurrentRow.Index;
-            if(i >= 0)
+            if(i >= 0 && dgvChiTietHoaDon.Rows[i].Cells[0].Value.ToString() != "")
             {
                 txtMaHoaDonCT.Text = dgvChiTietHoaDon.Rows[i].Cells[0].Value.ToString();
                 txtMaSanPham.Text = dgvChiTietHoaDon.Rows[i].Cells[1].Value.ToString();

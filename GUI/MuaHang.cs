@@ -168,10 +168,6 @@ static Color SetTransparency(int A, Color color)
                 Bitmap bm = new Bitmap(url + urlImg);
                 pbSanPham.Image = bm;
             }
-            else
-            {
-                MessageBox.Show("Hình như bạn chưa chọn sản phẩm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -338,10 +334,10 @@ static Color SetTransparency(int A, Color color)
             }    
             if(item == "Tên Sản Phẩm")
             {
-                dgvSanPham.DataSource = productBUS.GetProductByName(name);
+                dgvSanPham.DataSource = productBUS.GetProductByNameStatus(name);
             }
             else if(item == "Danh Mục"){
-                dgvSanPham.DataSource = productBUS.GetProductByCategory(name);
+                dgvSanPham.DataSource = productBUS.GetProductByCategoryStatus(name);
             }
             else if(item == "Tất Cả")
             {

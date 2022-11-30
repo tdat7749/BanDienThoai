@@ -45,7 +45,7 @@ INNER JOIN Category on Product.CategoryId = Category.Id";
         public static DataTable GetProductByName(string name)
         {
             Connection.Conn.Open();
-            string query = @$"select Product.Id,Product.NameProduct,Product.Price,Product.Description,Product.Stock,Category.CategoryName 
+            string query = @$"select Product.Id,Product.NameProduct,Product.Price,Product.Description,Product.Stock,Image,Category.CategoryName,Category.Id,Product.Status
                             from Product 
                             INNER JOIN Category on Product.CategoryId = Category.Id 
                             where NameProduct LIKE '%{name}%'";
@@ -58,13 +58,45 @@ INNER JOIN Category on Product.CategoryId = Category.Id";
             return dt;
         }
 
+        public static DataTable GetProductByNameStatus(string name)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Product.Id,Product.NameProduct,Product.Price,Product.Description,Product.Stock,Image,Category.CategoryName,Category.Id,Product.Status
+                            from Product 
+                            INNER JOIN Category on Product.CategoryId = Category.Id 
+                            where NameProduct LIKE '%{name}%' AND Status = 1";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
         public static DataTable GetProductByCategory(string name)
         {
             Connection.Conn.Open();
-            string query = @$"select Product.Id,Product.NameProduct,Product.Price,Product.Description,Product.Stock,Category.CategoryName 
+            string query = @$"select Product.Id,Product.NameProduct,Product.Price,Product.Description,Product.Stock,Image,Category.CategoryName ,Category.Id,Product.Status
                             from Product 
                             INNER JOIN Category on Product.CategoryId = Category.Id 
                             where CategoryName LIKE '%{name}%'";
+            SqlCommand command = new SqlCommand(query, Connection.Conn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            dataAdapter.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Connection.Conn.Close();
+            return dt;
+        }
+
+        public static DataTable GetProductByCategoryStatus(string name)
+        {
+            Connection.Conn.Open();
+            string query = @$"select Product.Id,Product.NameProduct,Product.Price,Product.Description,Product.Stock,Image,Category.CategoryName ,Category.Id,Product.Status
+                            from Product 
+                            INNER JOIN Category on Product.CategoryId = Category.Id 
+                            where CategoryName LIKE '%{name}%' AND Status = 1";
             SqlCommand command = new SqlCommand(query, Connection.Conn);
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
             dataAdapter.SelectCommand = command;
@@ -88,6 +120,7 @@ INNER JOIN Category on Product.CategoryId = Category.Id";
             command.Parameters.Add("@Image", SqlDbType.NVarChar).Value = product.Image;
             command.Parameters.Add("@CategoryId", SqlDbType.Int).Value = product.CategoryID;
             command.Parameters.Add("@Status", SqlDbType.Int).Value = product.Status;
+
             command.ExecuteNonQuery();
             Connection.Conn.Close();
         }

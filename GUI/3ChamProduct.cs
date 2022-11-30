@@ -26,7 +26,7 @@ namespace BanDienThoai.GUI
 
         public void GetAllProduct()
         {
-            dgvSanPham.DataSource = productBUS.GetAllProduct();
+            dgvSanPham.DataSource = productBUS.GetAllProductStatus();
         }
 
         private void btnChon_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace BanDienThoai.GUI
                 return;
             }
 
-            dgvSanPham.DataSource = productBUS.GetProductByName(txtSearch.Text.Trim());
+            dgvSanPham.DataSource = productBUS.GetProductByNameStatus(txtSearch.Text.Trim());
             if(dgvSanPham.Rows.Count <= 1)
             {
                 MessageBox.Show("Không tìm thấy !!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);

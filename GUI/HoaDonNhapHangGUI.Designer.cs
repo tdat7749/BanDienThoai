@@ -662,6 +662,7 @@
             // cbbLuaChon
             // 
             this.cbbLuaChon.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbbLuaChon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLuaChon.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cbbLuaChon.FormattingEnabled = true;
             this.cbbLuaChon.Items.AddRange(new object[] {

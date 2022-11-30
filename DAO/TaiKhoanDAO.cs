@@ -32,7 +32,7 @@ namespace BanDienThoai.DAO
         public static DataTable GetTaiKhoanBySDT(string sdt)
         {
             Connection.Conn.Open();
-            string query = $@"select StaffId,UserName,Password,Staff.FirstName,Staff.LastName,Staff.GioiTinh,Staff.PhoneNumber,Permission.NamePermiss from TaiKhoan
+            string query = $@"select StaffId,UserName,Password,Staff.FirstName,Staff.LastName,Staff.GioiTinh,Staff.PhoneNumber,Permission.NamePermiss,Status from TaiKhoan
                              INNER JOIN Staff on StaffId = Staff.Id
                              INNER JOIN Permission on PermissId = Permission.Id 
                              WHERE Staff.PhoneNumber LIKE '%{sdt}%'";
@@ -48,7 +48,7 @@ namespace BanDienThoai.DAO
         public static DataTable GetTaiKhoanByChucVu(string chucVu)
         {
             Connection.Conn.Open();
-            string query = $@"select StaffId,UserName,Password,Staff.FirstName,Staff.LastName,Staff.GioiTinh,Staff.PhoneNumber,Permission.NamePermiss from TaiKhoan
+            string query = $@"select StaffId,UserName,Password,Staff.FirstName,Staff.LastName,Staff.GioiTinh,Staff.PhoneNumber,Permission.NamePermiss,Status from TaiKhoan
                              INNER JOIN Staff on StaffId = Staff.Id
                              INNER JOIN Permission on PermissId = Permission.Id 
                              WHERE Staff.PhoneNumber LIKE N'%{chucVu}%'";
@@ -64,7 +64,7 @@ namespace BanDienThoai.DAO
         public static DataTable GetTaiKhoanByStaffName(string staffName)
         {
             Connection.Conn.Open();
-            string query = $@"select StaffId,UserName,Password,Staff.FirstName,Staff.LastName,Staff.GioiTinh,Staff.PhoneNumber,Permission.NamePermiss from TaiKhoan
+            string query = $@"select StaffId,UserName,Password,Staff.FirstName,Staff.LastName,Staff.GioiTinh,Staff.PhoneNumber,Permission.NamePermiss,Status from TaiKhoan
                              INNER JOIN Staff on StaffId = Staff.Id
                              INNER JOIN Permission on PermissId = Permission.Id 
                              WHERE Staff.PhoneNumber LIKE N'%{staffName}%'";
